@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Substantive Compuse în Germană - Workshop Complet</title>
+    <title>Substantive Compuse în Germană - Acces Protejat</title>
     <style>
         * {
             margin: 0;
@@ -14,310 +14,56 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            line-height: 1.6;
-            padding-top: 80px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Navigation Bar */
-        .nav-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            z-index: 9999;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px;
-            flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            padding: 20px;
         }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .nav-link {
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            background: rgba(255,255,255,0.1);
-            cursor: pointer;
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.25);
-            transform: translateY(-2px);
-        }
-
-        .nav-link.active {
-            background: rgba(255,255,255,0.35);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
+        #loginContainer {
             background: white;
+            padding: 50px;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-        }
-
-        .header {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 40px;
+            max-width: 450px;
+            width: 100%;
             text-align: center;
-            border-radius: 20px 20px 0 0;
         }
 
-        .header h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            font-size: 1.1rem;
-            opacity: 0.9;
-        }
-
-        .content {
-            padding: 40px;
-        }
-
-        /* Theory Sections */
-        .section-header {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 20px 25px;
-            border-radius: 12px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-bottom: 0;
-        }
-
-        .section-header:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
-        }
-
-        .section-header h3 {
-            font-size: 1.3rem;
-        }
-
-        .arrow {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-        }
-
-        .arrow.rotated {
-            transform: rotate(180deg);
-        }
-
-        .section-content {
-            display: none;
-            padding: 30px;
-            background: #f0fdf4;
-            border: 3px solid #10b981;
-            border-top: none;
-            border-radius: 0 0 12px 12px;
-            margin-bottom: 20px;
-        }
-
-        .section-content.active {
-            display: block;
-        }
-
-        .section {
-            margin-bottom: 20px;
-        }
-
-        /* Exercise Items */
-        .exercise-item {
-            background: #f0fdf4;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 25px;
-            border: 2px solid #e5e7eb;
-            transition: all 0.3s;
-        }
-
-        .exercise-item.correct {
-            border-color: #10b981;
-            background: #d1fae5;
-        }
-
-        .exercise-item.incorrect {
-            border-color: #ef4444;
-            background: #fee2e2;
-        }
-
-        .exercise-number {
-            display: inline-block;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        .word-display {
-            font-size: 1.3rem;
-            font-weight: bold;
+        #loginContainer h1 {
             color: #059669;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            font-size: 2rem;
         }
 
-        /* Input Styles */
-        .input-group {
-            margin-bottom: 15px;
+        #loginContainer p {
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 1.1rem;
         }
 
-        .input-group label {
-            display: block;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 8px;
-        }
-
-        .input-row {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-        }
-
-        .article-input-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            flex: 1;
-            min-width: 180px;
-        }
-
-        .article-input-wrapper.break-line {
-            flex-basis: 100%;
-        }
-
-        input[type="text"], select {
-            padding: 12px 15px;
+        #loginContainer input {
+            width: 100%;
+            padding: 15px;
             border: 2px solid #d1d5db;
-            border-radius: 8px;
-            font-size: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
             transition: all 0.3s;
-            flex: 1;
         }
 
-        input[type="text"].small {
-            max-width: 60px;
-            flex: 0 0 60px;
-        }
-
-        select {
-            cursor: pointer;
-            appearance: none;
-            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2310b981' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 12px center;
-            padding-right: 40px;
-        }
-
-        input:focus, select:focus {
+        #loginContainer input:focus {
             outline: none;
             border-color: #10b981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
-        input.correct, select.correct {
-            border-color: #10b981;
-            background: #ecfdf5;
-        }
-
-        input.incorrect, select.incorrect {
-            border-color: #ef4444;
-            background: #fef2f2;
-        }
-
-        .plus-sign {
-            font-size: 1.5rem;
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        /* Feedback */
-        .feedback {
-            display: none;
-            margin-top: 15px;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-        }
-
-        .feedback.show {
-            display: block;
-        }
-
-        .feedback.correct {
-            background: #d1fae5;
-            color: #065f46;
-            border-left: 4px solid #10b981;
-        }
-
-        .feedback.incorrect {
-            background: #fee2e2;
-            color: #991b1b;
-            border-left: 4px solid #ef4444;
-        }
-
-        .correct-answer {
-            margin-top: 10px;
-            padding: 10px;
-            background: #f0fdf4;
-            border-radius: 6px;
-            color: #065f46;
-        }
-
-        /* Buttons */
-        .buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        button {
-            padding: 15px 40px;
+        #loginContainer button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
             border: none;
             border-radius: 10px;
             font-size: 1.1rem;
@@ -326,1202 +72,130 @@
             transition: all 0.3s;
         }
 
-        .btn-check {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .btn-check:hover {
+        #loginContainer button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
         }
 
-        .btn-reset {
-            background: #6b7280;
-            color: white;
-        }
-
-        .btn-reset:hover {
-            background: #4b5563;
-        }
-
-        /* Score */
-        .score {
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            padding: 20px;
-            margin-top: 30px;
-            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-            border-radius: 12px;
-            display: none;
-        }
-
-        .score.show {
-            display: block;
-        }
-
-        /* Info Boxes */
-        .example-box, .info-box {
-            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border-left: 5px solid #10b981;
-        }
-
-        .example-box h3, .info-box h3 {
-            color: #065f46;
-            margin-bottom: 10px;
-        }
-
-        .example-box p, .info-box p {
-            color: #1e293b;
-            font-size: 1.05rem;
-        }
-
-        /* Ex 6 Styles */
-        .all-variants {
-            display: none;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 3px solid #10b981;
-        }
-
-        .all-variants.show {
-            display: block;
-        }
-
-        .variants-header {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .category {
-            margin-bottom: 30px;
-        }
-
-        .category-header {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-        }
-
-        .category-header h3 {
-            font-size: 1.3rem;
-        }
-
-        .arrow-ex6 {
-            font-size: 1.5rem;
-            transition: transform 0.3s;
-            color: white;
-        }
-
-        .variants-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 15px;
-        }
-
-        .variant-card {
-            background: #f0fdf4;
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 4px solid #10b981;
-        }
-
-        .variant-card strong {
-            color: #059669;
-            font-size: 1.1rem;
-        }
-
-        .variant-parts {
-            color: #6b7280;
-            font-size: 0.9rem;
-            margin: 5px 0;
-        }
-
-        .words-list {
-            background: white;
-            padding: 15px;
-            border-radius: 8px;
+        .error {
+            color: #ef4444;
+            font-weight: 600;
             margin-top: 15px;
+            display: none;
         }
 
-        .words-list p {
-            margin-bottom: 8px;
+        .error.show {
+            display: block;
         }
 
-        /* Responsive */
+        #protectedContent {
+            display: none;
+        }
+
+        .lock-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
         @media (max-width: 768px) {
-            body {
-                padding-top: 140px;
-                padding: 10px;
-                padding-top: 140px;
+            #loginContainer {
+                padding: 30px 20px;
             }
 
-            .nav-container {
-                flex-direction: column;
-            }
-
-            .container {
-                margin: 15px auto;
-                border-radius: 15px;
-            }
-
-            .header {
-                padding: 25px 20px;
-                border-radius: 15px 15px 0 0;
-            }
-
-            .header h1 {
+            #loginContainer h1 {
                 font-size: 1.5rem;
             }
 
-            .header p {
-                font-size: 0.95rem;
-            }
-
-            .content {
-                padding: 20px 15px;
-            }
-
-            .section-header h3 {
-                font-size: 1.1rem;
-            }
-
-            .example-box, .info-box {
-                padding: 15px;
-                font-size: 0.95rem;
-            }
-
-            .exercise-item {
-                padding: 15px;
-            }
-
-            .exercise-number {
-                font-size: 0.9rem;
-                padding: 6px 12px;
-            }
-
-            .word-display {
-                font-size: 1.1rem;
-            }
-
-            .input-group label {
-                font-size: 0.95rem;
-            }
-
-            .input-row {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .article-input-wrapper {
-                width: 100%;
-                min-width: 100%;
-            }
-
-            input[type="text"], select {
-                font-size: 0.95rem;
-                padding: 10px 12px;
-            }
-
-            .plus-sign {
-                display: none;
-            }
-
-            .feedback {
-                font-size: 0.9rem;
-                padding: 10px 12px;
-            }
-
-            .buttons {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            button {
-                width: 100%;
-                padding: 12px 20px;
+            #loginContainer p {
                 font-size: 1rem;
-            }
-
-            .score {
-                font-size: 1.2rem;
-                padding: 15px;
-            }
-
-            .variants-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .variant-card {
-                padding: 12px;
-            }
-
-            .category-header h3 {
-                font-size: 1.1rem;
-            }
-        }
-
-        /* Extra small phones */
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.3rem;
-            }
-
-            .nav-link {
-                font-size: 0.85rem;
-                padding: 6px 10px;
-            }
-
-            .exercise-item {
-                padding: 12px;
-            }
-
-            input[type="text"], select {
-                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Menu -->
-    <nav class="nav-menu">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span>ʚଓ</span>
-                <span>Claudia Tóth</span>
-            </div>
-            <div class="nav-links">
-                <a href="#teorie" class="nav-link">Teorie</a>
-                <a href="#ex1" class="nav-link">Ex. 1</a>
-                <a href="#ex2" class="nav-link">Ex. 2</a>
-                <a href="#ex3" class="nav-link">Ex. 3</a>
-                <a href="#ex4" class="nav-link">Ex. 4</a>
-                <a href="#ex5" class="nav-link">Ex. 5</a>
-                <a href="#ex6" class="nav-link">Ex. 6</a>
-                <a href="#recapitulare" class="nav-link">Recapitulare</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- TEORIE -->
-    <div class="container" id="teorie">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('teorie')">
-            <h1>ʚଓ TEORIE <span id="arrow-header-teorie" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Substantive Compuse în Germană - Zusammengesetzte Substantive - PARTEA 1</p>
-        </div>
-        <div class="content" id="content-teorie" style="display: none;">
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(0)">
-                    <h3>CE SUNT SUBSTANTIVELE COMPUSE?</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>DEFINIȚIE</h3>
-                        <p>Un substantiv compus este un substantiv format din <strong>cel puțin două cuvinte</strong> unite împreună.</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>Exemplu simplu în română:</h3>
-                        <p>"copil" + "cameră" = "camera copiilor"</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>Exemplu în germană:</h3>
-                        <p><strong>das Kind</strong> (copilul) + <strong>das Zimmer</strong> (camera) = <strong>das Kinderzimmer</strong> (camera copiilor)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(1)">
-                    <h3>DE CE SUNT IMPORTANTE?</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>1. Limba germană IUBEȘTE cuvintele compuse!</h3>
-                        <p>Germanii creează constant cuvinte noi prin combinare. Este o caracteristică fundamentală a limbii!</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>2. Vocabular INFINIT!</h3>
-                        <p>Când știi cum să formezi substantive compuse, vocabularul tău devine MULT mai mare! Nu mai trebuie să memorezi fiecare cuvânt separat.</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>3. Exprimare PRECISĂ!</h3>
-                        <p>Poți descrie lucruri foarte specific:<br>
-                        <strong>das Zimmer</strong> = camera (ce fel de cameră?)<br>
-                        <strong>das Kinderzimmer</strong> = camera copiilor (AHA! Acum știm!)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(2)">
-                    <h3>REGULILE DE AUR</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>REGULA 1: Scris cu majusculă</h3>
-                        <p>Un substantiv compus se scrie cu literă mare doar la început (ca orice substantiv german).</p>
-                        <p style="margin-top: 10px;">✅ das Kinderzimmer<br>❌ das KinderZimmer</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>REGULA 2: Articolul ultimului cuvânt</h3>
-                        <p>Substantivul compus ia articolul <strong>ultimului cuvânt</strong> (Grundwort - cuvântul de bază).</p>
-                        <p style="margin-top: 15px;"><strong>Exemple:</strong><br>
-                        • das Auto + <strong>die Tür</strong> = <strong>die</strong> Autotür (die de la Tür)<br>
-                        • der Tee + <strong>die Kanne</strong> = <strong>die</strong> Teekanne (die de la Kanne)<br>
-                        • die Sonne + <strong>der Schein</strong> = <strong>der</strong> Sonnenschein (der de la Schein)</p>
-                        <p style="margin-top: 10px; font-weight: bold; color: #059669;">⚠️ Reține: Ultimul cuvânt DICTEAZĂ articolul!</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>REGULA 3: Primul descrie pe al doilea</h3>
-                        <p>În substantivul compus:<br>
-                        <strong>Primul cuvânt</strong> (Bestimmungswort) = DESCRIE<br>
-                        <strong>Al doilea cuvânt</strong> (Grundwort) = este DESCRIS</p>
-                        <p style="margin-top: 10px;"><strong>das Kinder|zimmer</strong><br>
-                        Kind (copil) → descrie<br>
-                        Zimmer (cameră) → ce fel de cameră? → camera COPIILOR</p>
-                        <p style="margin-top: 10px;"><strong>die Auto|tür</strong><br>
-                        Auto (mașină) → descrie<br>
-                        Tür (ușă) → ce fel de ușă? → ușa MAȘINII</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(3)">
-                    <h3>TIPUL 1: SUBSTANTIV + SUBSTANTIV</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>CUM FUNCȚIONEAZĂ?</h3>
-                        <p>Pur și simplu așezi cuvintele unul după altul:</p>
-                        <p style="text-align: center; font-size: 1.2rem; font-weight: bold; background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
-                            SUBSTANTIV 1 + SUBSTANTIV 2 = SUBSTANTIV COMPUS
-                        </p>
-                    </div>
-                    <div class="example-box">
-                        <h3>EXEMPLE SIMPLE</h3>
-                        <p><strong>1.</strong> das Auto + die Tür = <strong>die Autotür</strong> (ușa mașinii)</p>
-                        <p><strong>2.</strong> der Tee + die Kanne = <strong>die Teekanne</strong> (ceainicul)</p>
-                        <p><strong>3.</strong> das Haus + die Tür = <strong>die Haustür</strong> (ușa de la intrare a casei)</p>
-                        <p><strong>4.</strong> der Fuß + der Ball = <strong>der Fußball</strong> (mingea de fotbal)</p>
-                        <p><strong>5.</strong> die Blume + der Topf = <strong>der Blumentopf</strong> (ghiveciul)</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>EXEMPLE MAI COMPLEXE (3+ cuvinte!)</h3>
-                        <p>Da, poți combina mai mult de 2 cuvinte!</p>
-                        <p style="margin-top: 10px;"><strong>1.</strong> der Fuß + der Ball + das Spiel = <strong>das Fußballspiel</strong><br>
-                        (meciul de fotbal)</p>
-                        <p><strong>2.</strong> die Geburt + der Tag + das Geschenk = <strong>das Geburtstagsgeschenk</strong><br>
-                        (cadoul de ziua de naștere)</p>
-                        <p><strong>3.</strong> das Auto + die Bahn + der Hof = <strong>der Autobahnhof</strong><br>
-                        (stația de autostradă / parcare)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(4)">
-                    <h3>CUM SĂ ÎNȚELEGI UN CUVÂNT LUNG?</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>Strategia în 3 pași:</h3>
-                        <p><strong>PASUL 1:</strong> Împarte cuvântul în părți<br>
-                        <strong>PASUL 2:</strong> Identifică ultimul cuvânt (Grundwort) → acesta îți dă ARTICOLUL și SENSUL PRINCIPAL<br>
-                        <strong>PASUL 3:</strong> Citește de la DREAPTA la STÂNGA pentru a înțelege sensul complet</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>EXEMPLU: die Haustür</h3>
-                        <p><strong>PASUL 1 - Împarte:</strong><br>Haus + Tür</p>
-                        <p style="margin-top: 10px;"><strong>PASUL 2 - Ultimul cuvânt:</strong><br>
-                        Tür (ușă) → articol <strong>die</strong><br>
-                        Deci este vorba despre o UȘĂ</p>
-                        <p style="margin-top: 10px;"><strong>PASUL 3 - Citește invers:</strong><br>
-                        Ce fel de ușă? → Haus (casă)<br>
-                        = ușa CASEI</p>
-                        <p style="margin-top: 10px; font-weight: bold; background: white; padding: 10px; border-radius: 8px;">
-                        ✓ Rezultat: die Haustür = ușa casei</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(5)">
-                    <h3>LITERELE DE LEGĂTURĂ (Fugenelemente)</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box">
-                        <h3>CE SUNT?</h3>
-                        <p>Uneori, între cuvinte trebuie să inserezi o literă sau un grup de litere pentru ca substantivul să sune corect.</p>
-                        <p style="margin-top: 10px;"><strong>Cele mai comune litere de legătură:</strong><br>
-                        -e- | -(e)s- | -(e)n- | -er-</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>CÂND FOLOSIM -(e)s-?</h3>
-                        <p>Literă de legătură -(e)s- apare adesea după substantive feminine terminate în -ung, -heit, -keit, -schaft:</p>
-                        <p style="margin-top: 10px;"><strong>1.</strong> die Geburt + der Tag = <strong>der Geburtstag</strong><br>
-                        die Geburt → Geburt<strong>s</strong>tag</p>
-                        <p><strong>2.</strong> die Geburt + der Tag + das Geschenk = <strong>das Geburtstagsgeschenk</strong><br>
-                        Geburtstag<strong>s</strong>geschenk</p>
-                        <p><strong>3.</strong> die Arbeit + der Platz = <strong>der Arbeitsplatz</strong><br>
-                        Arbeit<strong>s</strong>platz (locul de muncă)</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>CÂND FOLOSIM -(e)n-?</h3>
-                        <p>Literă de legătură -(e)n- apare adesea după substantive feminine (acestea trec la plural, însă există și excepții - die Hand, die Tür):</p>
-                        <p style="margin-top: 10px;"><strong>1.</strong> die Straße + die Bahn = <strong>die Straßenbahn</strong><br>
-                        Straße<strong>n</strong>bahn (tramvaiul)</p>
-                        <p><strong>2.</strong> die Blume + der Topf = <strong>der Blumentopf</strong><br>
-                        Blume<strong>n</strong>topf (ghiveciul)</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>CÂND FOLOSIM -er-?</h3>
-                        <p>Literă de legătură -er- apare adesea la plural:</p>
-                        <p style="margin-top: 10px;"><strong>1.</strong> das Bild + das Buch = <strong>das Bilderbuch</strong><br>
-                        das Bild (plural: Bilder) → Bild<strong>er</strong>buch<br>
-                        (cartea ilustrată)</p>
-                        <p><strong>2.</strong> das Kind + das Zimmer = <strong>das Kinderzimmer</strong><br>
-                        das Kind (plural: Kinder) → Kind<strong>er</strong>zimmer<br>
-                        (camera copiilor)</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-header" onclick="toggleSection(6)">
-                    <h3>CEL MAI LUNG CUVÂNT COMPUS ÎN GERMANĂ</h3>
-                    <span class="arrow">▼</span>
-                </div>
-                <div class="section-content">
-                    <div class="example-box" style="text-align: center;">
-                        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">🏆 Cel mai lung cuvânt compus</h3>
-                        <p style="font-size: 1.1rem; font-weight: bold; word-break: break-all; line-height: 1.8; color: #059669; margin: 20px 0;">
-                            Rinderkennzeichnungsfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
-                        </p>
-                        <p style="font-size: 1.4rem; font-weight: bold; color: #065f46; margin: 20px 0;">63 de litere!</p>
-                        <p>(O lege care reglementa modul în care este etichetată carnea de vită în Germania - a fost în vigoare între 1999-2013)</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>Traducere:</h3>
-                        <p>Legea privind transferul sarcinilor de monitorizare a etichetării cărnii de vită.</p>
-                    </div>
-                    <div class="example-box">
-                        <h3>Compunere:</h3>
-                        <p>• <strong>das Rind</strong> → vita / cornuta<br>
-                        • <strong>die Kennzeichnung</strong> → marcarea / identificarea<br>
-                        • <strong>das Fleisch</strong> → carnea<br>
-                        • <strong>die Etikettierung</strong> → etichetarea<br>
-                        • <strong>die Überwachung</strong> → supravegherea<br>
-                        • <strong>die Aufgabe</strong> → sarcina / atribuția<br>
-                        • <strong>die Übertragung</strong> → transferul / transmiterea<br>
-                        • <strong>das Gesetz</strong> → legea</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Login Container -->
+    <div id="loginContainer">
+        <div class="lock-icon">🔒</div>
+        <h1>Lecție Protejată</h1>
+        <p>Această lecție este disponibilă doar pentru cursanții înscriși.</p>
+        <input type="password" id="passwordInput" placeholder="Introdu parola" autofocus>
+        <button onclick="checkPassword()">Deschide Lecția</button>
+        <div class="error" id="errorMsg">❌ Parolă incorectă! Încearcă din nou.</div>
     </div>
 
-    <!-- EX 1 -->
-    <div class="container" id="ex1">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex1')">
-            <h1>ʚଓ ÜBUNG 1 <span id="arrow-header-ex1" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Descifrează substantivele compuse</p>
-        </div>
-        <div class="content" id="content-ex1" style="display: none;">
-            <div class="example-box">
-                <h3>📝 Exemplu:</h3>
-                <p><strong>die Autotür</strong> → <strong>das Auto</strong> + <strong>die Tür</strong> → ușa mașinii</p>
-            </div>
-            <div id="exercises-ex1"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="checkAnswers('ex1')">✓ Verifică</button>
-                <button class="btn-reset" onclick="resetExercise('ex1')">↻ Resetează</button>
-            </div>
-            <div class="score" id="score-ex1"></div>
-        </div>
-    </div>
-
-    <!-- EX 2 -->
-    <div class="container" id="ex2">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex2')">
-            <h1>ʚଓ ÜBUNG 2 <span id="arrow-header-ex2" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Substantive cu 3 părți</p>
-        </div>
-        <div class="content" id="content-ex2" style="display: none;">
-            <div class="info-box">
-                <h3>💡 Atenție!</h3>
-                <p>Aceste substantive au <strong>3 părți</strong>! Al treilea cuvânt va fi pe rând nou.</p>
-            </div>
-            <div id="exercises-ex2"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="checkAnswers('ex2')">✓ Verifică</button>
-                <button class="btn-reset" onclick="resetExercise('ex2')">↻ Resetează</button>
-            </div>
-            <div class="score" id="score-ex2"></div>
-        </div>
-    </div>
-
-    <!-- EX 3 -->
-    <div class="container" id="ex3">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex3')">
-            <h1>ʚଓ ÜBUNG 3 <span id="arrow-header-ex3" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Găsește articolul corect</p>
-        </div>
-        <div class="content" id="content-ex3" style="display: none;">
-            <div class="info-box">
-                <h3>⚡ Regula de aur:</h3>
-                <p><strong>Articolul vine de la ULTIMUL cuvânt!</strong></p>
-            </div>
-            <div id="exercises-ex3"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="checkAnswers('ex3')">✓ Verifică</button>
-                <button class="btn-reset" onclick="resetExercise('ex3')">↻ Resetează</button>
-            </div>
-            <div class="score" id="score-ex3"></div>
-        </div>
-    </div>
-
-    <!-- EX 4 -->
-    <div class="container" id="ex4">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex4')">
-            <h1>ʚଓ ÜBUNG 4 <span id="arrow-header-ex4" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Formează substantive compuse</p>
-        </div>
-        <div class="content" id="content-ex4" style="display: none;">
-            <div class="info-box">
-                <h3>📝 Exemplu:</h3>
-                <p><strong>der Apfel + der Saft = der Apfelsaft</strong></p>
-            </div>
-            <div id="exercises-ex4"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="checkAnswers('ex4')">✓ Verifică</button>
-                <button class="btn-reset" onclick="resetExercise('ex4')">↻ Resetează</button>
-            </div>
-            <div class="score" id="score-ex4"></div>
-        </div>
-    </div>
-
-    <!-- EX 5 -->
-    <div class="container" id="ex5">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex5')">
-            <h1>ʚଓ ÜBUNG 5 <span id="arrow-header-ex5" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Completează tabelul</p>
-        </div>
-        <div class="content" id="content-ex5" style="display: none;">
-            <div class="info-box">
-                <h3>📝 Instrucțiuni:</h3>
-                <p>Completează substantivul compus și traducerea.</p>
-            </div>
-            <div id="exercises-ex5"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="checkAnswers('ex5')">✓ Verifică</button>
-                <button class="btn-reset" onclick="resetExercise('ex5')">↻ Resetează</button>
-            </div>
-            <div class="score" id="score-ex5"></div>
-        </div>
-    </div>
-
-    <!-- EX 6 -->
-    <div class="container" id="ex6">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex6')">
-            <h1>ʚଓ ÜBUNG 6 <span id="arrow-header-ex6" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Creativitate - Creează substantive compuse!</p>
-        </div>
-        <div class="content" id="content-ex6" style="display: none;">
-            <div class="info-box">
-                <h3>🎨 Fii creativ!</h3>
-                <p>Creează <strong>5 substantive compuse</strong> folosind cuvintele de mai jos.</p>
-                <div class="words-list">
-                    <p><strong>Grupa 1:</strong> das Haus, der Garten, die Tür, das Fenster, der Baum</p>
-                    <p><strong>Grupa 2:</strong> das Buch, die Schule, der Lehrer, das Kind</p>
-                    <p><strong>Grupa 3:</strong> die Sonne, der Regen, der Schnee, die Blume</p>
-                </div>
-            </div>
-            <div id="exercises-ex6"></div>
-            <div class="buttons">
-                <button class="btn-check" onclick="showAllVariants()">🔍 Arată toate variantele</button>
-                <button class="btn-reset" onclick="resetExercise('ex6')">↻ Resetează</button>
-            </div>
-            <div class="all-variants" id="allVariants">
-                <div class="variants-header">
-                    <h2>✨ Toate variantele posibile</h2>
-                    <p>TOATE combinațiile cu cuvintele date!</p>
-                </div>
-                <div id="variantsContainer"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- RECAPITULARE -->
-    <div class="container" id="recapitulare">
-        <div class="header" style="cursor: pointer;" onclick="toggleExercise('recapitulare')">
-            <h1>ʚଓ RECAPITULARE <span id="arrow-header-recapitulare" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
-            <p>Ce am învățat astăzi?</p>
-        </div>
-        <div class="content" id="content-recapitulare" style="display: none;">
-            <div class="example-box">
-                <h3>✓ Substantive compuse</h3>
-                <p>Cuvinte formate din <strong>2+ cuvinte</strong></p>
-            </div>
-            <div class="example-box">
-                <h3>✓ Regulile</h3>
-                <p>Articolul ultimului cuvânt | Primul descrie pe al doilea</p>
-            </div>
-            <div class="example-box">
-                <h3>★ FELICITĂRI!</h3>
-                <p><strong>Viel Erfolg!</strong></p>
-            </div>
-        </div>
-    </div>
+    <!-- Protected Content (hidden initially) -->
+    <div id="protectedContent"></div>
 
     <script>
-        // Data
-        const exercisesEx1 = [
-            { word: "die Autobahn", article1: "das", part1: "Auto", article2: "die", part2: "Bahn", translation: "autostrada" },
-            { word: "der Autoschlüssel", article1: "das", part1: "Auto", article2: "der", part2: "Schlüssel", translation: "cheia mașinii" },
-            { word: "der Bahnhof", article1: "die", part1: "Bahn", article2: "der", part2: "Hof", translation: "gara" },
-            { word: "der Blumenstrauß", article1: "die", part1: "Blume", article2: "der", part2: "Strauß", translation: "buchetul de flori" },
-            { word: "der Briefkasten", article1: "der", part1: "Brief", article2: "der", part2: "Kasten", translation: "cutia poștală" },
-            { word: "das Gartenhaus", article1: "der", part1: "Garten", article2: "das", part2: "Haus", translation: "casa din grădină" }
-        ];
-
-        const exercisesEx2 = [
-            { word: "der Haustürschlüssel", article1: "das", part1: "Haus", article2: "die", part2: "Tür", article3: "der", part3: "Schlüssel", translation: "cheia ușii de la intrare" },
-            { word: "der Kindergartenlehrer", article1: "das", part1: "Kind", article2: "der", part2: "Garten", article3: "der", part3: "Lehrer", translation: "educatorul de grădiniță" },
-            { word: "die Weihnachtsmarktbude", article1: "die", part1: "Weihnacht", article2: "der", part2: "Markt", article3: "die", part3: "Bude", translation: "standurile de la târgul de Crăciun" },
-            { word: "das Geburtstagskind", article1: "der", part1: "Geburtstag", article2: "das", part2: "Kind", article3: "", part3: "", translation: "copilul care își sărbătorește ziua de naștere", note: true },
-            { word: "das Autobahndreieck", article1: "das", part1: "Auto", article2: "die", part2: "Bahn", article3: "das", part3: "Dreieck", translation: "intersecția de autostrăzi" },
-            { word: "der Fußballspieler", article1: "der", part1: "Fuß", article2: "der", part2: "Ball", article3: "der", part3: "Spieler", translation: "jucătorul de fotbal" }
-        ];
-
-        const exercisesEx3 = [
-            { word1: "Haus", article1: "das", word2: "Tür", article2: "die", compound: "Haustür", correct: "die" },
-            { word1: "Garten", article1: "der", word2: "Haus", article2: "das", compound: "Gartenhaus", correct: "das" },
-            { word1: "Blume", article1: "die", word2: "Topf", article2: "der", compound: "Blumentopf", correct: "der" },
-            { word1: "Tisch", article1: "der", word2: "Decke", article2: "die", compound: "Tischdecke", correct: "die" },
-            { word1: "Tennis", article1: "das", word2: "Ball", article2: "der", compound: "Tennisball", correct: "der" },
-            { word1: "Woche", article1: "die", word2: "Ende", article2: "das", compound: "Wochenende", correct: "das" }
-        ];
-
-        const exercisesEx4 = [
-            { word1: "der Apfel", word2: "der Kuchen", compound: "Apfelkuchen", article: "der", translation: "prăjitura cu mere" },
-            { word1: "die Reise", word2: "die Tasche", compound: "Reisetasche", article: "die", translation: "geanta de voiaj" },
-            { word1: "das Fahrrad", word2: "der Weg", compound: "Fahrradweg", article: "der", translation: "pista de biciclete" },
-            { word1: "die Hand", word2: "der Ball", compound: "Handball", article: "der", translation: "handbalul" },
-            { word1: "die Sonne", word2: "der Schein", compound: "Sonnenschein", article: "der", translation: "strălucirea soarelui" }
-        ];
-
-        const exercisesEx5 = [
-            { word1: "das Haus", word2: "das Tier", compound: "das Haustier", translation: "animalul de casă" },
-            { word1: "das Kleid", word2: "der Schrank", compound: "der Kleiderschrank", translation: "dulapul de haine" },
-            { word1: "der Brief", word2: "der Kasten", compound: "der Briefkasten", translation: "cutia poștală" },
-            { word1: "die Arbeit", word2: "der Platz", compound: "der Arbeitsplatz", translation: "locul de muncă" },
-            { word1: "die Straße", word2: "die Bahn", compound: "die Straßenbahn", translation: "tramvaiul" }
-        ];
-
-        const allVariants = {
-            "Grupa 1: Haus, Garten, Tür, Fenster, Baum": [
-                { word: "die Haustür", parts: "das Haus + die Tür", translation: "ușa de la intrare" },
-                { word: "das Hausfenster", parts: "das Haus + das Fenster", translation: "fereastra casei" },
-                { word: "der Hausbaum", parts: "das Haus + der Baum", translation: "copacul casei" },
-                { word: "das Gartenhaus", parts: "der Garten + das Haus", translation: "casa din grădină" },
-                { word: "die Gartentür", parts: "der Garten + die Tür", translation: "poarta grădinii" },
-                { word: "das Gartenfenster", parts: "der Garten + das Fenster", translation: "fereastra spre grădină" },
-                { word: "der Gartenbaum", parts: "der Garten + der Baum", translation: "copacul din grădină" },
-                { word: "das Türfenster", parts: "die Tür + das Fenster", translation: "fereastra ușii" },
-                { word: "das Baumhaus", parts: "der Baum + das Haus", translation: "casa din copac" },
-                { word: "die Gartenhaustür", parts: "der Garten + das Haus + die Tür", translation: "ușa casei din grădină" },
-                { word: "das Gartenhausfenster", parts: "der Garten + das Haus + das Fenster", translation: "fereastra casei din grădină" },
-                { word: "die Baumhaustür", parts: "der Baum + das Haus + die Tür", translation: "ușa casei din copac" },
-                { word: "das Baumhausfenster", parts: "der Baum + das Haus + das Fenster", translation: "fereastra casei din copac" }
-            ],
-            "Grupa 2: Buch, Schule, Lehrer, Kind": [
-                { word: "das Schulbuch", parts: "die Schule + das Buch", translation: "manualul școlar" },
-                { word: "der Schullehrer", parts: "die Schule + der Lehrer", translation: "profesorul de școală" },
-                { word: "das Schulkind", parts: "die Schule + das Kind", translation: "copilul școlar" },
-                { word: "das Lehrerbuch", parts: "der Lehrer + das Buch", translation: "cartea profesorului" },
-                { word: "der Kinderschullehrer", parts: "das Kind + die Schule + der Lehrer", translation: "profesorul școlii pentru copii" },
-                { word: "das Lehrerkind", parts: "der Lehrer + das Kind", translation: "copilul profesorului" },
-                { word: "das Kinderbuch", parts: "das Kind + das Buch", translation: "cartea pentru copii" },
-                { word: "die Kinderschule", parts: "das Kind + die Schule", translation: "școala pentru copii" },
-                { word: "der Kinderlehrer", parts: "das Kind + der Lehrer", translation: "profesorul pentru copii" },
-                { word: "das Schulkinderbuch", parts: "die Schule + das Kind + das Buch", translation: "cartea pentru copiii școlari" }
-            ],
-            "Grupa 3: Sonne, Regen, Schnee, Blume": [
-                { word: "die Sonnenblume", parts: "die Sonne + die Blume", translation: "floarea-soarelui" },
-                { word: "der Sonnenregen", parts: "die Sonne + der Regen", translation: "ploaia cu soare" },
-                { word: "der Sonnenschnee", parts: "die Sonne + der Schnee", translation: "zăpadă la soare" },
-                { word: "die Regenblume", parts: "der Regen + die Blume", translation: "floare de ploaie" },
-                { word: "der Regenschnee", parts: "der Regen + der Schnee", translation: "lapoviță" },
-                { word: "die Schneeblume", parts: "der Schnee + die Blume", translation: "floare de zăpadă" },
-                { word: "der Blumenregen", parts: "die Blume + der Regen", translation: "ploaia de flori" },
-                { word: "der Blumenschnee", parts: "die Blume + der Schnee", translation: "zăpadă de flori" }
-            ],
-            "Combinații între grupe": [
-                { word: "das Schulhaus", parts: "die Schule + das Haus", translation: "clădirea școlii" },
-                { word: "die Schultür", parts: "die Schule + die Tür", translation: "ușa școlii" },
-                { word: "das Schulfenster", parts: "die Schule + das Fenster", translation: "fereastra școlii" },
-                { word: "die Baumschule", parts: "der Baum + die Schule", translation: "pepiniera" },
-                { word: "der Schulbaum", parts: "die Schule + der Baum", translation: "copacul școlii" },
-                { word: "die Gartenblume", parts: "der Garten + die Blume", translation: "floarea de grădină" },
-                { word: "das Blumenhaus", parts: "die Blume + das Haus", translation: "casa florilor / sera" },
-                { word: "der Blumengarten", parts: "die Blume + der Garten", translation: "grădina de flori" },
-                { word: "die Blumentür", parts: "die Blume + die Tür", translation: "ușa cu flori" },
-                { word: "das Blumenfenster", parts: "die Blume + das Fenster", translation: "fereastra cu flori" },
-                { word: "der Sonnenbaum", parts: "die Sonne + der Baum", translation: "copac expus la soare" },
-                { word: "der Sonnengarten", parts: "die Sonne + der Garten", translation: "grădina însorită" },
-                { word: "das Blumenbuch", parts: "die Blume + das Buch", translation: "cartea despre flori" },
-                { word: "die Blumenschule", parts: "die Blume + die Schule", translation: "școala de floricultură" },
-                { word: "das Blumenkind", parts: "die Blume + das Kind", translation: "copilul floare" },
-                { word: "der Blumenlehrer", parts: "die Blume + der Lehrer", translation: "profesorul de floricultură" },
-                { word: "das Gartentor", parts: "der Garten + die Tür", translation: "poarta grădinii" },
-                { word: "das Haustor", parts: "das Haus + die Tür", translation: "poarta casei" }
-            ]
-        };
-
-        // Initialize
-        function initEx1() {
-            const container = document.getElementById('exercises-ex1');
-            exercisesEx1.forEach((ex, i) => {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.id = `ex1-${i}`;
-                div.innerHTML = `
-                    <div class="exercise-number">Ex. ${i + 1}</div>
-                    <div class="word-display">${ex.word}</div>
-                    <div class="input-group">
-                        <label>Împărțire:</label>
-                        <div class="input-row">
-                            <div class="article-input-wrapper">
-                                <input type="text" id="a1-ex1-${i}" placeholder="art." class="small">
-                                <input type="text" id="p1-ex1-${i}" placeholder="Cuvânt 1">
-                            </div>
-                            <span class="plus-sign">+</span>
-                            <div class="article-input-wrapper">
-                                <input type="text" id="a2-ex1-${i}" placeholder="art." class="small">
-                                <input type="text" id="p2-ex1-${i}" placeholder="Cuvânt 2">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group">
-                        <label>Traducere:</label>
-                        <input type="text" id="t-ex1-${i}" placeholder="Traducerea">
-                    </div>
-                    <div class="feedback" id="f-ex1-${i}"></div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function initEx2() {
-            const container = document.getElementById('exercises-ex2');
-            exercisesEx2.forEach((ex, i) => {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.id = `ex2-${i}`;
-                
-                let inputs = `
-                    <div class="article-input-wrapper">
-                        <input type="text" id="a1-ex2-${i}" placeholder="art." class="small">
-                        <input type="text" id="p1-ex2-${i}" placeholder="Cuv. 1">
-                    </div>
-                    <span class="plus-sign">+</span>
-                    <div class="article-input-wrapper">
-                        <input type="text" id="a2-ex2-${i}" placeholder="art." class="small">
-                        <input type="text" id="p2-ex2-${i}" placeholder="Cuv. 2">
-                    </div>
-                `;
-                
-                if (ex.part3) {
-                    inputs += `
-                        <span class="plus-sign">+</span>
-                        <div class="article-input-wrapper break-line">
-                            <input type="text" id="a3-ex2-${i}" placeholder="art." class="small">
-                            <input type="text" id="p3-ex2-${i}" placeholder="Cuv. 3">
-                        </div>
-                    `;
-                }
-                
-                div.innerHTML = `
-                    <div class="exercise-number">Ex. ${i + 1}</div>
-                    <div class="word-display">${ex.word}</div>
-                    <div class="input-group">
-                        <label>Împărțire:</label>
-                        <div class="input-row">${inputs}</div>
-                        ${ex.note ? '<p style="color: #059669; font-size: 0.9rem; font-style: italic;">💡 Acest cuvânt are doar 2 părți</p>' : ''}
-                    </div>
-                    <div class="input-group">
-                        <label>Traducere:</label>
-                        <input type="text" id="t-ex2-${i}" placeholder="Traducerea">
-                    </div>
-                    <div class="feedback" id="f-ex2-${i}"></div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function initEx3() {
-            const container = document.getElementById('exercises-ex3');
-            exercisesEx3.forEach((ex, i) => {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.id = `ex3-${i}`;
-                div.innerHTML = `
-                    <div class="exercise-number">${i + 1}</div>
-                    <div style="color: #6b7280; margin-bottom: 10px;">${ex.word1} (${ex.article1}) + ${ex.word2} (${ex.article2})</div>
-                    <div style="display: flex; gap: 10px; align-items: center;">
-                        <select id="a-ex3-${i}">
-                            <option value="">?</option>
-                            <option value="der">der</option>
-                            <option value="die">die</option>
-                            <option value="das">das</option>
-                        </select>
-                        <span style="font-weight: bold; color: #059669;">${ex.compound}</span>
-                    </div>
-                    <div class="feedback" id="f-ex3-${i}"></div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function initEx4() {
-            const container = document.getElementById('exercises-ex4');
-            exercisesEx4.forEach((ex, i) => {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.id = `ex4-${i}`;
-                div.innerHTML = `
-                    <div class="exercise-number">Ex. ${i + 1}</div>
-                    <div style="margin-bottom: 15px;"><strong>${ex.word1}</strong> + <strong>${ex.word2}</strong> =</div>
-                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
-                        <select id="a-ex4-${i}">
-                            <option value="">?</option>
-                            <option value="der">der</option>
-                            <option value="die">die</option>
-                            <option value="das">das</option>
-                        </select>
-                        <span style="font-weight: bold; color: #059669;">${ex.compound}</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Traducere:</label>
-                        <input type="text" id="t-ex4-${i}" placeholder="Traducerea">
-                    </div>
-                    <div class="feedback" id="f-ex4-${i}"></div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function initEx5() {
-            const container = document.getElementById('exercises-ex5');
-            exercisesEx5.forEach((ex, i) => {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.id = `ex5-${i}`;
-                div.innerHTML = `
-                    <div class="exercise-number">Ex. ${i + 1}</div>
-                    <div style="background: #d1fae5; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
-                        <strong>Cuvânt 1:</strong> ${ex.word1} | <strong>Cuvânt 2:</strong> ${ex.word2}
-                    </div>
-                    <div class="input-group">
-                        <label>Substantiv compus:</label>
-                        <input type="text" id="c-ex5-${i}" placeholder="ex: das Gartenhaus">
-                    </div>
-                    <div class="input-group">
-                        <label>Traducere:</label>
-                        <input type="text" id="t-ex5-${i}" placeholder="Traducerea">
-                    </div>
-                    <div class="feedback" id="f-ex5-${i}"></div>
-                `;
-                container.appendChild(div);
-            });
-        }
-
-        function initEx6() {
-            const container = document.getElementById('exercises-ex6');
-            for (let i = 0; i < 5; i++) {
-                const div = document.createElement('div');
-                div.className = 'exercise-item';
-                div.innerHTML = `
-                    <div class="exercise-number">Combinația ${i + 1}</div>
-                    <div class="input-row">
-                        <input type="text" id="w1-ex6-${i}" placeholder="Cuvânt 1 (cu articol)">
-                        <span class="plus-sign">+</span>
-                        <input type="text" id="w2-ex6-${i}" placeholder="Cuvânt 2 (cu articol)">
-                        <span class="plus-sign">=</span>
-                        <input type="text" id="c-ex6-${i}" placeholder="Compus">
-                    </div>
-                    <div class="input-group">
-                        <label>Traducere:</label>
-                        <input type="text" id="t-ex6-${i}" placeholder="Traducerea">
-                    </div>
-                `;
-                container.appendChild(div);
+        // Simple hash function for password verification
+        function simpleHash(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
             }
+            return hash.toString();
         }
 
-        function toggleSection(i) {
-            const contents = document.querySelectorAll('.section-content');
-            const arrows = document.querySelectorAll('.arrow');
-            contents[i].classList.toggle('active');
-            arrows[i].classList.toggle('rotated');
-        }
+        // Correct password hash (for "cursanti2025")
+        const correctPasswordHash = "1719025619";
 
-        function normalizeString(s) {
-            return s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-        }
-
-        function checkAnswers(id) {
-            if (id === 'ex1') checkEx1();
-            if (id === 'ex2') checkEx2();
-            if (id === 'ex3') checkEx3();
-            if (id === 'ex4') checkEx4();
-            if (id === 'ex5') checkEx5();
-        }
-
-        function checkEx1() {
-            let correct = 0;
-            exercisesEx1.forEach((ex, i) => {
-                const isCorrect = 
-                    normalizeString(document.getElementById(`a1-ex1-${i}`).value) === normalizeString(ex.article1) &&
-                    normalizeString(document.getElementById(`p1-ex1-${i}`).value) === normalizeString(ex.part1) &&
-                    normalizeString(document.getElementById(`a2-ex1-${i}`).value) === normalizeString(ex.article2) &&
-                    normalizeString(document.getElementById(`p2-ex1-${i}`).value) === normalizeString(ex.part2) &&
-                    normalizeString(document.getElementById(`t-ex1-${i}`).value) === normalizeString(ex.translation);
-                
-                document.getElementById(`ex1-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
-                document.getElementById(`f-ex1-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
-                document.getElementById(`f-ex1-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ ${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} = ${ex.translation}`;
-                if (isCorrect) correct++;
-            });
-            showScore('ex1', correct, exercisesEx1.length);
-        }
-
-        function checkEx2() {
-            let correct = 0;
-            exercisesEx2.forEach((ex, i) => {
-                let isCorrect = 
-                    normalizeString(document.getElementById(`a1-ex2-${i}`).value) === normalizeString(ex.article1) &&
-                    normalizeString(document.getElementById(`p1-ex2-${i}`).value) === normalizeString(ex.part1) &&
-                    normalizeString(document.getElementById(`a2-ex2-${i}`).value) === normalizeString(ex.article2) &&
-                    normalizeString(document.getElementById(`p2-ex2-${i}`).value) === normalizeString(ex.part2) &&
-                    normalizeString(document.getElementById(`t-ex2-${i}`).value) === normalizeString(ex.translation);
-                
-                if (ex.part3) {
-                    isCorrect = isCorrect &&
-                        normalizeString(document.getElementById(`a3-ex2-${i}`).value) === normalizeString(ex.article3) &&
-                        normalizeString(document.getElementById(`p3-ex2-${i}`).value) === normalizeString(ex.part3);
-                }
-                
-                document.getElementById(`ex2-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
-                document.getElementById(`f-ex2-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
-                
-                if (isCorrect) {
-                    document.getElementById(`f-ex2-${i}`).innerHTML = '✓ Perfect!';
-                } else {
-                    let correctAnswer = ex.part3 
-                        ? `${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} + ${ex.article3} ${ex.part3} = ${ex.translation}`
-                        : `${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} = ${ex.translation}`;
-                    document.getElementById(`f-ex2-${i}`).innerHTML = `✗ Răspuns corect: ${correctAnswer}`;
-                }
-                
-                if (isCorrect) correct++;
-            });
-            showScore('ex2', correct, exercisesEx2.length);
-        }
-
-        function checkEx3() {
-            let correct = 0;
-            exercisesEx3.forEach((ex, i) => {
-                const isCorrect = document.getElementById(`a-ex3-${i}`).value === ex.correct;
-                document.getElementById(`ex3-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
-                document.getElementById(`f-ex3-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
-                document.getElementById(`f-ex3-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Articolul corect: ${ex.correct}`;
-                if (isCorrect) correct++;
-            });
-            showScore('ex3', correct, exercisesEx3.length);
-        }
-
-        function checkEx4() {
-            let correct = 0;
-            exercisesEx4.forEach((ex, i) => {
-                const isCorrect = 
-                    document.getElementById(`a-ex4-${i}`).value === ex.article &&
-                    normalizeString(document.getElementById(`t-ex4-${i}`).value) === normalizeString(ex.translation);
-                
-                document.getElementById(`ex4-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
-                document.getElementById(`f-ex4-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
-                document.getElementById(`f-ex4-${i}`).innerHTML = isCorrect ? '✓ Perfect!' : `✗ ${ex.article} ${ex.compound} = ${ex.translation}`;
-                if (isCorrect) correct++;
-            });
-            showScore('ex4', correct, exercisesEx4.length);
-        }
-
-        function checkEx5() {
-            let correct = 0;
-            exercisesEx5.forEach((ex, i) => {
-                const isCorrect = 
-                    normalizeString(document.getElementById(`c-ex5-${i}`).value) === normalizeString(ex.compound) &&
-                    normalizeString(document.getElementById(`t-ex5-${i}`).value) === normalizeString(ex.translation);
-                
-                document.getElementById(`ex5-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
-                document.getElementById(`f-ex5-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
-                document.getElementById(`f-ex5-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ ${ex.compound} = ${ex.translation}`;
-                if (isCorrect) correct++;
-            });
-            showScore('ex5', correct, exercisesEx5.length);
-        }
-
-        function showScore(id, correct, total) {
-            const score = document.getElementById(`score-${id}`);
-            const pct = Math.round((correct / total) * 100);
-            const emoji = pct === 100 ? '🎉' : pct >= 80 ? '👏' : pct >= 60 ? '👍' : '💪';
-            score.innerHTML = `${emoji} Scor: ${correct} / ${total} (${pct}%)`;
-            score.className = 'score show';
-        }
-
-        function showAllVariants() {
-            const container = document.getElementById('variantsContainer');
-            container.innerHTML = '';
+        function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            const inputHash = simpleHash(input);
             
-            Object.keys(allVariants).forEach((cat, index) => {
-                const categoryDiv = document.createElement('div');
-                categoryDiv.className = 'category';
+            if (inputHash === correctPasswordHash) {
+                // Password correct - show content
+                document.getElementById('loginContainer').style.display = 'none';
+                document.getElementById('protectedContent').style.display = 'block';
+                loadProtectedContent();
                 
-                const header = document.createElement('div');
-                header.className = 'category-header';
-                header.style.cursor = 'pointer';
-                header.style.display = 'flex';
-                header.style.justifyContent = 'space-between';
-                header.style.alignItems = 'center';
-                header.onclick = () => toggleCategoryEx6(index);
-                header.innerHTML = `<h3>${cat}</h3><span class="arrow-ex6" id="arrow-ex6-${index}">▼</span>`;
-                
-                const grid = document.createElement('div');
-                grid.className = 'variants-grid';
-                grid.id = `grid-ex6-${index}`;
-                grid.style.display = 'none';
-                
-                allVariants[cat].forEach(v => {
-                    const card = document.createElement('div');
-                    card.className = 'variant-card';
-                    card.innerHTML = `
-                        <strong>${v.word}</strong>
-                        <div class="variant-parts">${v.parts}</div>
-                        <div>${v.translation}</div>
-                    `;
-                    grid.appendChild(card);
-                });
-                
-                categoryDiv.appendChild(header);
-                categoryDiv.appendChild(grid);
-                container.appendChild(categoryDiv);
-            });
-            
-            document.getElementById('allVariants').className = 'all-variants show';
-        }
-
-        function toggleCategoryEx6(index) {
-            const grid = document.getElementById(`grid-ex6-${index}`);
-            const arrow = document.getElementById(`arrow-ex6-${index}`);
-            
-            if (grid.style.display === 'none') {
-                grid.style.display = 'grid';
-                arrow.style.transform = 'rotate(180deg)';
+                // Store session
+                sessionStorage.setItem('authenticated', 'true');
             } else {
-                grid.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';
+                // Password incorrect
+                document.getElementById('errorMsg').classList.add('show');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+                
+                // Hide error after 3 seconds
+                setTimeout(() => {
+                    document.getElementById('errorMsg').classList.remove('show');
+                }, 3000);
             }
         }
 
-        function resetExercise(id) {
-            if (id === 'ex1') exercisesEx1.forEach((_, i) => {
-                ['a1', 'p1', 'a2', 'p2', 't'].forEach(f => document.getElementById(`${f}-ex1-${i}`).value = '');
-                document.getElementById(`ex1-${i}`).className = 'exercise-item';
-                document.getElementById(`f-ex1-${i}`).className = 'feedback';
-            });
-            if (id === 'ex2') exercisesEx2.forEach((ex, i) => {
-                ['a1', 'p1', 'a2', 'p2', 't'].forEach(f => document.getElementById(`${f}-ex2-${i}`).value = '');
-                if (ex.part3) ['a3', 'p3'].forEach(f => document.getElementById(`${f}-ex2-${i}`).value = '');
-                document.getElementById(`ex2-${i}`).className = 'exercise-item';
-                document.getElementById(`f-ex2-${i}`).className = 'feedback';
-            });
-            if (id === 'ex3') exercisesEx3.forEach((_, i) => {
-                document.getElementById(`a-ex3-${i}`).value = '';
-                document.getElementById(`ex3-${i}`).className = 'exercise-item';
-                document.getElementById(`f-ex3-${i}`).className = 'feedback';
-            });
-            if (id === 'ex4') exercisesEx4.forEach((_, i) => {
-                ['a', 't'].forEach(f => document.getElementById(`${f}-ex4-${i}`).value = '');
-                document.getElementById(`ex4-${i}`).className = 'exercise-item';
-                document.getElementById(`f-ex4-${i}`).className = 'feedback';
-            });
-            if (id === 'ex5') exercisesEx5.forEach((_, i) => {
-                ['c', 't'].forEach(f => document.getElementById(`${f}-ex5-${i}`).value = '');
-                document.getElementById(`ex5-${i}`).className = 'exercise-item';
-                document.getElementById(`f-ex5-${i}`).className = 'feedback';
-            });
-            if (id === 'ex6') {
-                for (let i = 0; i < 5; i++) ['w1', 'w2', 'c', 't'].forEach(f => document.getElementById(`${f}-ex6-${i}`).value = '');
-                document.getElementById('allVariants').className = 'all-variants';
+        // Allow Enter key to submit
+        document.getElementById('passwordInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkPassword();
             }
-            document.getElementById(`score-${id}`).className = 'score';
-        }
-
-        // Toggle exercise visibility
-        function toggleExercise(exerciseId) {
-            const content = document.getElementById(`content-${exerciseId}`);
-            const arrow = document.getElementById(`arrow-header-${exerciseId}`);
-            
-            if (content.style.display === 'none') {
-                content.style.display = 'block';
-                arrow.style.transform = 'rotate(180deg)';
-            } else {
-                content.style.display = 'none';
-                arrow.style.transform = 'rotate(0deg)';
-            }
-        }
-
-        // Nav highlight
-        window.addEventListener('scroll', () => {
-            const sections = ['teorie', 'ex1', 'ex2', 'ex3', 'ex4', 'ex5', 'ex6', 'recapitulare'];
-            let current = '';
-            sections.forEach(s => {
-                const el = document.getElementById(s);
-                if (el) {
-                    const rect = el.getBoundingClientRect();
-                    if (rect.top <= 100 && rect.bottom >= 100) current = s;
-                }
-            });
-            document.querySelectorAll('.nav-link').forEach((link, i) => {
-                link.classList.toggle('active', sections[i] === current);
-            });
         });
 
-        // Init all
-        initEx1();
-        initEx2();
-        initEx3();
-        initEx4();
-        initEx5();
-        initEx6();
+        // Check if already authenticated in this session
+        if (sessionStorage.getItem('authenticated') === 'true') {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('protectedContent').style.display = 'block';
+            loadProtectedContent();
+        }
+
+        function loadProtectedContent() {
+            // The actual protected HTML content (Base64 encoded)
+            const encodedContent = atob("PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9InJvIj4KPGhlYWQ+CiAgICA8bWV0YSBjaGFyc2V0PSJVVEYtOCI+CiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEuMCI+CiAgICA8dGl0bGU+U3Vic3RhbnRpdmUgQ29tcHVzZSDDrm4gR2VybWFuxIMgLSBXb3Jrc2hvcCBDb21wbGV0PC90aXRsZT4KICAgIDxzdHlsZT4KICAgICAgICAqIHsKICAgICAgICAgICAgbWFyZ2luOiAwOwogICAgICAgICAgICBwYWRkaW5nOiAwOwogICAgICAgICAgICBib3gtc2l6aW5nOiBib3JkZXItYm94OwogICAgICAgIH0KCiAgICAgICAgYm9keSB7CiAgICAgICAgICAgIGZvbnQtZmFtaWx5OiAnU2Vnb2UgVUknLCBUYWhvbWEsIEdlbmV2YSwgVmVyZGFuYSwgc2Fucy1zZXJpZjsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzEwYjk4MSAwJSwgIzA1OTY2OSAxMDAlKTsKICAgICAgICAgICAgbGluZS1oZWlnaHQ6IDEuNjsKICAgICAgICAgICAgcGFkZGluZy10b3A6IDgwcHg7CiAgICAgICAgfQoKICAgICAgICBodG1sIHsKICAgICAgICAgICAgc2Nyb2xsLWJlaGF2aW9yOiBzbW9vdGg7CiAgICAgICAgfQoKICAgICAgICAvKiBOYXZpZ2F0aW9uIEJhciAqLwogICAgICAgIC5uYXYtbWVudSB7CiAgICAgICAgICAgIHBvc2l0aW9uOiBmaXhlZDsKICAgICAgICAgICAgdG9wOiAwOwogICAgICAgICAgICBsZWZ0OiAwOwogICAgICAgICAgICByaWdodDogMDsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzEwYjk4MSAwJSwgIzA1OTY2OSAxMDAlKTsKICAgICAgICAgICAgYm94LXNoYWRvdzogMCA0cHggMjBweCByZ2JhKDAsMCwwLDAuMik7CiAgICAgICAgICAgIHotaW5kZXg6IDk5OTk7CiAgICAgICAgfQoKICAgICAgICAubmF2LWNvbnRhaW5lciB7CiAgICAgICAgICAgIG1heC13aWR0aDogMTIwMHB4OwogICAgICAgICAgICBtYXJnaW46IDAgYXV0bzsKICAgICAgICAgICAgZGlzcGxheTogZmxleDsKICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgICAgICAgICAganVzdGlmeS1jb250ZW50OiBzcGFjZS1iZXR3ZWVuOwogICAgICAgICAgICBwYWRkaW5nOiAxNXB4IDIwcHg7CiAgICAgICAgICAgIGZsZXgtd3JhcDogd3JhcDsKICAgICAgICAgICAgZ2FwOiAxMHB4OwogICAgICAgIH0KCiAgICAgICAgLm5hdi1sb2dvIHsKICAgICAgICAgICAgZGlzcGxheTogZmxleDsKICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgICAgICAgICAgZ2FwOiAxMHB4OwogICAgICAgICAgICBjb2xvcjogd2hpdGU7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOwogICAgICAgICAgICBmb250LXNpemU6IDEuMnJlbTsKICAgICAgICB9CgogICAgICAgIC5uYXYtbGlua3MgewogICAgICAgICAgICBkaXNwbGF5OiBmbGV4OwogICAgICAgICAgICBnYXA6IDhweDsKICAgICAgICAgICAgZmxleC13cmFwOiB3cmFwOwogICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAgICAgIH0KCiAgICAgICAgLm5hdi1saW5rIHsKICAgICAgICAgICAgY29sb3I6IHdoaXRlOwogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDhweCAxNnB4OwogICAgICAgICAgICBib3JkZXItcmFkaXVzOiA4cHg7CiAgICAgICAgICAgIGZvbnQtc2l6ZTogMC45NXJlbTsKICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDsKICAgICAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuM3M7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC4xKTsKICAgICAgICAgICAgY3Vyc29yOiBwb2ludGVyOwogICAgICAgIH0KCiAgICAgICAgLm5hdi1saW5rOmhvdmVyIHsKICAgICAgICAgICAgYmFja2dyb3VuZDogcmdiYSgyNTUsMjU1LDI1NSwwLjI1KTsKICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC0ycHgpOwogICAgICAgIH0KCiAgICAgICAgLm5hdi1saW5rLmFjdGl2ZSB7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHJnYmEoMjU1LDI1NSwyNTUsMC4zNSk7CiAgICAgICAgfQoKICAgICAgICAvKiBNYWluIENvbnRhaW5lciAqLwogICAgICAgIC5jb250YWluZXIgewogICAgICAgICAgICBtYXgtd2lkdGg6IDEwMDBweDsKICAgICAgICAgICAgbWFyZ2luOiAzMHB4IGF1dG87CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHdoaXRlOwogICAgICAgICAgICBib3JkZXItcmFkaXVzOiAyMHB4OwogICAgICAgICAgICBib3gtc2hhZG93OiAwIDIwcHggNjBweCByZ2JhKDAsMCwwLDAuMyk7CiAgICAgICAgfQoKICAgICAgICAuaGVhZGVyIHsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzEwYjk4MSAwJSwgIzA1OTY2OSAxMDAlKTsKICAgICAgICAgICAgY29sb3I6IHdoaXRlOwogICAgICAgICAgICBwYWRkaW5nOiA0MHB4OwogICAgICAgICAgICB0ZXh0LWFsaWduOiBjZW50ZXI7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDIwcHggMjBweCAwIDA7CiAgICAgICAgfQoKICAgICAgICAuaGVhZGVyIGgxIHsKICAgICAgICAgICAgZm9udC1zaXplOiAycmVtOwogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxMHB4OwogICAgICAgIH0KCiAgICAgICAgLmhlYWRlciBwIHsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjFyZW07CiAgICAgICAgICAgIG9wYWNpdHk6IDAuOTsKICAgICAgICB9CgogICAgICAgIC5jb250ZW50IHsKICAgICAgICAgICAgcGFkZGluZzogNDBweDsKICAgICAgICB9CgogICAgICAgIC8qIFRoZW9yeSBTZWN0aW9ucyAqLwogICAgICAgIC5zZWN0aW9uLWhlYWRlciB7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICMxMGI5ODEgMCUsICMwNTk2NjkgMTAwJSk7CiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTsKICAgICAgICAgICAgcGFkZGluZzogMjBweCAyNXB4OwogICAgICAgICAgICBib3JkZXItcmFkaXVzOiAxMnB4OwogICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7CiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7CiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogc3BhY2UtYmV0d2VlbjsKICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgICAgICAgICAgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuM3MsIGJveC1zaGFkb3cgMC4zczsKICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMDsKICAgICAgICB9CgogICAgICAgIC5zZWN0aW9uLWhlYWRlcjpob3ZlciB7CiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMnB4KTsKICAgICAgICAgICAgYm94LXNoYWRvdzogMCA4cHggMjBweCByZ2JhKDE2LCAxODUsIDEyOSwgMC40KTsKICAgICAgICB9CgogICAgICAgIC5zZWN0aW9uLWhlYWRlciBoMyB7CiAgICAgICAgICAgIGZvbnQtc2l6ZTogMS4zcmVtOwogICAgICAgIH0KCiAgICAgICAgLmFycm93IHsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjVyZW07CiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzOwogICAgICAgIH0KCiAgICAgICAgLmFycm93LnJvdGF0ZWQgewogICAgICAgICAgICB0cmFuc2Zvcm06IHJvdGF0ZSgxODBkZWcpOwogICAgICAgIH0KCiAgICAgICAgLnNlY3Rpb24tY29udGVudCB7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgICAgIHBhZGRpbmc6IDMwcHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmMGZkZjQ7CiAgICAgICAgICAgIGJvcmRlcjogM3B4IHNvbGlkICMxMGI5ODE7CiAgICAgICAgICAgIGJvcmRlci10b3A6IG5vbmU7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDAgMCAxMnB4IDEycHg7CiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7CiAgICAgICAgfQoKICAgICAgICAuc2VjdGlvbi1jb250ZW50LmFjdGl2ZSB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KCiAgICAgICAgLnNlY3Rpb24gewogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAyMHB4OwogICAgICAgIH0KCiAgICAgICAgLyogRXhlcmNpc2UgSXRlbXMgKi8KICAgICAgICAuZXhlcmNpc2UtaXRlbSB7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmMGZkZjQ7CiAgICAgICAgICAgIHBhZGRpbmc6IDI1cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDI1cHg7CiAgICAgICAgICAgIGJvcmRlcjogMnB4IHNvbGlkICNlNWU3ZWI7CiAgICAgICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjNzOwogICAgICAgIH0KCiAgICAgICAgLmV4ZXJjaXNlLWl0ZW0uY29ycmVjdCB7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzEwYjk4MTsKICAgICAgICAgICAgYmFja2dyb3VuZDogI2QxZmFlNTsKICAgICAgICB9CgogICAgICAgIC5leGVyY2lzZS1pdGVtLmluY29ycmVjdCB7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogI2VmNDQ0NDsKICAgICAgICAgICAgYmFja2dyb3VuZDogI2ZlZTJlMjsKICAgICAgICB9CgogICAgICAgIC5leGVyY2lzZS1udW1iZXIgewogICAgICAgICAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICMxMGI5ODEgMCUsICMwNTk2NjkgMTAwJSk7CiAgICAgICAgICAgIGNvbG9yOiB3aGl0ZTsKICAgICAgICAgICAgcGFkZGluZzogOHB4IDE2cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDIwcHg7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOwogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNXB4OwogICAgICAgIH0KCiAgICAgICAgLndvcmQtZGlzcGxheSB7CiAgICAgICAgICAgIGZvbnQtc2l6ZTogMS4zcmVtOwogICAgICAgICAgICBmb250LXdlaWdodDogYm9sZDsKICAgICAgICAgICAgY29sb3I6ICMwNTk2Njk7CiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDIwcHg7CiAgICAgICAgfQoKICAgICAgICAvKiBJbnB1dCBTdHlsZXMgKi8KICAgICAgICAuaW5wdXQtZ3JvdXAgewogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNXB4OwogICAgICAgIH0KCiAgICAgICAgLmlucHV0LWdyb3VwIGxhYmVsIHsKICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7CiAgICAgICAgICAgIGNvbG9yOiAjMzc0MTUxOwogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA4cHg7CiAgICAgICAgfQoKICAgICAgICAuaW5wdXQtcm93IHsKICAgICAgICAgICAgZGlzcGxheTogZmxleDsKICAgICAgICAgICAgZ2FwOiAxMHB4OwogICAgICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyOwogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiAxNXB4OwogICAgICAgICAgICBmbGV4LXdyYXA6IHdyYXA7CiAgICAgICAgfQoKICAgICAgICAuYXJ0aWNsZS1pbnB1dC13cmFwcGVyIHsKICAgICAgICAgICAgZGlzcGxheTogZmxleDsKICAgICAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlcjsKICAgICAgICAgICAgZ2FwOiA1cHg7CiAgICAgICAgICAgIGZsZXg6IDE7CiAgICAgICAgICAgIG1pbi13aWR0aDogMTgwcHg7CiAgICAgICAgfQoKICAgICAgICAuYXJ0aWNsZS1pbnB1dC13cmFwcGVyLmJyZWFrLWxpbmUgewogICAgICAgICAgICBmbGV4LWJhc2lzOiAxMDAlOwogICAgICAgIH0KCiAgICAgICAgaW5wdXRbdHlwZT0idGV4dCJdLCBzZWxlY3QgewogICAgICAgICAgICBwYWRkaW5nOiAxMnB4IDE1cHg7CiAgICAgICAgICAgIGJvcmRlcjogMnB4IHNvbGlkICNkMWQ1ZGI7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDsKICAgICAgICAgICAgZm9udC1zaXplOiAxcmVtOwogICAgICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4zczsKICAgICAgICAgICAgZmxleDogMTsKICAgICAgICB9CgogICAgICAgIGlucHV0W3R5cGU9InRleHQiXS5zbWFsbCB7CiAgICAgICAgICAgIG1heC13aWR0aDogNjBweDsKICAgICAgICAgICAgZmxleDogMCAwIDYwcHg7CiAgICAgICAgfQoKICAgICAgICBzZWxlY3QgewogICAgICAgICAgICBjdXJzb3I6IHBvaW50ZXI7CiAgICAgICAgICAgIGFwcGVhcmFuY2U6IG5vbmU7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IHdoaXRlIHVybCgiZGF0YTppbWFnZS9zdmcreG1sLCUzQ3N2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMicgaGVpZ2h0PScxMicgdmlld0JveD0nMCAwIDEyIDEyJyUzRSUzQ3BhdGggZmlsbD0nJTIzMTBiOTgxJyBkPSdNNiA5TDEgNGgxMHonLyUzRSUzQy9zdmclM0UiKSBuby1yZXBlYXQgcmlnaHQgMTJweCBjZW50ZXI7CiAgICAgICAgICAgIHBhZGRpbmctcmlnaHQ6IDQwcHg7CiAgICAgICAgfQoKICAgICAgICBpbnB1dDpmb2N1cywgc2VsZWN0OmZvY3VzIHsKICAgICAgICAgICAgb3V0bGluZTogbm9uZTsKICAgICAgICAgICAgYm9yZGVyLWNvbG9yOiAjMTBiOTgxOwogICAgICAgICAgICBib3gtc2hhZG93OiAwIDAgMCAzcHggcmdiYSgxNiwgMTg1LCAxMjksIDAuMSk7CiAgICAgICAgfQoKICAgICAgICBpbnB1dC5jb3JyZWN0LCBzZWxlY3QuY29ycmVjdCB7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogIzEwYjk4MTsKICAgICAgICAgICAgYmFja2dyb3VuZDogI2VjZmRmNTsKICAgICAgICB9CgogICAgICAgIGlucHV0LmluY29ycmVjdCwgc2VsZWN0LmluY29ycmVjdCB7CiAgICAgICAgICAgIGJvcmRlci1jb2xvcjogI2VmNDQ0NDsKICAgICAgICAgICAgYmFja2dyb3VuZDogI2ZlZjJmMjsKICAgICAgICB9CgogICAgICAgIC5wbHVzLXNpZ24gewogICAgICAgICAgICBmb250LXNpemU6IDEuNXJlbTsKICAgICAgICAgICAgY29sb3I6ICMxMGI5ODE7CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOwogICAgICAgIH0KCiAgICAgICAgLyogRmVlZGJhY2sgKi8KICAgICAgICAuZmVlZGJhY2sgewogICAgICAgICAgICBkaXNwbGF5OiBub25lOwogICAgICAgICAgICBtYXJnaW4tdG9wOiAxNXB4OwogICAgICAgICAgICBwYWRkaW5nOiAxMnB4IDE1cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDsKICAgICAgICAgICAgZm9udC13ZWlnaHQ6IDYwMDsKICAgICAgICB9CgogICAgICAgIC5mZWVkYmFjay5zaG93IHsKICAgICAgICAgICAgZGlzcGxheTogYmxvY2s7CiAgICAgICAgfQoKICAgICAgICAuZmVlZGJhY2suY29ycmVjdCB7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNkMWZhZTU7CiAgICAgICAgICAgIGNvbG9yOiAjMDY1ZjQ2OwogICAgICAgICAgICBib3JkZXItbGVmdDogNHB4IHNvbGlkICMxMGI5ODE7CiAgICAgICAgfQoKICAgICAgICAuZmVlZGJhY2suaW5jb3JyZWN0IHsKICAgICAgICAgICAgYmFja2dyb3VuZDogI2ZlZTJlMjsKICAgICAgICAgICAgY29sb3I6ICM5OTFiMWI7CiAgICAgICAgICAgIGJvcmRlci1sZWZ0OiA0cHggc29saWQgI2VmNDQ0NDsKICAgICAgICB9CgogICAgICAgIC5jb3JyZWN0LWFuc3dlciB7CiAgICAgICAgICAgIG1hcmdpbi10b3A6IDEwcHg7CiAgICAgICAgICAgIHBhZGRpbmc6IDEwcHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmMGZkZjQ7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDZweDsKICAgICAgICAgICAgY29sb3I6ICMwNjVmNDY7CiAgICAgICAgfQoKICAgICAgICAvKiBCdXR0b25zICovCiAgICAgICAgLmJ1dHRvbnMgewogICAgICAgICAgICBkaXNwbGF5OiBmbGV4OwogICAgICAgICAgICBnYXA6IDE1cHg7CiAgICAgICAgICAgIGp1c3RpZnktY29udGVudDogY2VudGVyOwogICAgICAgICAgICBtYXJnaW4tdG9wOiA0MHB4OwogICAgICAgICAgICBmbGV4LXdyYXA6IHdyYXA7CiAgICAgICAgfQoKICAgICAgICBidXR0b24gewogICAgICAgICAgICBwYWRkaW5nOiAxNXB4IDQwcHg7CiAgICAgICAgICAgIGJvcmRlcjogbm9uZTsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTBweDsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjFyZW07CiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiA2MDA7CiAgICAgICAgICAgIGN1cnNvcjogcG9pbnRlcjsKICAgICAgICAgICAgdHJhbnNpdGlvbjogYWxsIDAuM3M7CiAgICAgICAgfQoKICAgICAgICAuYnRuLWNoZWNrIHsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzEwYjk4MSAwJSwgIzA1OTY2OSAxMDAlKTsKICAgICAgICAgICAgY29sb3I6IHdoaXRlOwogICAgICAgICAgICBib3gtc2hhZG93OiAwIDRweCAxNXB4IHJnYmEoMTYsIDE4NSwgMTI5LCAwLjQpOwogICAgICAgIH0KCiAgICAgICAgLmJ0bi1jaGVjazpob3ZlciB7CiAgICAgICAgICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlWSgtMnB4KTsKICAgICAgICAgICAgYm94LXNoYWRvdzogMCA2cHggMjBweCByZ2JhKDE2LCAxODUsIDEyOSwgMC42KTsKICAgICAgICB9CgogICAgICAgIC5idG4tcmVzZXQgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiAjNmI3MjgwOwogICAgICAgICAgICBjb2xvcjogd2hpdGU7CiAgICAgICAgfQoKICAgICAgICAuYnRuLXJlc2V0OmhvdmVyIHsKICAgICAgICAgICAgYmFja2dyb3VuZDogIzRiNTU2MzsKICAgICAgICB9CgogICAgICAgIC8qIFNjb3JlICovCiAgICAgICAgLnNjb3JlIHsKICAgICAgICAgICAgdGV4dC1hbGlnbjogY2VudGVyOwogICAgICAgICAgICBmb250LXNpemU6IDEuNXJlbTsKICAgICAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQ7CiAgICAgICAgICAgIHBhZGRpbmc6IDIwcHg7CiAgICAgICAgICAgIG1hcmdpbi10b3A6IDMwcHg7CiAgICAgICAgICAgIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgxMzVkZWcsICNmZWYzYzcgMCUsICNmZGU2OGEgMTAwJSk7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgICAgICAgICAgIGRpc3BsYXk6IG5vbmU7CiAgICAgICAgfQoKICAgICAgICAuc2NvcmUuc2hvdyB7CiAgICAgICAgICAgIGRpc3BsYXk6IGJsb2NrOwogICAgICAgIH0KCiAgICAgICAgLyogSW5mbyBCb3hlcyAqLwogICAgICAgIC5leGFtcGxlLWJveCwgLmluZm8tYm94IHsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgI2QxZmFlNSAwJSwgI2E3ZjNkMCAxMDAlKTsKICAgICAgICAgICAgcGFkZGluZzogMjBweDsKICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTJweDsKICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMjBweDsKICAgICAgICAgICAgYm9yZGVyLWxlZnQ6IDVweCBzb2xpZCAjMTBiOTgxOwogICAgICAgIH0KCiAgICAgICAgLmV4YW1wbGUtYm94IGgzLCAuaW5mby1ib3ggaDMgewogICAgICAgICAgICBjb2xvcjogIzA2NWY0NjsKICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMTBweDsKICAgICAgICB9CgogICAgICAgIC5leGFtcGxlLWJveCBwLCAuaW5mby1ib3ggcCB7CiAgICAgICAgICAgIGNvbG9yOiAjMWUyOTNiOwogICAgICAgICAgICBmb250LXNpemU6IDEuMDVyZW07CiAgICAgICAgfQoKICAgICAgICAvKiBFeCA2IFN0eWxlcyAqLwogICAgICAgIC5hbGwtdmFyaWFudHMgewogICAgICAgICAgICBkaXNwbGF5OiBub25lOwogICAgICAgICAgICBtYXJnaW4tdG9wOiA0MHB4OwogICAgICAgICAgICBwYWRkaW5nLXRvcDogNDBweDsKICAgICAgICAgICAgYm9yZGVyLXRvcDogM3B4IHNvbGlkICMxMGI5ODE7CiAgICAgICAgfQoKICAgICAgICAuYWxsLXZhcmlhbnRzLnNob3cgewogICAgICAgICAgICBkaXNwbGF5OiBibG9jazsKICAgICAgICB9CgogICAgICAgIC52YXJpYW50cy1oZWFkZXIgewogICAgICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTM1ZGVnLCAjZmJiZjI0IDAlLCAjZjU5ZTBiIDEwMCUpOwogICAgICAgICAgICBjb2xvcjogd2hpdGU7CiAgICAgICAgICAgIHBhZGRpbmc6IDI1cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEycHg7CiAgICAgICAgICAgIHRleHQtYWxpZ246IGNlbnRlcjsKICAgICAgICAgICAgbWFyZ2luLWJvdHRvbTogMzBweDsKICAgICAgICB9CgogICAgICAgIC5jYXRlZ29yeSB7CiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDMwcHg7CiAgICAgICAgfQoKICAgICAgICAuY2F0ZWdvcnktaGVhZGVyIHsKICAgICAgICAgICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KDEzNWRlZywgIzEwYjk4MSAwJSwgIzA1OTY2OSAxMDAlKTsKICAgICAgICAgICAgY29sb3I6IHdoaXRlOwogICAgICAgICAgICBwYWRkaW5nOiAxNXB4IDIwcHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDEwcHg7CiAgICAgICAgICAgIG1hcmdpbi1ib3R0b206IDE1cHg7CiAgICAgICAgfQoKICAgICAgICAuY2F0ZWdvcnktaGVhZGVyIGgzIHsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjNyZW07CiAgICAgICAgfQoKICAgICAgICAuYXJyb3ctZXg2IHsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjVyZW07CiAgICAgICAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzOwogICAgICAgICAgICBjb2xvcjogd2hpdGU7CiAgICAgICAgfQoKICAgICAgICAudmFyaWFudHMtZ3JpZCB7CiAgICAgICAgICAgIGRpc3BsYXk6IGdyaWQ7CiAgICAgICAgICAgIGdyaWQtdGVtcGxhdGUtY29sdW1uczogcmVwZWF0KGF1dG8tZmlsbCwgbWlubWF4KDMwMHB4LCAxZnIpKTsKICAgICAgICAgICAgZ2FwOiAxNXB4OwogICAgICAgIH0KCiAgICAgICAgLnZhcmlhbnQtY2FyZCB7CiAgICAgICAgICAgIGJhY2tncm91bmQ6ICNmMGZkZjQ7CiAgICAgICAgICAgIHBhZGRpbmc6IDE1cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDsKICAgICAgICAgICAgYm9yZGVyLWxlZnQ6IDRweCBzb2xpZCAjMTBiOTgxOwogICAgICAgIH0KCiAgICAgICAgLnZhcmlhbnQtY2FyZCBzdHJvbmcgewogICAgICAgICAgICBjb2xvcjogIzA1OTY2OTsKICAgICAgICAgICAgZm9udC1zaXplOiAxLjFyZW07CiAgICAgICAgfQoKICAgICAgICAudmFyaWFudC1wYXJ0cyB7CiAgICAgICAgICAgIGNvbG9yOiAjNmI3MjgwOwogICAgICAgICAgICBmb250LXNpemU6IDAuOXJlbTsKICAgICAgICAgICAgbWFyZ2luOiA1cHggMDsKICAgICAgICB9CgogICAgICAgIC53b3Jkcy1saXN0IHsKICAgICAgICAgICAgYmFja2dyb3VuZDogd2hpdGU7CiAgICAgICAgICAgIHBhZGRpbmc6IDE1cHg7CiAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDhweDsKICAgICAgICAgICAgbWFyZ2luLXRvcDogMTVweDsKICAgICAgICB9CgogICAgICAgIC53b3Jkcy1saXN0IHAgewogICAgICAgICAgICBtYXJnaW4tYm90dG9tOiA4cHg7CiAgICAgICAgfQoKICAgICAgICAvKiBSZXNwb25zaXZlICovCiAgICAgICAgQG1lZGlhIChtYXgtd2lkdGg6IDc2OHB4KSB7CiAgICAgICAgICAgIGJvZHkgewogICAgICAgICAgICAgICAgcGFkZGluZy10b3A6IDE0MHB4OwogICAgICAgICAgICAgICAgcGFkZGluZzogMTBweDsKICAgICAgICAgICAgICAgIHBhZGRpbmctdG9wOiAxNDBweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLm5hdi1jb250YWluZXIgewogICAgICAgICAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmNvbnRhaW5lciB7CiAgICAgICAgICAgICAgICBtYXJnaW46IDE1cHggYXV0bzsKICAgICAgICAgICAgICAgIGJvcmRlci1yYWRpdXM6IDE1cHg7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5oZWFkZXIgewogICAgICAgICAgICAgICAgcGFkZGluZzogMjVweCAyMHB4OwogICAgICAgICAgICAgICAgYm9yZGVyLXJhZGl1czogMTVweCAxNXB4IDAgMDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmhlYWRlciBoMSB7CiAgICAgICAgICAgICAgICBmb250LXNpemU6IDEuNXJlbTsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmhlYWRlciBwIHsKICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMC45NXJlbTsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmNvbnRlbnQgewogICAgICAgICAgICAgICAgcGFkZGluZzogMjBweCAxNXB4OwogICAgICAgICAgICB9CgogICAgICAgICAgICAuc2VjdGlvbi1oZWFkZXIgaDMgewogICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjFyZW07CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5leGFtcGxlLWJveCwgLmluZm8tYm94IHsKICAgICAgICAgICAgICAgIHBhZGRpbmc6IDE1cHg7CiAgICAgICAgICAgICAgICBmb250LXNpemU6IDAuOTVyZW07CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5leGVyY2lzZS1pdGVtIHsKICAgICAgICAgICAgICAgIHBhZGRpbmc6IDE1cHg7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5leGVyY2lzZS1udW1iZXIgewogICAgICAgICAgICAgICAgZm9udC1zaXplOiAwLjlyZW07CiAgICAgICAgICAgICAgICBwYWRkaW5nOiA2cHggMTJweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLndvcmQtZGlzcGxheSB7CiAgICAgICAgICAgICAgICBmb250LXNpemU6IDEuMXJlbTsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmlucHV0LWdyb3VwIGxhYmVsIHsKICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMC45NXJlbTsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmlucHV0LXJvdyB7CiAgICAgICAgICAgICAgICBmbGV4LWRpcmVjdGlvbjogY29sdW1uOwogICAgICAgICAgICAgICAgZ2FwOiA4cHg7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5hcnRpY2xlLWlucHV0LXdyYXBwZXIgewogICAgICAgICAgICAgICAgd2lkdGg6IDEwMCU7CiAgICAgICAgICAgICAgICBtaW4td2lkdGg6IDEwMCU7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGlucHV0W3R5cGU9InRleHQiXSwgc2VsZWN0IHsKICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMC45NXJlbTsKICAgICAgICAgICAgICAgIHBhZGRpbmc6IDEwcHggMTJweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLnBsdXMtc2lnbiB7CiAgICAgICAgICAgICAgICBkaXNwbGF5OiBub25lOwogICAgICAgICAgICB9CgogICAgICAgICAgICAuZmVlZGJhY2sgewogICAgICAgICAgICAgICAgZm9udC1zaXplOiAwLjlyZW07CiAgICAgICAgICAgICAgICBwYWRkaW5nOiAxMHB4IDEycHg7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5idXR0b25zIHsKICAgICAgICAgICAgICAgIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47CiAgICAgICAgICAgICAgICBnYXA6IDEwcHg7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIGJ1dHRvbiB7CiAgICAgICAgICAgICAgICB3aWR0aDogMTAwJTsKICAgICAgICAgICAgICAgIHBhZGRpbmc6IDEycHggMjBweDsKICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMXJlbTsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLnNjb3JlIHsKICAgICAgICAgICAgICAgIGZvbnQtc2l6ZTogMS4ycmVtOwogICAgICAgICAgICAgICAgcGFkZGluZzogMTVweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLnZhcmlhbnRzLWdyaWQgewogICAgICAgICAgICAgICAgZ3JpZC10ZW1wbGF0ZS1jb2x1bW5zOiAxZnI7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC52YXJpYW50LWNhcmQgewogICAgICAgICAgICAgICAgcGFkZGluZzogMTJweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmNhdGVnb3J5LWhlYWRlciBoMyB7CiAgICAgICAgICAgICAgICBmb250LXNpemU6IDEuMXJlbTsKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgLyogRXh0cmEgc21hbGwgcGhvbmVzICovCiAgICAgICAgQG1lZGlhIChtYXgtd2lkdGg6IDQ4MHB4KSB7CiAgICAgICAgICAgIC5oZWFkZXIgaDEgewogICAgICAgICAgICAgICAgZm9udC1zaXplOiAxLjNyZW07CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC5uYXYtbGluayB7CiAgICAgICAgICAgICAgICBmb250LXNpemU6IDAuODVyZW07CiAgICAgICAgICAgICAgICBwYWRkaW5nOiA2cHggMTBweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgLmV4ZXJjaXNlLWl0ZW0gewogICAgICAgICAgICAgICAgcGFkZGluZzogMTJweDsKICAgICAgICAgICAgfQoKICAgICAgICAgICAgaW5wdXRbdHlwZT0idGV4dCJdLCBzZWxlY3QgewogICAgICAgICAgICAgICAgZm9udC1zaXplOiAwLjlyZW07CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICA8L3N0eWxlPgo8L2hlYWQ+Cjxib2R5PgogICAgPCEtLSBOYXZpZ2F0aW9uIE1lbnUgLS0+CiAgICA8bmF2IGNsYXNzPSJuYXYtbWVudSI+CiAgICAgICAgPGRpdiBjbGFzcz0ibmF2LWNvbnRhaW5lciI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9Im5hdi1sb2dvIj4KICAgICAgICAgICAgICAgIDxzcGFuPsqa4KyTPC9zcGFuPgogICAgICAgICAgICAgICAgPHNwYW4+Q2xhdWRpYSBUw7N0aDwvc3Bhbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9Im5hdi1saW5rcyI+CiAgICAgICAgICAgICAgICA8YSBocmVmPSIjdGVvcmllIiBjbGFzcz0ibmF2LWxpbmsiPlRlb3JpZTwvYT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9IiNleDEiIGNsYXNzPSJuYXYtbGluayI+RXguIDE8L2E+CiAgICAgICAgICAgICAgICA8YSBocmVmPSIjZXgyIiBjbGFzcz0ibmF2LWxpbmsiPkV4LiAyPC9hPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iI2V4MyIgY2xhc3M9Im5hdi1saW5rIj5FeC4gMzwvYT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9IiNleDQiIGNsYXNzPSJuYXYtbGluayI+RXguIDQ8L2E+CiAgICAgICAgICAgICAgICA8YSBocmVmPSIjZXg1IiBjbGFzcz0ibmF2LWxpbmsiPkV4LiA1PC9hPgogICAgICAgICAgICAgICAgPGEgaHJlZj0iI2V4NiIgY2xhc3M9Im5hdi1saW5rIj5FeC4gNjwvYT4KICAgICAgICAgICAgICAgIDxhIGhyZWY9IiNyZWNhcGl0dWxhcmUiIGNsYXNzPSJuYXYtbGluayI+UmVjYXBpdHVsYXJlPC9hPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvbmF2PgoKICAgIDwhLS0gVEVPUklFIC0tPgogICAgPGRpdiBjbGFzcz0iY29udGFpbmVyIiBpZD0idGVvcmllIj4KICAgICAgICA8ZGl2IGNsYXNzPSJoZWFkZXIiIHN0eWxlPSJjdXJzb3I6IHBvaW50ZXI7IiBvbmNsaWNrPSJ0b2dnbGVFeGVyY2lzZSgndGVvcmllJykiPgogICAgICAgICAgICA8aDE+yprgrJMgVEVPUklFIDxzcGFuIGlkPSJhcnJvdy1oZWFkZXItdGVvcmllIiBzdHlsZT0iZm9udC1zaXplOiAxLjVyZW07IHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzOyI+4pa8PC9zcGFuPjwvaDE+CiAgICAgICAgICAgIDxwPlN1YnN0YW50aXZlIENvbXB1c2Ugw65uIEdlcm1hbsSDIC0gWnVzYW1tZW5nZXNldHp0ZSBTdWJzdGFudGl2ZSAtIFBBUlRFQSAxPC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQiIGlkPSJjb250ZW50LXRlb3JpZSIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWRlciIgb25jbGljaz0idG9nZ2xlU2VjdGlvbigwKSI+CiAgICAgICAgICAgICAgICAgICAgPGgzPkNFIFNVTlQgU1VCU1RBTlRJVkVMRSBDT01QVVNFPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImFycm93Ij7ilrw8L3NwYW4+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24tY29udGVudCI+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+REVGSU5JyJpJRTwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlVuIHN1YnN0YW50aXYgY29tcHVzIGVzdGUgdW4gc3Vic3RhbnRpdiBmb3JtYXQgZGluIDxzdHJvbmc+Y2VsIHB1yJtpbiBkb3XEgyBjdXZpbnRlPC9zdHJvbmc+IHVuaXRlIMOubXByZXVuxIMuPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzPkV4ZW1wbHUgc2ltcGx1IMOubiByb23Dom7Egzo8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8cD4iY29waWwiICsgImNhbWVyxIMiID0gImNhbWVyYSBjb3BpaWxvciI8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+RXhlbXBsdSDDrm4gZ2VybWFuxIM6PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5kYXMgS2luZDwvc3Ryb25nPiAoY29waWx1bCkgKyA8c3Ryb25nPmRhcyBaaW1tZXI8L3N0cm9uZz4gKGNhbWVyYSkgPSA8c3Ryb25nPmRhcyBLaW5kZXJ6aW1tZXI8L3N0cm9uZz4gKGNhbWVyYSBjb3BpaWxvcik8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uIj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24taGVhZGVyIiBvbmNsaWNrPSJ0b2dnbGVTZWN0aW9uKDEpIj4KICAgICAgICAgICAgICAgICAgICA8aDM+REUgQ0UgU1VOVCBJTVBPUlRBTlRFPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImFycm93Ij7ilrw8L3NwYW4+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24tY29udGVudCI+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+MS4gTGltYmEgZ2VybWFuxIMgSVVCRciYVEUgY3V2aW50ZWxlIGNvbXB1c2UhPC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+R2VybWFuaWkgY3JlZWF6xIMgY29uc3RhbnQgY3V2aW50ZSBub2kgcHJpbiBjb21iaW5hcmUuIEVzdGUgbyBjYXJhY3RlcmlzdGljxIMgZnVuZGFtZW50YWzEgyBhIGxpbWJpaSE8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+Mi4gVm9jYWJ1bGFyIElORklOSVQhPC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+Q8OibmQgyJl0aWkgY3VtIHPEgyBmb3JtZXppIHN1YnN0YW50aXZlIGNvbXB1c2UsIHZvY2FidWxhcnVsIHTEg3UgZGV2aW5lIE1VTFQgbWFpIG1hcmUhIE51IG1haSB0cmVidWllIHPEgyBtZW1vcmV6aSBmaWVjYXJlIGN1dsOibnQgc2VwYXJhdC48L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+My4gRXhwcmltYXJlIFBSRUNJU8SCITwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlBvyJtpIGRlc2NyaWUgbHVjcnVyaSBmb2FydGUgc3BlY2lmaWM6PGJyPgogICAgICAgICAgICAgICAgICAgICAgICA8c3Ryb25nPmRhcyBaaW1tZXI8L3N0cm9uZz4gPSBjYW1lcmEgKGNlIGZlbCBkZSBjYW1lcsSDPyk8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzdHJvbmc+ZGFzIEtpbmRlcnppbW1lcjwvc3Ryb25nPiA9IGNhbWVyYSBjb3BpaWxvciAoQUhBISBBY3VtIMiZdGltISk8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uIj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24taGVhZGVyIiBvbmNsaWNrPSJ0b2dnbGVTZWN0aW9uKDIpIj4KICAgICAgICAgICAgICAgICAgICA8aDM+UkVHVUxJTEUgREUgQVVSPC9oMz4KICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iYXJyb3ciPuKWvDwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi1jb250ZW50Ij4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz5SRUdVTEEgMTogU2NyaXMgY3UgbWFqdXNjdWzEgzwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlVuIHN1YnN0YW50aXYgY29tcHVzIHNlIHNjcmllIGN1IGxpdGVyxIMgbWFyZSBkb2FyIGxhIMOubmNlcHV0IChjYSBvcmljZSBzdWJzdGFudGl2IGdlcm1hbikuPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDogMTBweDsiPuKchSBkYXMgS2luZGVyemltbWVyPGJyPuKdjCBkYXMgS2luZGVyWmltbWVyPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzPlJFR1VMQSAyOiBBcnRpY29sdWwgdWx0aW11bHVpIGN1dsOibnQ8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8cD5TdWJzdGFudGl2dWwgY29tcHVzIGlhIGFydGljb2x1bCA8c3Ryb25nPnVsdGltdWx1aSBjdXbDom50PC9zdHJvbmc+IChHcnVuZHdvcnQgLSBjdXbDom50dWwgZGUgYmF6xIMpLjwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi10b3A6IDE1cHg7Ij48c3Ryb25nPkV4ZW1wbGU6PC9zdHJvbmc+PGJyPgogICAgICAgICAgICAgICAgICAgICAgICDigKIgZGFzIEF1dG8gKyA8c3Ryb25nPmRpZSBUw7xyPC9zdHJvbmc+ID0gPHN0cm9uZz5kaWU8L3N0cm9uZz4gQXV0b3TDvHIgKGRpZSBkZSBsYSBUw7xyKTxicj4KICAgICAgICAgICAgICAgICAgICAgICAg4oCiIGRlciBUZWUgKyA8c3Ryb25nPmRpZSBLYW5uZTwvc3Ryb25nPiA9IDxzdHJvbmc+ZGllPC9zdHJvbmc+IFRlZWthbm5lIChkaWUgZGUgbGEgS2FubmUpPGJyPgogICAgICAgICAgICAgICAgICAgICAgICDigKIgZGllIFNvbm5lICsgPHN0cm9uZz5kZXIgU2NoZWluPC9zdHJvbmc+ID0gPHN0cm9uZz5kZXI8L3N0cm9uZz4gU29ubmVuc2NoZWluIChkZXIgZGUgbGEgU2NoZWluKTwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi10b3A6IDEwcHg7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogIzA1OTY2OTsiPuKaoO+4jyBSZcibaW5lOiBVbHRpbXVsIGN1dsOibnQgRElDVEVBWsSCIGFydGljb2x1bCE8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+UkVHVUxBIDM6IFByaW11bCBkZXNjcmllIHBlIGFsIGRvaWxlYTwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPsOObiBzdWJzdGFudGl2dWwgY29tcHVzOjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgPHN0cm9uZz5QcmltdWwgY3V2w6JudDwvc3Ryb25nPiAoQmVzdGltbXVuZ3N3b3J0KSA9IERFU0NSSUU8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzdHJvbmc+QWwgZG9pbGVhIGN1dsOibnQ8L3N0cm9uZz4gKEdydW5kd29ydCkgPSBlc3RlIERFU0NSSVM8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW4tdG9wOiAxMHB4OyI+PHN0cm9uZz5kYXMgS2luZGVyfHppbW1lcjwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgS2luZCAoY29waWwpIOKGkiBkZXNjcmllPGJyPgogICAgICAgICAgICAgICAgICAgICAgICBaaW1tZXIgKGNhbWVyxIMpIOKGkiBjZSBmZWwgZGUgY2FtZXLEgz8g4oaSIGNhbWVyYSBDT1BJSUxPUjwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi10b3A6IDEwcHg7Ij48c3Ryb25nPmRpZSBBdXRvfHTDvHI8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIEF1dG8gKG1hyJlpbsSDKSDihpIgZGVzY3JpZTxicj4KICAgICAgICAgICAgICAgICAgICAgICAgVMO8ciAodciZxIMpIOKGkiBjZSBmZWwgZGUgdciZxIM/IOKGkiB1yJlhIE1ByJhJTklJPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWRlciIgb25jbGljaz0idG9nZ2xlU2VjdGlvbigzKSI+CiAgICAgICAgICAgICAgICAgICAgPGgzPlRJUFVMIDE6IFNVQlNUQU5USVYgKyBTVUJTVEFOVElWPC9oMz4KICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iYXJyb3ciPuKWvDwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi1jb250ZW50Ij4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz5DVU0gRlVOQ8iaSU9ORUFaxII/PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+UHVyIMiZaSBzaW1wbHUgYciZZXppIGN1dmludGVsZSB1bnVsIGR1cMSDIGFsdHVsOjwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsgZm9udC1zaXplOiAxLjJyZW07IGZvbnQtd2VpZ2h0OiBib2xkOyBiYWNrZ3JvdW5kOiB3aGl0ZTsgcGFkZGluZzogMTVweDsgYm9yZGVyLXJhZGl1czogOHB4OyBtYXJnaW4tdG9wOiAxNXB4OyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVUJTVEFOVElWIDEgKyBTVUJTVEFOVElWIDIgPSBTVUJTVEFOVElWIENPTVBVUwogICAgICAgICAgICAgICAgICAgICAgICA8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+RVhFTVBMRSBTSU1QTEU8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjEuPC9zdHJvbmc+IGRhcyBBdXRvICsgZGllIFTDvHIgPSA8c3Ryb25nPmRpZSBBdXRvdMO8cjwvc3Ryb25nPiAodciZYSBtYciZaW5paSk8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxzdHJvbmc+Mi48L3N0cm9uZz4gZGVyIFRlZSArIGRpZSBLYW5uZSA9IDxzdHJvbmc+ZGllIFRlZWthbm5lPC9zdHJvbmc+IChjZWFpbmljdWwpPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjMuPC9zdHJvbmc+IGRhcyBIYXVzICsgZGllIFTDvHIgPSA8c3Ryb25nPmRpZSBIYXVzdMO8cjwvc3Ryb25nPiAodciZYSBkZSBsYSBpbnRyYXJlIGEgY2FzZWkpPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjQuPC9zdHJvbmc+IGRlciBGdcOfICsgZGVyIEJhbGwgPSA8c3Ryb25nPmRlciBGdcOfYmFsbDwvc3Ryb25nPiAobWluZ2VhIGRlIGZvdGJhbCk8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxzdHJvbmc+NS48L3N0cm9uZz4gZGllIEJsdW1lICsgZGVyIFRvcGYgPSA8c3Ryb25nPmRlciBCbHVtZW50b3BmPC9zdHJvbmc+IChnaGl2ZWNpdWwpPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzPkVYRU1QTEUgTUFJIENPTVBMRVhFICgzKyBjdXZpbnRlISk8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8cD5EYSwgcG/Im2kgY29tYmluYSBtYWkgbXVsdCBkZSAyIGN1dmludGUhPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDogMTBweDsiPjxzdHJvbmc+MS48L3N0cm9uZz4gZGVyIEZ1w58gKyBkZXIgQmFsbCArIGRhcyBTcGllbCA9IDxzdHJvbmc+ZGFzIEZ1w59iYWxsc3BpZWw8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIChtZWNpdWwgZGUgZm90YmFsKTwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz4yLjwvc3Ryb25nPiBkaWUgR2VidXJ0ICsgZGVyIFRhZyArIGRhcyBHZXNjaGVuayA9IDxzdHJvbmc+ZGFzIEdlYnVydHN0YWdzZ2VzY2hlbms8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIChjYWRvdWwgZGUgeml1YSBkZSBuYciZdGVyZSk8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxzdHJvbmc+My48L3N0cm9uZz4gZGFzIEF1dG8gKyBkaWUgQmFobiArIGRlciBIb2YgPSA8c3Ryb25nPmRlciBBdXRvYmFobmhvZjwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgKHN0YcibaWEgZGUgYXV0b3N0cmFkxIMgLyBwYXJjYXJlKTwvcD4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L2Rpdj4KCiAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24iPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi1oZWFkZXIiIG9uY2xpY2s9InRvZ2dsZVNlY3Rpb24oNCkiPgogICAgICAgICAgICAgICAgICAgIDxoMz5DVU0gU8SCIMOOTsiaRUxFR0kgVU4gQ1VWw4JOVCBMVU5HPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9ImFycm93Ij7ilrw8L3NwYW4+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InNlY3Rpb24tY29udGVudCI+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+U3RyYXRlZ2lhIMOubiAzIHBhyJlpOjwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPjxzdHJvbmc+UEFTVUwgMTo8L3N0cm9uZz4gw45tcGFydGUgY3V2w6JudHVsIMOubiBwxINyyJtpPGJyPgogICAgICAgICAgICAgICAgICAgICAgICA8c3Ryb25nPlBBU1VMIDI6PC9zdHJvbmc+IElkZW50aWZpY8SDIHVsdGltdWwgY3V2w6JudCAoR3J1bmR3b3J0KSDihpIgYWNlc3RhIMOuyJtpIGTEgyBBUlRJQ09MVUwgyJlpIFNFTlNVTCBQUklOQ0lQQUw8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzdHJvbmc+UEFTVUwgMzo8L3N0cm9uZz4gQ2l0ZciZdGUgZGUgbGEgRFJFQVBUQSBsYSBTVMOCTkdBIHBlbnRydSBhIMOubsibZWxlZ2Ugc2Vuc3VsIGNvbXBsZXQ8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+RVhFTVBMVTogZGllIEhhdXN0w7xyPC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5QQVNVTCAxIC0gw45tcGFydGU6PC9zdHJvbmc+PGJyPkhhdXMgKyBUw7xyPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDogMTBweDsiPjxzdHJvbmc+UEFTVUwgMiAtIFVsdGltdWwgY3V2w6JudDo8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIFTDvHIgKHXImcSDKSDihpIgYXJ0aWNvbCA8c3Ryb25nPmRpZTwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgRGVjaSBlc3RlIHZvcmJhIGRlc3ByZSBvIFXImMSCPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDogMTBweDsiPjxzdHJvbmc+UEFTVUwgMyAtIENpdGXImXRlIGludmVyczo8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIENlIGZlbCBkZSB1yJnEgz8g4oaSIEhhdXMgKGNhc8SDKTxicj4KICAgICAgICAgICAgICAgICAgICAgICAgPSB1yJlhIENBU0VJPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0ibWFyZ2luLXRvcDogMTBweDsgZm9udC13ZWlnaHQ6IGJvbGQ7IGJhY2tncm91bmQ6IHdoaXRlOyBwYWRkaW5nOiAxMHB4OyBib3JkZXItcmFkaXVzOiA4cHg7Ij4KICAgICAgICAgICAgICAgICAgICAgICAg4pyTIFJlenVsdGF0OiBkaWUgSGF1c3TDvHIgPSB1yJlhIGNhc2VpPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWRlciIgb25jbGljaz0idG9nZ2xlU2VjdGlvbig1KSI+CiAgICAgICAgICAgICAgICAgICAgPGgzPkxJVEVSRUxFIERFIExFR8SCVFVSxIIgKEZ1Z2VuZWxlbWVudGUpPC9oMz4KICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iYXJyb3ciPuKWvDwvc3Bhbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbi1jb250ZW50Ij4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz5DRSBTVU5UPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPlVuZW9yaSwgw65udHJlIGN1dmludGUgdHJlYnVpZSBzxIMgaW5zZXJlemkgbyBsaXRlcsSDIHNhdSB1biBncnVwIGRlIGxpdGVyZSBwZW50cnUgY2Egc3Vic3RhbnRpdnVsIHPEgyBzdW5lIGNvcmVjdC48L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW4tdG9wOiAxMHB4OyI+PHN0cm9uZz5DZWxlIG1haSBjb211bmUgbGl0ZXJlIGRlIGxlZ8SDdHVyxIM6PC9zdHJvbmc+PGJyPgogICAgICAgICAgICAgICAgICAgICAgICAtZS0gfCAtKGUpcy0gfCAtKGUpbi0gfCAtZXItPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzPkPDgk5EIEZPTE9TSU0gLShlKXMtPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkxpdGVyxIMgZGUgbGVnxIN0dXLEgyAtKGUpcy0gYXBhcmUgYWRlc2VhIGR1cMSDIHN1YnN0YW50aXZlIGZlbWluaW5lIHRlcm1pbmF0ZSDDrm4gLXVuZywgLWhlaXQsIC1rZWl0LCAtc2NoYWZ0OjwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHAgc3R5bGU9Im1hcmdpbi10b3A6IDEwcHg7Ij48c3Ryb25nPjEuPC9zdHJvbmc+IGRpZSBHZWJ1cnQgKyBkZXIgVGFnID0gPHN0cm9uZz5kZXIgR2VidXJ0c3RhZzwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgZGllIEdlYnVydCDihpIgR2VidXJ0PHN0cm9uZz5zPC9zdHJvbmc+dGFnPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjIuPC9zdHJvbmc+IGRpZSBHZWJ1cnQgKyBkZXIgVGFnICsgZGFzIEdlc2NoZW5rID0gPHN0cm9uZz5kYXMgR2VidXJ0c3RhZ3NnZXNjaGVuazwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgR2VidXJ0c3RhZzxzdHJvbmc+czwvc3Ryb25nPmdlc2NoZW5rPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjMuPC9zdHJvbmc+IGRpZSBBcmJlaXQgKyBkZXIgUGxhdHogPSA8c3Ryb25nPmRlciBBcmJlaXRzcGxhdHo8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIEFyYmVpdDxzdHJvbmc+czwvc3Ryb25nPnBsYXR6IChsb2N1bCBkZSBtdW5jxIMpPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94Ij4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzPkPDgk5EIEZPTE9TSU0gLShlKW4tPzwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkxpdGVyxIMgZGUgbGVnxIN0dXLEgyAtKGUpbi0gYXBhcmUgYWRlc2VhIGR1cMSDIHN1YnN0YW50aXZlIGZlbWluaW5lIChhY2VzdGVhIHRyZWMgbGEgcGx1cmFsLCDDrm5zxIMgZXhpc3TEgyDImWkgZXhjZXDIm2lpIC0gZGllIEhhbmQsIGRpZSBUw7xyKTo8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW4tdG9wOiAxMHB4OyI+PHN0cm9uZz4xLjwvc3Ryb25nPiBkaWUgU3RyYcOfZSArIGRpZSBCYWhuID0gPHN0cm9uZz5kaWUgU3RyYcOfZW5iYWhuPC9zdHJvbmc+PGJyPgogICAgICAgICAgICAgICAgICAgICAgICBTdHJhw59lPHN0cm9uZz5uPC9zdHJvbmc+YmFobiAodHJhbXZhaXVsKTwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz4yLjwvc3Ryb25nPiBkaWUgQmx1bWUgKyBkZXIgVG9wZiA9IDxzdHJvbmc+ZGVyIEJsdW1lbnRvcGY8L3N0cm9uZz48YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIEJsdW1lPHN0cm9uZz5uPC9zdHJvbmc+dG9wZiAoZ2hpdmVjaXVsKTwvcD4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz5Dw4JORCBGT0xPU0lNIC1lci0/PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+TGl0ZXLEgyBkZSBsZWfEg3R1csSDIC1lci0gYXBhcmUgYWRlc2VhIGxhIHBsdXJhbDo8L3A+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJtYXJnaW4tdG9wOiAxMHB4OyI+PHN0cm9uZz4xLjwvc3Ryb25nPiBkYXMgQmlsZCArIGRhcyBCdWNoID0gPHN0cm9uZz5kYXMgQmlsZGVyYnVjaDwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgZGFzIEJpbGQgKHBsdXJhbDogQmlsZGVyKSDihpIgQmlsZDxzdHJvbmc+ZXI8L3N0cm9uZz5idWNoPGJyPgogICAgICAgICAgICAgICAgICAgICAgICAoY2FydGVhIGlsdXN0cmF0xIMpPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPjIuPC9zdHJvbmc+IGRhcyBLaW5kICsgZGFzIFppbW1lciA9IDxzdHJvbmc+ZGFzIEtpbmRlcnppbW1lcjwvc3Ryb25nPjxicj4KICAgICAgICAgICAgICAgICAgICAgICAgZGFzIEtpbmQgKHBsdXJhbDogS2luZGVyKSDihpIgS2luZDxzdHJvbmc+ZXI8L3N0cm9uZz56aW1tZXI8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIChjYW1lcmEgY29waWlsb3IpPC9wPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2VjdGlvbiI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWhlYWRlciIgb25jbGljaz0idG9nZ2xlU2VjdGlvbig2KSI+CiAgICAgICAgICAgICAgICAgICAgPGgzPkNFTCBNQUkgTFVORyBDVVbDgk5UIENPTVBVUyDDjk4gR0VSTUFOxII8L2gzPgogICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJhcnJvdyI+4pa8PC9zcGFuPgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJzZWN0aW9uLWNvbnRlbnQiPgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4YW1wbGUtYm94IiBzdHlsZT0idGV4dC1hbGlnbjogY2VudGVyOyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMyBzdHlsZT0iZm9udC1zaXplOiAxLjVyZW07IG1hcmdpbi1ib3R0b206IDIwcHg7Ij7wn4+GIENlbCBtYWkgbHVuZyBjdXbDom50IGNvbXB1czwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwIHN0eWxlPSJmb250LXNpemU6IDEuMXJlbTsgZm9udC13ZWlnaHQ6IGJvbGQ7IHdvcmQtYnJlYWs6IGJyZWFrLWFsbDsgbGluZS1oZWlnaHQ6IDEuODsgY29sb3I6ICMwNTk2Njk7IG1hcmdpbjogMjBweCAwOyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICBSaW5kZXJrZW5uemVpY2hudW5nc2ZsZWlzY2hldGlrZXR0aWVydW5nc8O8YmVyd2FjaHVuZ3NhdWZnYWJlbsO8YmVydHJhZ3VuZ3NnZXNldHoKICAgICAgICAgICAgICAgICAgICAgICAgPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBzdHlsZT0iZm9udC1zaXplOiAxLjRyZW07IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogIzA2NWY0NjsgbWFyZ2luOiAyMHB4IDA7Ij42MyBkZSBsaXRlcmUhPC9wPgogICAgICAgICAgICAgICAgICAgICAgICA8cD4oTyBsZWdlIGNhcmUgcmVnbGVtZW50YSBtb2R1bCDDrm4gY2FyZSBlc3RlIGV0aWNoZXRhdMSDIGNhcm5lYSBkZSB2aXTEgyDDrm4gR2VybWFuaWEgLSBhIGZvc3Qgw65uIHZpZ29hcmUgw65udHJlIDE5OTktMjAxMyk8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgICAgICAgICA8aDM+VHJhZHVjZXJlOjwvaDM+CiAgICAgICAgICAgICAgICAgICAgICAgIDxwPkxlZ2VhIHByaXZpbmQgdHJhbnNmZXJ1bCBzYXJjaW5pbG9yIGRlIG1vbml0b3JpemFyZSBhIGV0aWNoZXTEg3JpaSBjxINybmlpIGRlIHZpdMSDLjwvcD4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxoMz5Db21wdW5lcmU6PC9oMz4KICAgICAgICAgICAgICAgICAgICAgICAgPHA+4oCiIDxzdHJvbmc+ZGFzIFJpbmQ8L3N0cm9uZz4g4oaSIHZpdGEgLyBjb3JudXRhPGJyPgogICAgICAgICAgICAgICAgICAgICAgICDigKIgPHN0cm9uZz5kaWUgS2VubnplaWNobnVuZzwvc3Ryb25nPiDihpIgbWFyY2FyZWEgLyBpZGVudGlmaWNhcmVhPGJyPgogICAgICAgICAgICAgICAgICAgICAgICDigKIgPHN0cm9uZz5kYXMgRmxlaXNjaDwvc3Ryb25nPiDihpIgY2FybmVhPGJyPgogICAgICAgICAgICAgICAgICAgICAgICDigKIgPHN0cm9uZz5kaWUgRXRpa2V0dGllcnVuZzwvc3Ryb25nPiDihpIgZXRpY2hldGFyZWE8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIOKAoiA8c3Ryb25nPmRpZSDDnGJlcndhY2h1bmc8L3N0cm9uZz4g4oaSIHN1cHJhdmVnaGVyZWE8YnI+CiAgICAgICAgICAgICAgICAgICAgICAgIOKAoiA8c3Ryb25nPmRpZSBBdWZnYWJlPC9zdHJvbmc+IOKGkiBzYXJjaW5hIC8gYXRyaWJ1yJtpYTxicj4KICAgICAgICAgICAgICAgICAgICAgICAg4oCiIDxzdHJvbmc+ZGllIMOcYmVydHJhZ3VuZzwvc3Ryb25nPiDihpIgdHJhbnNmZXJ1bCAvIHRyYW5zbWl0ZXJlYTxicj4KICAgICAgICAgICAgICAgICAgICAgICAg4oCiIDxzdHJvbmc+ZGFzIEdlc2V0ejwvc3Ryb25nPiDihpIgbGVnZWE8L3A+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KCiAgICA8IS0tIEVYIDEgLS0+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIiIGlkPSJleDEiPgogICAgICAgIDxkaXYgY2xhc3M9ImhlYWRlciIgc3R5bGU9ImN1cnNvcjogcG9pbnRlcjsiIG9uY2xpY2s9InRvZ2dsZUV4ZXJjaXNlKCdleDEnKSI+CiAgICAgICAgICAgIDxoMT7KmuCskyDDnEJVTkcgMSA8c3BhbiBpZD0iYXJyb3ctaGVhZGVyLWV4MSIgc3R5bGU9ImZvbnQtc2l6ZTogMS41cmVtOyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zczsiPuKWvDwvc3Bhbj48L2gxPgogICAgICAgICAgICA8cD5EZXNjaWZyZWF6xIMgc3Vic3RhbnRpdmVsZSBjb21wdXNlPC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQiIGlkPSJjb250ZW50LWV4MSIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgPGgzPvCfk50gRXhlbXBsdTo8L2gzPgogICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5kaWUgQXV0b3TDvHI8L3N0cm9uZz4g4oaSIDxzdHJvbmc+ZGFzIEF1dG88L3N0cm9uZz4gKyA8c3Ryb25nPmRpZSBUw7xyPC9zdHJvbmc+IOKGkiB1yJlhIG1hyJlpbmlpPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBpZD0iZXhlcmNpc2VzLWV4MSI+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImJ1dHRvbnMiPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz0iYnRuLWNoZWNrIiBvbmNsaWNrPSJjaGVja0Fuc3dlcnMoJ2V4MScpIj7inJMgVmVyaWZpY8SDPC9idXR0b24+CiAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJidG4tcmVzZXQiIG9uY2xpY2s9InJlc2V0RXhlcmNpc2UoJ2V4MScpIj7ihrsgUmVzZXRlYXrEgzwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2NvcmUiIGlkPSJzY29yZS1leDEiPjwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CgogICAgPCEtLSBFWCAyIC0tPgogICAgPGRpdiBjbGFzcz0iY29udGFpbmVyIiBpZD0iZXgyIj4KICAgICAgICA8ZGl2IGNsYXNzPSJoZWFkZXIiIHN0eWxlPSJjdXJzb3I6IHBvaW50ZXI7IiBvbmNsaWNrPSJ0b2dnbGVFeGVyY2lzZSgnZXgyJykiPgogICAgICAgICAgICA8aDE+yprgrJMgw5xCVU5HIDIgPHNwYW4gaWQ9ImFycm93LWhlYWRlci1leDIiIHN0eWxlPSJmb250LXNpemU6IDEuNXJlbTsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuM3M7Ij7ilrw8L3NwYW4+PC9oMT4KICAgICAgICAgICAgPHA+U3Vic3RhbnRpdmUgY3UgMyBwxINyyJtpPC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQiIGlkPSJjb250ZW50LWV4MiIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW5mby1ib3giPgogICAgICAgICAgICAgICAgPGgzPvCfkqEgQXRlbsibaWUhPC9oMz4KICAgICAgICAgICAgICAgIDxwPkFjZXN0ZSBzdWJzdGFudGl2ZSBhdSA8c3Ryb25nPjMgcMSDcsibaTwvc3Ryb25nPiEgQWwgdHJlaWxlYSBjdXbDom50IHZhIGZpIHBlIHLDom5kIG5vdS48L3A+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGlkPSJleGVyY2lzZXMtZXgyIj48L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iYnV0dG9ucyI+CiAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJidG4tY2hlY2siIG9uY2xpY2s9ImNoZWNrQW5zd2VycygnZXgyJykiPuKckyBWZXJpZmljxIM8L2J1dHRvbj4KICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3M9ImJ0bi1yZXNldCIgb25jbGljaz0icmVzZXRFeGVyY2lzZSgnZXgyJykiPuKGuyBSZXNldGVhesSDPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJzY29yZSIgaWQ9InNjb3JlLWV4MiI+PC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KCiAgICA8IS0tIEVYIDMgLS0+CiAgICA8ZGl2IGNsYXNzPSJjb250YWluZXIiIGlkPSJleDMiPgogICAgICAgIDxkaXYgY2xhc3M9ImhlYWRlciIgc3R5bGU9ImN1cnNvcjogcG9pbnRlcjsiIG9uY2xpY2s9InRvZ2dsZUV4ZXJjaXNlKCdleDMnKSI+CiAgICAgICAgICAgIDxoMT7KmuCskyDDnEJVTkcgMyA8c3BhbiBpZD0iYXJyb3ctaGVhZGVyLWV4MyIgc3R5bGU9ImZvbnQtc2l6ZTogMS41cmVtOyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zczsiPuKWvDwvc3Bhbj48L2gxPgogICAgICAgICAgICA8cD5HxINzZciZdGUgYXJ0aWNvbHVsIGNvcmVjdDwvcD4KICAgICAgICA8L2Rpdj4KICAgICAgICA8ZGl2IGNsYXNzPSJjb250ZW50IiBpZD0iY29udGVudC1leDMiIHN0eWxlPSJkaXNwbGF5OiBub25lOyI+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImluZm8tYm94Ij4KICAgICAgICAgICAgICAgIDxoMz7imqEgUmVndWxhIGRlIGF1cjo8L2gzPgogICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5BcnRpY29sdWwgdmluZSBkZSBsYSBVTFRJTVVMIGN1dsOibnQhPC9zdHJvbmc+PC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBpZD0iZXhlcmNpc2VzLWV4MyI+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImJ1dHRvbnMiPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz0iYnRuLWNoZWNrIiBvbmNsaWNrPSJjaGVja0Fuc3dlcnMoJ2V4MycpIj7inJMgVmVyaWZpY8SDPC9idXR0b24+CiAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJidG4tcmVzZXQiIG9uY2xpY2s9InJlc2V0RXhlcmNpc2UoJ2V4MycpIj7ihrsgUmVzZXRlYXrEgzwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2NvcmUiIGlkPSJzY29yZS1leDMiPjwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CgogICAgPCEtLSBFWCA0IC0tPgogICAgPGRpdiBjbGFzcz0iY29udGFpbmVyIiBpZD0iZXg0Ij4KICAgICAgICA8ZGl2IGNsYXNzPSJoZWFkZXIiIHN0eWxlPSJjdXJzb3I6IHBvaW50ZXI7IiBvbmNsaWNrPSJ0b2dnbGVFeGVyY2lzZSgnZXg0JykiPgogICAgICAgICAgICA8aDE+yprgrJMgw5xCVU5HIDQgPHNwYW4gaWQ9ImFycm93LWhlYWRlci1leDQiIHN0eWxlPSJmb250LXNpemU6IDEuNXJlbTsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuM3M7Ij7ilrw8L3NwYW4+PC9oMT4KICAgICAgICAgICAgPHA+Rm9ybWVhesSDIHN1YnN0YW50aXZlIGNvbXB1c2U8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29udGVudCIgaWQ9ImNvbnRlbnQtZXg0IiBzdHlsZT0iZGlzcGxheTogbm9uZTsiPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbmZvLWJveCI+CiAgICAgICAgICAgICAgICA8aDM+8J+TnSBFeGVtcGx1OjwvaDM+CiAgICAgICAgICAgICAgICA8cD48c3Ryb25nPmRlciBBcGZlbCArIGRlciBTYWZ0ID0gZGVyIEFwZmVsc2FmdDwvc3Ryb25nPjwvcD4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgaWQ9ImV4ZXJjaXNlcy1leDQiPjwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJidXR0b25zIj4KICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3M9ImJ0bi1jaGVjayIgb25jbGljaz0iY2hlY2tBbnN3ZXJzKCdleDQnKSI+4pyTIFZlcmlmaWPEgzwvYnV0dG9uPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz0iYnRuLXJlc2V0IiBvbmNsaWNrPSJyZXNldEV4ZXJjaXNlKCdleDQnKSI+4oa7IFJlc2V0ZWF6xIM8L2J1dHRvbj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9InNjb3JlIiBpZD0ic2NvcmUtZXg0Ij48L2Rpdj4KICAgICAgICA8L2Rpdj4KICAgIDwvZGl2PgoKICAgIDwhLS0gRVggNSAtLT4KICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciIgaWQ9ImV4NSI+CiAgICAgICAgPGRpdiBjbGFzcz0iaGVhZGVyIiBzdHlsZT0iY3Vyc29yOiBwb2ludGVyOyIgb25jbGljaz0idG9nZ2xlRXhlcmNpc2UoJ2V4NScpIj4KICAgICAgICAgICAgPGgxPsqa4KyTIMOcQlVORyA1IDxzcGFuIGlkPSJhcnJvdy1oZWFkZXItZXg1IiBzdHlsZT0iZm9udC1zaXplOiAxLjVyZW07IHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjNzOyI+4pa8PC9zcGFuPjwvaDE+CiAgICAgICAgICAgIDxwPkNvbXBsZXRlYXrEgyB0YWJlbHVsPC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQiIGlkPSJjb250ZW50LWV4NSIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW5mby1ib3giPgogICAgICAgICAgICAgICAgPGgzPvCfk50gSW5zdHJ1Y8ibaXVuaTo8L2gzPgogICAgICAgICAgICAgICAgPHA+Q29tcGxldGVhesSDIHN1YnN0YW50aXZ1bCBjb21wdXMgyJlpIHRyYWR1Y2VyZWEuPC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBpZD0iZXhlcmNpc2VzLWV4NSI+PC9kaXY+CiAgICAgICAgICAgIDxkaXYgY2xhc3M9ImJ1dHRvbnMiPgogICAgICAgICAgICAgICAgPGJ1dHRvbiBjbGFzcz0iYnRuLWNoZWNrIiBvbmNsaWNrPSJjaGVja0Fuc3dlcnMoJ2V4NScpIj7inJMgVmVyaWZpY8SDPC9idXR0b24+CiAgICAgICAgICAgICAgICA8YnV0dG9uIGNsYXNzPSJidG4tcmVzZXQiIG9uY2xpY2s9InJlc2V0RXhlcmNpc2UoJ2V4NScpIj7ihrsgUmVzZXRlYXrEgzwvYnV0dG9uPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0ic2NvcmUiIGlkPSJzY29yZS1leDUiPjwvZGl2PgogICAgICAgIDwvZGl2PgogICAgPC9kaXY+CgogICAgPCEtLSBFWCA2IC0tPgogICAgPGRpdiBjbGFzcz0iY29udGFpbmVyIiBpZD0iZXg2Ij4KICAgICAgICA8ZGl2IGNsYXNzPSJoZWFkZXIiIHN0eWxlPSJjdXJzb3I6IHBvaW50ZXI7IiBvbmNsaWNrPSJ0b2dnbGVFeGVyY2lzZSgnZXg2JykiPgogICAgICAgICAgICA8aDE+yprgrJMgw5xCVU5HIDYgPHNwYW4gaWQ9ImFycm93LWhlYWRlci1leDYiIHN0eWxlPSJmb250LXNpemU6IDEuNXJlbTsgdHJhbnNpdGlvbjogdHJhbnNmb3JtIDAuM3M7Ij7ilrw8L3NwYW4+PC9oMT4KICAgICAgICAgICAgPHA+Q3JlYXRpdml0YXRlIC0gQ3JlZWF6xIMgc3Vic3RhbnRpdmUgY29tcHVzZSE8L3A+CiAgICAgICAgPC9kaXY+CiAgICAgICAgPGRpdiBjbGFzcz0iY29udGVudCIgaWQ9ImNvbnRlbnQtZXg2IiBzdHlsZT0iZGlzcGxheTogbm9uZTsiPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbmZvLWJveCI+CiAgICAgICAgICAgICAgICA8aDM+8J+OqCBGaWkgY3JlYXRpdiE8L2gzPgogICAgICAgICAgICAgICAgPHA+Q3JlZWF6xIMgPHN0cm9uZz41IHN1YnN0YW50aXZlIGNvbXB1c2U8L3N0cm9uZz4gZm9sb3NpbmQgY3V2aW50ZWxlIGRlIG1haSBqb3MuPC9wPgogICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0id29yZHMtbGlzdCI+CiAgICAgICAgICAgICAgICAgICAgPHA+PHN0cm9uZz5HcnVwYSAxOjwvc3Ryb25nPiBkYXMgSGF1cywgZGVyIEdhcnRlbiwgZGllIFTDvHIsIGRhcyBGZW5zdGVyLCBkZXIgQmF1bTwvcD4KICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPkdydXBhIDI6PC9zdHJvbmc+IGRhcyBCdWNoLCBkaWUgU2NodWxlLCBkZXIgTGVocmVyLCBkYXMgS2luZDwvcD4KICAgICAgICAgICAgICAgICAgICA8cD48c3Ryb25nPkdydXBhIDM6PC9zdHJvbmc+IGRpZSBTb25uZSwgZGVyIFJlZ2VuLCBkZXIgU2NobmVlLCBkaWUgQmx1bWU8L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgIDxkaXYgaWQ9ImV4ZXJjaXNlcy1leDYiPjwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJidXR0b25zIj4KICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3M9ImJ0bi1jaGVjayIgb25jbGljaz0ic2hvd0FsbFZhcmlhbnRzKCkiPvCflI0gQXJhdMSDIHRvYXRlIHZhcmlhbnRlbGU8L2J1dHRvbj4KICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3M9ImJ0bi1yZXNldCIgb25jbGljaz0icmVzZXRFeGVyY2lzZSgnZXg2JykiPuKGuyBSZXNldGVhesSDPC9idXR0b24+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJhbGwtdmFyaWFudHMiIGlkPSJhbGxWYXJpYW50cyI+CiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJ2YXJpYW50cy1oZWFkZXIiPgogICAgICAgICAgICAgICAgICAgIDxoMj7inKggVG9hdGUgdmFyaWFudGVsZSBwb3NpYmlsZTwvaDI+CiAgICAgICAgICAgICAgICAgICAgPHA+VE9BVEUgY29tYmluYcibaWlsZSBjdSBjdXZpbnRlbGUgZGF0ZSE8L3A+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxkaXYgaWQ9InZhcmlhbnRzQ29udGFpbmVyIj48L2Rpdj4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KCiAgICA8IS0tIFJFQ0FQSVRVTEFSRSAtLT4KICAgIDxkaXYgY2xhc3M9ImNvbnRhaW5lciIgaWQ9InJlY2FwaXR1bGFyZSI+CiAgICAgICAgPGRpdiBjbGFzcz0iaGVhZGVyIiBzdHlsZT0iY3Vyc29yOiBwb2ludGVyOyIgb25jbGljaz0idG9nZ2xlRXhlcmNpc2UoJ3JlY2FwaXR1bGFyZScpIj4KICAgICAgICAgICAgPGgxPsqa4KyTIFJFQ0FQSVRVTEFSRSA8c3BhbiBpZD0iYXJyb3ctaGVhZGVyLXJlY2FwaXR1bGFyZSIgc3R5bGU9ImZvbnQtc2l6ZTogMS41cmVtOyB0cmFuc2l0aW9uOiB0cmFuc2Zvcm0gMC4zczsiPuKWvDwvc3Bhbj48L2gxPgogICAgICAgICAgICA8cD5DZSBhbSDDrm52xIPIm2F0IGFzdMSDemk/PC9wPgogICAgICAgIDwvZGl2PgogICAgICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQiIGlkPSJjb250ZW50LXJlY2FwaXR1bGFyZSIgc3R5bGU9ImRpc3BsYXk6IG5vbmU7Ij4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgPGgzPuKckyBTdWJzdGFudGl2ZSBjb21wdXNlPC9oMz4KICAgICAgICAgICAgICAgIDxwPkN1dmludGUgZm9ybWF0ZSBkaW4gPHN0cm9uZz4yKyBjdXZpbnRlPC9zdHJvbmc+PC9wPgogICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgPGRpdiBjbGFzcz0iZXhhbXBsZS1ib3giPgogICAgICAgICAgICAgICAgPGgzPuKckyBSZWd1bGlsZTwvaDM+CiAgICAgICAgICAgICAgICA8cD5BcnRpY29sdWwgdWx0aW11bHVpIGN1dsOibnQgfCBQcmltdWwgZGVzY3JpZSBwZSBhbCBkb2lsZWE8L3A+CiAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGFtcGxlLWJveCI+CiAgICAgICAgICAgICAgICA8aDM+4piFIEZFTElDSVTEglJJITwvaDM+CiAgICAgICAgICAgICAgICA8cD48c3Ryb25nPlZpZWwgRXJmb2xnITwvc3Ryb25nPjwvcD4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgPC9kaXY+CiAgICA8L2Rpdj4KCiAgICA8c2NyaXB0PgogICAgICAgIC8vIERhdGEKICAgICAgICBjb25zdCBleGVyY2lzZXNFeDEgPSBbCiAgICAgICAgICAgIHsgd29yZDogImRpZSBBdXRvYmFobiIsIGFydGljbGUxOiAiZGFzIiwgcGFydDE6ICJBdXRvIiwgYXJ0aWNsZTI6ICJkaWUiLCBwYXJ0MjogIkJhaG4iLCB0cmFuc2xhdGlvbjogImF1dG9zdHJhZGEiIH0sCiAgICAgICAgICAgIHsgd29yZDogImRlciBBdXRvc2NobMO8c3NlbCIsIGFydGljbGUxOiAiZGFzIiwgcGFydDE6ICJBdXRvIiwgYXJ0aWNsZTI6ICJkZXIiLCBwYXJ0MjogIlNjaGzDvHNzZWwiLCB0cmFuc2xhdGlvbjogImNoZWlhIG1hyJlpbmlpIiB9LAogICAgICAgICAgICB7IHdvcmQ6ICJkZXIgQmFobmhvZiIsIGFydGljbGUxOiAiZGllIiwgcGFydDE6ICJCYWhuIiwgYXJ0aWNsZTI6ICJkZXIiLCBwYXJ0MjogIkhvZiIsIHRyYW5zbGF0aW9uOiAiZ2FyYSIgfSwKICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEJsdW1lbnN0cmF1w58iLCBhcnRpY2xlMTogImRpZSIsIHBhcnQxOiAiQmx1bWUiLCBhcnRpY2xlMjogImRlciIsIHBhcnQyOiAiU3RyYXXDnyIsIHRyYW5zbGF0aW9uOiAiYnVjaGV0dWwgZGUgZmxvcmkiIH0sCiAgICAgICAgICAgIHsgd29yZDogImRlciBCcmllZmthc3RlbiIsIGFydGljbGUxOiAiZGVyIiwgcGFydDE6ICJCcmllZiIsIGFydGljbGUyOiAiZGVyIiwgcGFydDI6ICJLYXN0ZW4iLCB0cmFuc2xhdGlvbjogImN1dGlhIHBvyJl0YWzEgyIgfSwKICAgICAgICAgICAgeyB3b3JkOiAiZGFzIEdhcnRlbmhhdXMiLCBhcnRpY2xlMTogImRlciIsIHBhcnQxOiAiR2FydGVuIiwgYXJ0aWNsZTI6ICJkYXMiLCBwYXJ0MjogIkhhdXMiLCB0cmFuc2xhdGlvbjogImNhc2EgZGluIGdyxINkaW7EgyIgfQogICAgICAgIF07CgogICAgICAgIGNvbnN0IGV4ZXJjaXNlc0V4MiA9IFsKICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEhhdXN0w7xyc2NobMO8c3NlbCIsIGFydGljbGUxOiAiZGFzIiwgcGFydDE6ICJIYXVzIiwgYXJ0aWNsZTI6ICJkaWUiLCBwYXJ0MjogIlTDvHIiLCBhcnRpY2xlMzogImRlciIsIHBhcnQzOiAiU2NobMO8c3NlbCIsIHRyYW5zbGF0aW9uOiAiY2hlaWEgdciZaWkgZGUgbGEgaW50cmFyZSIgfSwKICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEtpbmRlcmdhcnRlbmxlaHJlciIsIGFydGljbGUxOiAiZGFzIiwgcGFydDE6ICJLaW5kIiwgYXJ0aWNsZTI6ICJkZXIiLCBwYXJ0MjogIkdhcnRlbiIsIGFydGljbGUzOiAiZGVyIiwgcGFydDM6ICJMZWhyZXIiLCB0cmFuc2xhdGlvbjogImVkdWNhdG9ydWwgZGUgZ3LEg2RpbmnIm8SDIiB9LAogICAgICAgICAgICB7IHdvcmQ6ICJkaWUgV2VpaG5hY2h0c21hcmt0YnVkZSIsIGFydGljbGUxOiAiZGllIiwgcGFydDE6ICJXZWlobmFjaHQiLCBhcnRpY2xlMjogImRlciIsIHBhcnQyOiAiTWFya3QiLCBhcnRpY2xlMzogImRpZSIsIHBhcnQzOiAiQnVkZSIsIHRyYW5zbGF0aW9uOiAic3RhbmR1cmlsZSBkZSBsYSB0w6JyZ3VsIGRlIENyxINjaXVuIiB9LAogICAgICAgICAgICB7IHdvcmQ6ICJkYXMgR2VidXJ0c3RhZ3NraW5kIiwgYXJ0aWNsZTE6ICJkZXIiLCBwYXJ0MTogIkdlYnVydHN0YWciLCBhcnRpY2xlMjogImRhcyIsIHBhcnQyOiAiS2luZCIsIGFydGljbGUzOiAiIiwgcGFydDM6ICIiLCB0cmFuc2xhdGlvbjogImNvcGlsdWwgY2FyZSDDrsiZaSBzxINyYsSDdG9yZciZdGUgeml1YSBkZSBuYciZdGVyZSIsIG5vdGU6IHRydWUgfSwKICAgICAgICAgICAgeyB3b3JkOiAiZGFzIEF1dG9iYWhuZHJlaWVjayIsIGFydGljbGUxOiAiZGFzIiwgcGFydDE6ICJBdXRvIiwgYXJ0aWNsZTI6ICJkaWUiLCBwYXJ0MjogIkJhaG4iLCBhcnRpY2xlMzogImRhcyIsIHBhcnQzOiAiRHJlaWVjayIsIHRyYW5zbGF0aW9uOiAiaW50ZXJzZWPIm2lhIGRlIGF1dG9zdHLEg3ppIiB9LAogICAgICAgICAgICB7IHdvcmQ6ICJkZXIgRnXDn2JhbGxzcGllbGVyIiwgYXJ0aWNsZTE6ICJkZXIiLCBwYXJ0MTogIkZ1w58iLCBhcnRpY2xlMjogImRlciIsIHBhcnQyOiAiQmFsbCIsIGFydGljbGUzOiAiZGVyIiwgcGFydDM6ICJTcGllbGVyIiwgdHJhbnNsYXRpb246ICJqdWPEg3RvcnVsIGRlIGZvdGJhbCIgfQogICAgICAgIF07CgogICAgICAgIGNvbnN0IGV4ZXJjaXNlc0V4MyA9IFsKICAgICAgICAgICAgeyB3b3JkMTogIkhhdXMiLCBhcnRpY2xlMTogImRhcyIsIHdvcmQyOiAiVMO8ciIsIGFydGljbGUyOiAiZGllIiwgY29tcG91bmQ6ICJIYXVzdMO8ciIsIGNvcnJlY3Q6ICJkaWUiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJHYXJ0ZW4iLCBhcnRpY2xlMTogImRlciIsIHdvcmQyOiAiSGF1cyIsIGFydGljbGUyOiAiZGFzIiwgY29tcG91bmQ6ICJHYXJ0ZW5oYXVzIiwgY29ycmVjdDogImRhcyIgfSwKICAgICAgICAgICAgeyB3b3JkMTogIkJsdW1lIiwgYXJ0aWNsZTE6ICJkaWUiLCB3b3JkMjogIlRvcGYiLCBhcnRpY2xlMjogImRlciIsIGNvbXBvdW5kOiAiQmx1bWVudG9wZiIsIGNvcnJlY3Q6ICJkZXIiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJUaXNjaCIsIGFydGljbGUxOiAiZGVyIiwgd29yZDI6ICJEZWNrZSIsIGFydGljbGUyOiAiZGllIiwgY29tcG91bmQ6ICJUaXNjaGRlY2tlIiwgY29ycmVjdDogImRpZSIgfSwKICAgICAgICAgICAgeyB3b3JkMTogIlRlbm5pcyIsIGFydGljbGUxOiAiZGFzIiwgd29yZDI6ICJCYWxsIiwgYXJ0aWNsZTI6ICJkZXIiLCBjb21wb3VuZDogIlRlbm5pc2JhbGwiLCBjb3JyZWN0OiAiZGVyIiB9LAogICAgICAgICAgICB7IHdvcmQxOiAiV29jaGUiLCBhcnRpY2xlMTogImRpZSIsIHdvcmQyOiAiRW5kZSIsIGFydGljbGUyOiAiZGFzIiwgY29tcG91bmQ6ICJXb2NoZW5lbmRlIiwgY29ycmVjdDogImRhcyIgfQogICAgICAgIF07CgogICAgICAgIGNvbnN0IGV4ZXJjaXNlc0V4NCA9IFsKICAgICAgICAgICAgeyB3b3JkMTogImRlciBBcGZlbCIsIHdvcmQyOiAiZGVyIEt1Y2hlbiIsIGNvbXBvdW5kOiAiQXBmZWxrdWNoZW4iLCBhcnRpY2xlOiAiZGVyIiwgdHJhbnNsYXRpb246ICJwcsSDaml0dXJhIGN1IG1lcmUiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJkaWUgUmVpc2UiLCB3b3JkMjogImRpZSBUYXNjaGUiLCBjb21wb3VuZDogIlJlaXNldGFzY2hlIiwgYXJ0aWNsZTogImRpZSIsIHRyYW5zbGF0aW9uOiAiZ2VhbnRhIGRlIHZvaWFqIiB9LAogICAgICAgICAgICB7IHdvcmQxOiAiZGFzIEZhaHJyYWQiLCB3b3JkMjogImRlciBXZWciLCBjb21wb3VuZDogIkZhaHJyYWR3ZWciLCBhcnRpY2xlOiAiZGVyIiwgdHJhbnNsYXRpb246ICJwaXN0YSBkZSBiaWNpY2xldGUiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJkaWUgSGFuZCIsIHdvcmQyOiAiZGVyIEJhbGwiLCBjb21wb3VuZDogIkhhbmRiYWxsIiwgYXJ0aWNsZTogImRlciIsIHRyYW5zbGF0aW9uOiAiaGFuZGJhbHVsIiB9LAogICAgICAgICAgICB7IHdvcmQxOiAiZGllIFNvbm5lIiwgd29yZDI6ICJkZXIgU2NoZWluIiwgY29tcG91bmQ6ICJTb25uZW5zY2hlaW4iLCBhcnRpY2xlOiAiZGVyIiwgdHJhbnNsYXRpb246ICJzdHLEg2x1Y2lyZWEgc29hcmVsdWkiIH0KICAgICAgICBdOwoKICAgICAgICBjb25zdCBleGVyY2lzZXNFeDUgPSBbCiAgICAgICAgICAgIHsgd29yZDE6ICJkYXMgSGF1cyIsIHdvcmQyOiAiZGFzIFRpZXIiLCBjb21wb3VuZDogImRhcyBIYXVzdGllciIsIHRyYW5zbGF0aW9uOiAiYW5pbWFsdWwgZGUgY2FzxIMiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJkYXMgS2xlaWQiLCB3b3JkMjogImRlciBTY2hyYW5rIiwgY29tcG91bmQ6ICJkZXIgS2xlaWRlcnNjaHJhbmsiLCB0cmFuc2xhdGlvbjogImR1bGFwdWwgZGUgaGFpbmUiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJkZXIgQnJpZWYiLCB3b3JkMjogImRlciBLYXN0ZW4iLCBjb21wb3VuZDogImRlciBCcmllZmthc3RlbiIsIHRyYW5zbGF0aW9uOiAiY3V0aWEgcG/ImXRhbMSDIiB9LAogICAgICAgICAgICB7IHdvcmQxOiAiZGllIEFyYmVpdCIsIHdvcmQyOiAiZGVyIFBsYXR6IiwgY29tcG91bmQ6ICJkZXIgQXJiZWl0c3BsYXR6IiwgdHJhbnNsYXRpb246ICJsb2N1bCBkZSBtdW5jxIMiIH0sCiAgICAgICAgICAgIHsgd29yZDE6ICJkaWUgU3RyYcOfZSIsIHdvcmQyOiAiZGllIEJhaG4iLCBjb21wb3VuZDogImRpZSBTdHJhw59lbmJhaG4iLCB0cmFuc2xhdGlvbjogInRyYW12YWl1bCIgfQogICAgICAgIF07CgogICAgICAgIGNvbnN0IGFsbFZhcmlhbnRzID0gewogICAgICAgICAgICAiR3J1cGEgMTogSGF1cywgR2FydGVuLCBUw7xyLCBGZW5zdGVyLCBCYXVtIjogWwogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGllIEhhdXN0w7xyIiwgcGFydHM6ICJkYXMgSGF1cyArIGRpZSBUw7xyIiwgdHJhbnNsYXRpb246ICJ1yJlhIGRlIGxhIGludHJhcmUiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgSGF1c2ZlbnN0ZXIiLCBwYXJ0czogImRhcyBIYXVzICsgZGFzIEZlbnN0ZXIiLCB0cmFuc2xhdGlvbjogImZlcmVhc3RyYSBjYXNlaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRlciBIYXVzYmF1bSIsIHBhcnRzOiAiZGFzIEhhdXMgKyBkZXIgQmF1bSIsIHRyYW5zbGF0aW9uOiAiY29wYWN1bCBjYXNlaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBHYXJ0ZW5oYXVzIiwgcGFydHM6ICJkZXIgR2FydGVuICsgZGFzIEhhdXMiLCB0cmFuc2xhdGlvbjogImNhc2EgZGluIGdyxINkaW7EgyIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRpZSBHYXJ0ZW50w7xyIiwgcGFydHM6ICJkZXIgR2FydGVuICsgZGllIFTDvHIiLCB0cmFuc2xhdGlvbjogInBvYXJ0YSBncsSDZGluaWkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgR2FydGVuZmVuc3RlciIsIHBhcnRzOiAiZGVyIEdhcnRlbiArIGRhcyBGZW5zdGVyIiwgdHJhbnNsYXRpb246ICJmZXJlYXN0cmEgc3ByZSBncsSDZGluxIMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkZXIgR2FydGVuYmF1bSIsIHBhcnRzOiAiZGVyIEdhcnRlbiArIGRlciBCYXVtIiwgdHJhbnNsYXRpb246ICJjb3BhY3VsIGRpbiBncsSDZGluxIMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgVMO8cmZlbnN0ZXIiLCBwYXJ0czogImRpZSBUw7xyICsgZGFzIEZlbnN0ZXIiLCB0cmFuc2xhdGlvbjogImZlcmVhc3RyYSB1yJlpaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBCYXVtaGF1cyIsIHBhcnRzOiAiZGVyIEJhdW0gKyBkYXMgSGF1cyIsIHRyYW5zbGF0aW9uOiAiY2FzYSBkaW4gY29wYWMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgR2FydGVuaGF1c3TDvHIiLCBwYXJ0czogImRlciBHYXJ0ZW4gKyBkYXMgSGF1cyArIGRpZSBUw7xyIiwgdHJhbnNsYXRpb246ICJ1yJlhIGNhc2VpIGRpbiBncsSDZGluxIMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgR2FydGVuaGF1c2ZlbnN0ZXIiLCBwYXJ0czogImRlciBHYXJ0ZW4gKyBkYXMgSGF1cyArIGRhcyBGZW5zdGVyIiwgdHJhbnNsYXRpb246ICJmZXJlYXN0cmEgY2FzZWkgZGluIGdyxINkaW7EgyIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRpZSBCYXVtaGF1c3TDvHIiLCBwYXJ0czogImRlciBCYXVtICsgZGFzIEhhdXMgKyBkaWUgVMO8ciIsIHRyYW5zbGF0aW9uOiAidciZYSBjYXNlaSBkaW4gY29wYWMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgQmF1bWhhdXNmZW5zdGVyIiwgcGFydHM6ICJkZXIgQmF1bSArIGRhcyBIYXVzICsgZGFzIEZlbnN0ZXIiLCB0cmFuc2xhdGlvbjogImZlcmVhc3RyYSBjYXNlaSBkaW4gY29wYWMiIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgIkdydXBhIDI6IEJ1Y2gsIFNjaHVsZSwgTGVocmVyLCBLaW5kIjogWwogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGFzIFNjaHVsYnVjaCIsIHBhcnRzOiAiZGllIFNjaHVsZSArIGRhcyBCdWNoIiwgdHJhbnNsYXRpb246ICJtYW51YWx1bCDImWNvbGFyIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIFNjaHVsbGVocmVyIiwgcGFydHM6ICJkaWUgU2NodWxlICsgZGVyIExlaHJlciIsIHRyYW5zbGF0aW9uOiAicHJvZmVzb3J1bCBkZSDImWNvYWzEgyIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBTY2h1bGtpbmQiLCBwYXJ0czogImRpZSBTY2h1bGUgKyBkYXMgS2luZCIsIHRyYW5zbGF0aW9uOiAiY29waWx1bCDImWNvbGFyIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGFzIExlaHJlcmJ1Y2giLCBwYXJ0czogImRlciBMZWhyZXIgKyBkYXMgQnVjaCIsIHRyYW5zbGF0aW9uOiAiY2FydGVhIHByb2Zlc29ydWx1aSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRlciBLaW5kZXJzY2h1bGxlaHJlciIsIHBhcnRzOiAiZGFzIEtpbmQgKyBkaWUgU2NodWxlICsgZGVyIExlaHJlciIsIHRyYW5zbGF0aW9uOiAicHJvZmVzb3J1bCDImWNvbGlpIHBlbnRydSBjb3BpaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBMZWhyZXJraW5kIiwgcGFydHM6ICJkZXIgTGVocmVyICsgZGFzIEtpbmQiLCB0cmFuc2xhdGlvbjogImNvcGlsdWwgcHJvZmVzb3J1bHVpIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGFzIEtpbmRlcmJ1Y2giLCBwYXJ0czogImRhcyBLaW5kICsgZGFzIEJ1Y2giLCB0cmFuc2xhdGlvbjogImNhcnRlYSBwZW50cnUgY29waWkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgS2luZGVyc2NodWxlIiwgcGFydHM6ICJkYXMgS2luZCArIGRpZSBTY2h1bGUiLCB0cmFuc2xhdGlvbjogIsiZY29hbGEgcGVudHJ1IGNvcGlpIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEtpbmRlcmxlaHJlciIsIHBhcnRzOiAiZGFzIEtpbmQgKyBkZXIgTGVocmVyIiwgdHJhbnNsYXRpb246ICJwcm9mZXNvcnVsIHBlbnRydSBjb3BpaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBTY2h1bGtpbmRlcmJ1Y2giLCBwYXJ0czogImRpZSBTY2h1bGUgKyBkYXMgS2luZCArIGRhcyBCdWNoIiwgdHJhbnNsYXRpb246ICJjYXJ0ZWEgcGVudHJ1IGNvcGlpaSDImWNvbGFyaSIgfQogICAgICAgICAgICBdLAogICAgICAgICAgICAiR3J1cGEgMzogU29ubmUsIFJlZ2VuLCBTY2huZWUsIEJsdW1lIjogWwogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGllIFNvbm5lbmJsdW1lIiwgcGFydHM6ICJkaWUgU29ubmUgKyBkaWUgQmx1bWUiLCB0cmFuc2xhdGlvbjogImZsb2FyZWEtc29hcmVsdWkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkZXIgU29ubmVucmVnZW4iLCBwYXJ0czogImRpZSBTb25uZSArIGRlciBSZWdlbiIsIHRyYW5zbGF0aW9uOiAicGxvYWlhIGN1IHNvYXJlIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIFNvbm5lbnNjaG5lZSIsIHBhcnRzOiAiZGllIFNvbm5lICsgZGVyIFNjaG5lZSIsIHRyYW5zbGF0aW9uOiAiesSDcGFkxIMgbGEgc29hcmUiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgUmVnZW5ibHVtZSIsIHBhcnRzOiAiZGVyIFJlZ2VuICsgZGllIEJsdW1lIiwgdHJhbnNsYXRpb246ICJmbG9hcmUgZGUgcGxvYWllIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIFJlZ2Vuc2NobmVlIiwgcGFydHM6ICJkZXIgUmVnZW4gKyBkZXIgU2NobmVlIiwgdHJhbnNsYXRpb246ICJsYXBvdmnIm8SDIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGllIFNjaG5lZWJsdW1lIiwgcGFydHM6ICJkZXIgU2NobmVlICsgZGllIEJsdW1lIiwgdHJhbnNsYXRpb246ICJmbG9hcmUgZGUgesSDcGFkxIMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkZXIgQmx1bWVucmVnZW4iLCBwYXJ0czogImRpZSBCbHVtZSArIGRlciBSZWdlbiIsIHRyYW5zbGF0aW9uOiAicGxvYWlhIGRlIGZsb3JpIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEJsdW1lbnNjaG5lZSIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGVyIFNjaG5lZSIsIHRyYW5zbGF0aW9uOiAiesSDcGFkxIMgZGUgZmxvcmkiIH0KICAgICAgICAgICAgXSwKICAgICAgICAgICAgIkNvbWJpbmHIm2lpIMOubnRyZSBncnVwZSI6IFsKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBTY2h1bGhhdXMiLCBwYXJ0czogImRpZSBTY2h1bGUgKyBkYXMgSGF1cyIsIHRyYW5zbGF0aW9uOiAiY2zEg2RpcmVhIMiZY29saWkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgU2NodWx0w7xyIiwgcGFydHM6ICJkaWUgU2NodWxlICsgZGllIFTDvHIiLCB0cmFuc2xhdGlvbjogInXImWEgyJljb2xpaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBTY2h1bGZlbnN0ZXIiLCBwYXJ0czogImRpZSBTY2h1bGUgKyBkYXMgRmVuc3RlciIsIHRyYW5zbGF0aW9uOiAiZmVyZWFzdHJhIMiZY29saWkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgQmF1bXNjaHVsZSIsIHBhcnRzOiAiZGVyIEJhdW0gKyBkaWUgU2NodWxlIiwgdHJhbnNsYXRpb246ICJwZXBpbmllcmEiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkZXIgU2NodWxiYXVtIiwgcGFydHM6ICJkaWUgU2NodWxlICsgZGVyIEJhdW0iLCB0cmFuc2xhdGlvbjogImNvcGFjdWwgyJljb2xpaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRpZSBHYXJ0ZW5ibHVtZSIsIHBhcnRzOiAiZGVyIEdhcnRlbiArIGRpZSBCbHVtZSIsIHRyYW5zbGF0aW9uOiAiZmxvYXJlYSBkZSBncsSDZGluxIMiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgQmx1bWVuaGF1cyIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGFzIEhhdXMiLCB0cmFuc2xhdGlvbjogImNhc2EgZmxvcmlsb3IgLyBzZXJhIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGVyIEJsdW1lbmdhcnRlbiIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGVyIEdhcnRlbiIsIHRyYW5zbGF0aW9uOiAiZ3LEg2RpbmEgZGUgZmxvcmkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkaWUgQmx1bWVudMO8ciIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGllIFTDvHIiLCB0cmFuc2xhdGlvbjogInXImWEgY3UgZmxvcmkiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkYXMgQmx1bWVuZmVuc3RlciIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGFzIEZlbnN0ZXIiLCB0cmFuc2xhdGlvbjogImZlcmVhc3RyYSBjdSBmbG9yaSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRlciBTb25uZW5iYXVtIiwgcGFydHM6ICJkaWUgU29ubmUgKyBkZXIgQmF1bSIsIHRyYW5zbGF0aW9uOiAiY29wYWMgZXhwdXMgbGEgc29hcmUiIH0sCiAgICAgICAgICAgICAgICB7IHdvcmQ6ICJkZXIgU29ubmVuZ2FydGVuIiwgcGFydHM6ICJkaWUgU29ubmUgKyBkZXIgR2FydGVuIiwgdHJhbnNsYXRpb246ICJncsSDZGluYSDDrm5zb3JpdMSDIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGFzIEJsdW1lbmJ1Y2giLCBwYXJ0czogImRpZSBCbHVtZSArIGRhcyBCdWNoIiwgdHJhbnNsYXRpb246ICJjYXJ0ZWEgZGVzcHJlIGZsb3JpIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGllIEJsdW1lbnNjaHVsZSIsIHBhcnRzOiAiZGllIEJsdW1lICsgZGllIFNjaHVsZSIsIHRyYW5zbGF0aW9uOiAiyJljb2FsYSBkZSBmbG9yaWN1bHR1csSDIiB9LAogICAgICAgICAgICAgICAgeyB3b3JkOiAiZGFzIEJsdW1lbmtpbmQiLCBwYXJ0czogImRpZSBCbHVtZSArIGRhcyBLaW5kIiwgdHJhbnNsYXRpb246ICJjb3BpbHVsIGZsb2FyZSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRlciBCbHVtZW5sZWhyZXIiLCBwYXJ0czogImRpZSBCbHVtZSArIGRlciBMZWhyZXIiLCB0cmFuc2xhdGlvbjogInByb2Zlc29ydWwgZGUgZmxvcmljdWx0dXLEgyIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBHYXJ0ZW50b3IiLCBwYXJ0czogImRlciBHYXJ0ZW4gKyBkaWUgVMO8ciIsIHRyYW5zbGF0aW9uOiAicG9hcnRhIGdyxINkaW5paSIgfSwKICAgICAgICAgICAgICAgIHsgd29yZDogImRhcyBIYXVzdG9yIiwgcGFydHM6ICJkYXMgSGF1cyArIGRpZSBUw7xyIiwgdHJhbnNsYXRpb246ICJwb2FydGEgY2FzZWkiIH0KICAgICAgICAgICAgXQogICAgICAgIH07CgogICAgICAgIC8vIEluaXRpYWxpemUKICAgICAgICBmdW5jdGlvbiBpbml0RXgxKCkgewogICAgICAgICAgICBjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZXhlcmNpc2VzLWV4MScpOwogICAgICAgICAgICBleGVyY2lzZXNFeDEuZm9yRWFjaCgoZXgsIGkpID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IGRpdiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgICAgICAgICAgICAgZGl2LmNsYXNzTmFtZSA9ICdleGVyY2lzZS1pdGVtJzsKICAgICAgICAgICAgICAgIGRpdi5pZCA9IGBleDEtJHtpfWA7CiAgICAgICAgICAgICAgICBkaXYuaW5uZXJIVE1MID0gYAogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4ZXJjaXNlLW51bWJlciI+RXguICR7aSArIDF9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0id29yZC1kaXNwbGF5Ij4ke2V4LndvcmR9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW5wdXQtZ3JvdXAiPgogICAgICAgICAgICAgICAgICAgICAgICA8bGFiZWw+w45tcMSDcsibaXJlOjwvbGFiZWw+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImlucHV0LXJvdyI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJhcnRpY2xlLWlucHV0LXdyYXBwZXIiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0iYTEtZXgxLSR7aX0iIHBsYWNlaG9sZGVyPSJhcnQuIiBjbGFzcz0ic21hbGwiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0icDEtZXgxLSR7aX0iIHBsYWNlaG9sZGVyPSJDdXbDom50IDEiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0icGx1cy1zaWduIj4rPC9zcGFuPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJ0aWNsZS1pbnB1dC13cmFwcGVyIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9ImEyLWV4MS0ke2l9IiBwbGFjZWhvbGRlcj0iYXJ0LiIgY2xhc3M9InNtYWxsIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InAyLWV4MS0ke2l9IiBwbGFjZWhvbGRlcj0iQ3V2w6JudCAyIj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbnB1dC1ncm91cCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbD5UcmFkdWNlcmU6PC9sYWJlbD4KICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJ0LWV4MS0ke2l9IiBwbGFjZWhvbGRlcj0iVHJhZHVjZXJlYSI+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iZmVlZGJhY2siIGlkPSJmLWV4MS0ke2l9Ij48L2Rpdj4KICAgICAgICAgICAgICAgIGA7CiAgICAgICAgICAgICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQoZGl2KTsKICAgICAgICAgICAgfSk7CiAgICAgICAgfQoKICAgICAgICBmdW5jdGlvbiBpbml0RXgyKCkgewogICAgICAgICAgICBjb25zdCBjb250YWluZXIgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnZXhlcmNpc2VzLWV4MicpOwogICAgICAgICAgICBleGVyY2lzZXNFeDIuZm9yRWFjaCgoZXgsIGkpID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IGRpdiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgICAgICAgICAgICAgZGl2LmNsYXNzTmFtZSA9ICdleGVyY2lzZS1pdGVtJzsKICAgICAgICAgICAgICAgIGRpdi5pZCA9IGBleDItJHtpfWA7CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGxldCBpbnB1dHMgPSBgCiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJ0aWNsZS1pbnB1dC13cmFwcGVyIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJhMS1leDItJHtpfSIgcGxhY2Vob2xkZXI9ImFydC4iIGNsYXNzPSJzbWFsbCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0icDEtZXgyLSR7aX0iIHBsYWNlaG9sZGVyPSJDdXYuIDEiPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJwbHVzLXNpZ24iPis8L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJ0aWNsZS1pbnB1dC13cmFwcGVyIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJhMi1leDItJHtpfSIgcGxhY2Vob2xkZXI9ImFydC4iIGNsYXNzPSJzbWFsbCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0icDItZXgyLSR7aX0iIHBsYWNlaG9sZGVyPSJDdXYuIDIiPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgYDsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgaWYgKGV4LnBhcnQzKSB7CiAgICAgICAgICAgICAgICAgICAgaW5wdXRzICs9IGAKICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9InBsdXMtc2lnbiI+Kzwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iYXJ0aWNsZS1pbnB1dC13cmFwcGVyIGJyZWFrLWxpbmUiPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJhMy1leDItJHtpfSIgcGxhY2Vob2xkZXI9ImFydC4iIGNsYXNzPSJzbWFsbCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InAzLWV4Mi0ke2l9IiBwbGFjZWhvbGRlcj0iQ3V2LiAzIj4KICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgYDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgZGl2LmlubmVySFRNTCA9IGAKICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGVyY2lzZS1udW1iZXIiPkV4LiAke2kgKyAxfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9IndvcmQtZGlzcGxheSI+JHtleC53b3JkfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImlucHV0LWdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGxhYmVsPsOObXDEg3LIm2lyZTo8L2xhYmVsPgogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbnB1dC1yb3ciPiR7aW5wdXRzfTwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgICAke2V4Lm5vdGUgPyAnPHAgc3R5bGU9ImNvbG9yOiAjMDU5NjY5OyBmb250LXNpemU6IDAuOXJlbTsgZm9udC1zdHlsZTogaXRhbGljOyI+8J+SoSBBY2VzdCBjdXbDom50IGFyZSBkb2FyIDIgcMSDcsibaTwvcD4nIDogJyd9CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW5wdXQtZ3JvdXAiPgogICAgICAgICAgICAgICAgICAgICAgICA8bGFiZWw+VHJhZHVjZXJlOjwvbGFiZWw+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0idC1leDItJHtpfSIgcGxhY2Vob2xkZXI9IlRyYWR1Y2VyZWEiPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZlZWRiYWNrIiBpZD0iZi1leDItJHtpfSI+PC9kaXY+CiAgICAgICAgICAgICAgICBgOwogICAgICAgICAgICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKGRpdik7CiAgICAgICAgICAgIH0pOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gaW5pdEV4MygpIHsKICAgICAgICAgICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2V4ZXJjaXNlcy1leDMnKTsKICAgICAgICAgICAgZXhlcmNpc2VzRXgzLmZvckVhY2goKGV4LCBpKSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBkaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgICAgICAgICAgICAgIGRpdi5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkaXYuaWQgPSBgZXgzLSR7aX1gOwogICAgICAgICAgICAgICAgZGl2LmlubmVySFRNTCA9IGAKICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGVyY2lzZS1udW1iZXIiPiR7aSArIDF9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT0iY29sb3I6ICM2YjcyODA7IG1hcmdpbi1ib3R0b206IDEwcHg7Ij4ke2V4LndvcmQxfSAoJHtleC5hcnRpY2xlMX0pICsgJHtleC53b3JkMn0gKCR7ZXguYXJ0aWNsZTJ9KTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9ImRpc3BsYXk6IGZsZXg7IGdhcDogMTBweDsgYWxpZ24taXRlbXM6IGNlbnRlcjsiPgogICAgICAgICAgICAgICAgICAgICAgICA8c2VsZWN0IGlkPSJhLWV4My0ke2l9Ij4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9IiI+Pzwvb3B0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbiB2YWx1ZT0iZGVyIj5kZXI8L29wdGlvbj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9ImRpZSI+ZGllPC9vcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uIHZhbHVlPSJkYXMiPmRhczwvb3B0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICA8L3NlbGVjdD4KICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gc3R5bGU9ImZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogIzA1OTY2OTsiPiR7ZXguY29tcG91bmR9PC9zcGFuPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZlZWRiYWNrIiBpZD0iZi1leDMtJHtpfSI+PC9kaXY+CiAgICAgICAgICAgICAgICBgOwogICAgICAgICAgICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKGRpdik7CiAgICAgICAgICAgIH0pOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gaW5pdEV4NCgpIHsKICAgICAgICAgICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2V4ZXJjaXNlcy1leDQnKTsKICAgICAgICAgICAgZXhlcmNpc2VzRXg0LmZvckVhY2goKGV4LCBpKSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBkaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgICAgICAgICAgICAgIGRpdi5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkaXYuaWQgPSBgZXg0LSR7aX1gOwogICAgICAgICAgICAgICAgZGl2LmlubmVySFRNTCA9IGAKICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGVyY2lzZS1udW1iZXIiPkV4LiAke2kgKyAxfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9Im1hcmdpbi1ib3R0b206IDE1cHg7Ij48c3Ryb25nPiR7ZXgud29yZDF9PC9zdHJvbmc+ICsgPHN0cm9uZz4ke2V4LndvcmQyfTwvc3Ryb25nPiA9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBzdHlsZT0iZGlzcGxheTogZmxleDsgZ2FwOiAxMHB4OyBtYXJnaW4tYm90dG9tOiAxNXB4OyI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzZWxlY3QgaWQ9ImEtZXg0LSR7aX0iPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbiB2YWx1ZT0iIj4/PC9vcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8b3B0aW9uIHZhbHVlPSJkZXIiPmRlcjwvb3B0aW9uPgogICAgICAgICAgICAgICAgICAgICAgICAgICAgPG9wdGlvbiB2YWx1ZT0iZGllIj5kaWU8L29wdGlvbj4KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxvcHRpb24gdmFsdWU9ImRhcyI+ZGFzPC9vcHRpb24+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvc2VsZWN0PgogICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBzdHlsZT0iZm9udC13ZWlnaHQ6IGJvbGQ7IGNvbG9yOiAjMDU5NjY5OyI+JHtleC5jb21wb3VuZH08L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW5wdXQtZ3JvdXAiPgogICAgICAgICAgICAgICAgICAgICAgICA8bGFiZWw+VHJhZHVjZXJlOjwvbGFiZWw+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0idC1leDQtJHtpfSIgcGxhY2Vob2xkZXI9IlRyYWR1Y2VyZWEiPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImZlZWRiYWNrIiBpZD0iZi1leDQtJHtpfSI+PC9kaXY+CiAgICAgICAgICAgICAgICBgOwogICAgICAgICAgICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKGRpdik7CiAgICAgICAgICAgIH0pOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gaW5pdEV4NSgpIHsKICAgICAgICAgICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2V4ZXJjaXNlcy1leDUnKTsKICAgICAgICAgICAgZXhlcmNpc2VzRXg1LmZvckVhY2goKGV4LCBpKSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBkaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgICAgICAgICAgICAgIGRpdi5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkaXYuaWQgPSBgZXg1LSR7aX1gOwogICAgICAgICAgICAgICAgZGl2LmlubmVySFRNTCA9IGAKICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJleGVyY2lzZS1udW1iZXIiPkV4LiAke2kgKyAxfTwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9ImJhY2tncm91bmQ6ICNkMWZhZTU7IHBhZGRpbmc6IDE1cHg7IGJvcmRlci1yYWRpdXM6IDhweDsgbWFyZ2luLWJvdHRvbTogMTVweDsiPgogICAgICAgICAgICAgICAgICAgICAgICA8c3Ryb25nPkN1dsOibnQgMTo8L3N0cm9uZz4gJHtleC53b3JkMX0gfCA8c3Ryb25nPkN1dsOibnQgMjo8L3N0cm9uZz4gJHtleC53b3JkMn0KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbnB1dC1ncm91cCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbD5TdWJzdGFudGl2IGNvbXB1czo8L2xhYmVsPgogICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9ImMtZXg1LSR7aX0iIHBsYWNlaG9sZGVyPSJleDogZGFzIEdhcnRlbmhhdXMiPgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImlucHV0LWdyb3VwIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGxhYmVsPlRyYWR1Y2VyZTo8L2xhYmVsPgogICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9InQtZXg1LSR7aX0iIHBsYWNlaG9sZGVyPSJUcmFkdWNlcmVhIj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJmZWVkYmFjayIgaWQ9ImYtZXg1LSR7aX0iPjwvZGl2PgogICAgICAgICAgICAgICAgYDsKICAgICAgICAgICAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChkaXYpOwogICAgICAgICAgICB9KTsKICAgICAgICB9CgogICAgICAgIGZ1bmN0aW9uIGluaXRFeDYoKSB7CiAgICAgICAgICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdleGVyY2lzZXMtZXg2Jyk7CiAgICAgICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgNTsgaSsrKSB7CiAgICAgICAgICAgICAgICBjb25zdCBkaXYgPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KCdkaXYnKTsKICAgICAgICAgICAgICAgIGRpdi5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkaXYuaW5uZXJIVE1MID0gYAogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImV4ZXJjaXNlLW51bWJlciI+Q29tYmluYcibaWEgJHtpICsgMX08L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbnB1dC1yb3ciPgogICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgdHlwZT0idGV4dCIgaWQ9IncxLWV4Ni0ke2l9IiBwbGFjZWhvbGRlcj0iQ3V2w6JudCAxIChjdSBhcnRpY29sKSI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJwbHVzLXNpZ24iPis8L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCB0eXBlPSJ0ZXh0IiBpZD0idzItZXg2LSR7aX0iIHBsYWNlaG9sZGVyPSJDdXbDom50IDIgKGN1IGFydGljb2wpIj4KICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW4gY2xhc3M9InBsdXMtc2lnbiI+PTwvc3Bhbj4KICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJjLWV4Ni0ke2l9IiBwbGFjZWhvbGRlcj0iQ29tcHVzIj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJpbnB1dC1ncm91cCI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbD5UcmFkdWNlcmU6PC9sYWJlbD4KICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IHR5cGU9InRleHQiIGlkPSJ0LWV4Ni0ke2l9IiBwbGFjZWhvbGRlcj0iVHJhZHVjZXJlYSI+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICBgOwogICAgICAgICAgICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKGRpdik7CiAgICAgICAgICAgIH0KICAgICAgICB9CgogICAgICAgIGZ1bmN0aW9uIHRvZ2dsZVNlY3Rpb24oaSkgewogICAgICAgICAgICBjb25zdCBjb250ZW50cyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3JBbGwoJy5zZWN0aW9uLWNvbnRlbnQnKTsKICAgICAgICAgICAgY29uc3QgYXJyb3dzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLmFycm93Jyk7CiAgICAgICAgICAgIGNvbnRlbnRzW2ldLmNsYXNzTGlzdC50b2dnbGUoJ2FjdGl2ZScpOwogICAgICAgICAgICBhcnJvd3NbaV0uY2xhc3NMaXN0LnRvZ2dsZSgncm90YXRlZCcpOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gbm9ybWFsaXplU3RyaW5nKHMpIHsKICAgICAgICAgICAgcmV0dXJuIHMudHJpbSgpLnRvTG93ZXJDYXNlKCkubm9ybWFsaXplKCJORkQiKS5yZXBsYWNlKC9bXHUwMzAwLVx1MDM2Zl0vZywgIiIpOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gY2hlY2tBbnN3ZXJzKGlkKSB7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4MScpIGNoZWNrRXgxKCk7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4MicpIGNoZWNrRXgyKCk7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4MycpIGNoZWNrRXgzKCk7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4NCcpIGNoZWNrRXg0KCk7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4NScpIGNoZWNrRXg1KCk7CiAgICAgICAgfQoKICAgICAgICBmdW5jdGlvbiBjaGVja0V4MSgpIHsKICAgICAgICAgICAgbGV0IGNvcnJlY3QgPSAwOwogICAgICAgICAgICBleGVyY2lzZXNFeDEuZm9yRWFjaCgoZXgsIGkpID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IGlzQ29ycmVjdCA9IAogICAgICAgICAgICAgICAgICAgIG5vcm1hbGl6ZVN0cmluZyhkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgYTEtZXgxLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5hcnRpY2xlMSkgJiYKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHAxLWV4MS0ke2l9YCkudmFsdWUpID09PSBub3JtYWxpemVTdHJpbmcoZXgucGFydDEpICYmCiAgICAgICAgICAgICAgICAgICAgbm9ybWFsaXplU3RyaW5nKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBhMi1leDEtJHtpfWApLnZhbHVlKSA9PT0gbm9ybWFsaXplU3RyaW5nKGV4LmFydGljbGUyKSAmJgogICAgICAgICAgICAgICAgICAgIG5vcm1hbGl6ZVN0cmluZyhkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgcDItZXgxLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5wYXJ0MikgJiYKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHQtZXgxLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC50cmFuc2xhdGlvbik7CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBleDEtJHtpfWApLmNsYXNzTmFtZSA9IGlzQ29ycmVjdCA/ICdleGVyY2lzZS1pdGVtIGNvcnJlY3QnIDogJ2V4ZXJjaXNlLWl0ZW0gaW5jb3JyZWN0JzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4MS0ke2l9YCkuY2xhc3NOYW1lID0gaXNDb3JyZWN0ID8gJ2ZlZWRiYWNrIGNvcnJlY3Qgc2hvdycgOiAnZmVlZGJhY2sgaW5jb3JyZWN0IHNob3cnOwogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGYtZXgxLSR7aX1gKS5pbm5lckhUTUwgPSBpc0NvcnJlY3QgPyAn4pyTIENvcmVjdCEnIDogYOKclyAke2V4LmFydGljbGUxfSAke2V4LnBhcnQxfSArICR7ZXguYXJ0aWNsZTJ9ICR7ZXgucGFydDJ9ID0gJHtleC50cmFuc2xhdGlvbn1gOwogICAgICAgICAgICAgICAgaWYgKGlzQ29ycmVjdCkgY29ycmVjdCsrOwogICAgICAgICAgICB9KTsKICAgICAgICAgICAgc2hvd1Njb3JlKCdleDEnLCBjb3JyZWN0LCBleGVyY2lzZXNFeDEubGVuZ3RoKTsKICAgICAgICB9CgogICAgICAgIGZ1bmN0aW9uIGNoZWNrRXgyKCkgewogICAgICAgICAgICBsZXQgY29ycmVjdCA9IDA7CiAgICAgICAgICAgIGV4ZXJjaXNlc0V4Mi5mb3JFYWNoKChleCwgaSkgPT4gewogICAgICAgICAgICAgICAgbGV0IGlzQ29ycmVjdCA9IAogICAgICAgICAgICAgICAgICAgIG5vcm1hbGl6ZVN0cmluZyhkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgYTEtZXgyLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5hcnRpY2xlMSkgJiYKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHAxLWV4Mi0ke2l9YCkudmFsdWUpID09PSBub3JtYWxpemVTdHJpbmcoZXgucGFydDEpICYmCiAgICAgICAgICAgICAgICAgICAgbm9ybWFsaXplU3RyaW5nKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBhMi1leDItJHtpfWApLnZhbHVlKSA9PT0gbm9ybWFsaXplU3RyaW5nKGV4LmFydGljbGUyKSAmJgogICAgICAgICAgICAgICAgICAgIG5vcm1hbGl6ZVN0cmluZyhkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgcDItZXgyLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5wYXJ0MikgJiYKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHQtZXgyLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC50cmFuc2xhdGlvbik7CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGlmIChleC5wYXJ0MykgewogICAgICAgICAgICAgICAgICAgIGlzQ29ycmVjdCA9IGlzQ29ycmVjdCAmJgogICAgICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGEzLWV4Mi0ke2l9YCkudmFsdWUpID09PSBub3JtYWxpemVTdHJpbmcoZXguYXJ0aWNsZTMpICYmCiAgICAgICAgICAgICAgICAgICAgICAgIG5vcm1hbGl6ZVN0cmluZyhkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgcDMtZXgyLSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5wYXJ0Myk7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBleDItJHtpfWApLmNsYXNzTmFtZSA9IGlzQ29ycmVjdCA/ICdleGVyY2lzZS1pdGVtIGNvcnJlY3QnIDogJ2V4ZXJjaXNlLWl0ZW0gaW5jb3JyZWN0JzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4Mi0ke2l9YCkuY2xhc3NOYW1lID0gaXNDb3JyZWN0ID8gJ2ZlZWRiYWNrIGNvcnJlY3Qgc2hvdycgOiAnZmVlZGJhY2sgaW5jb3JyZWN0IHNob3cnOwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBpZiAoaXNDb3JyZWN0KSB7CiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGYtZXgyLSR7aX1gKS5pbm5lckhUTUwgPSAn4pyTIFBlcmZlY3QhJzsKICAgICAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICAgICAgbGV0IGNvcnJlY3RBbnN3ZXIgPSBleC5wYXJ0MyAKICAgICAgICAgICAgICAgICAgICAgICAgPyBgJHtleC5hcnRpY2xlMX0gJHtleC5wYXJ0MX0gKyAke2V4LmFydGljbGUyfSAke2V4LnBhcnQyfSArICR7ZXguYXJ0aWNsZTN9ICR7ZXgucGFydDN9ID0gJHtleC50cmFuc2xhdGlvbn1gCiAgICAgICAgICAgICAgICAgICAgICAgIDogYCR7ZXguYXJ0aWNsZTF9ICR7ZXgucGFydDF9ICsgJHtleC5hcnRpY2xlMn0gJHtleC5wYXJ0Mn0gPSAke2V4LnRyYW5zbGF0aW9ufWA7CiAgICAgICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGYtZXgyLSR7aX1gKS5pbm5lckhUTUwgPSBg4pyXIFLEg3NwdW5zIGNvcmVjdDogJHtjb3JyZWN0QW5zd2VyfWA7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGlmIChpc0NvcnJlY3QpIGNvcnJlY3QrKzsKICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIHNob3dTY29yZSgnZXgyJywgY29ycmVjdCwgZXhlcmNpc2VzRXgyLmxlbmd0aCk7CiAgICAgICAgfQoKICAgICAgICBmdW5jdGlvbiBjaGVja0V4MygpIHsKICAgICAgICAgICAgbGV0IGNvcnJlY3QgPSAwOwogICAgICAgICAgICBleGVyY2lzZXNFeDMuZm9yRWFjaCgoZXgsIGkpID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IGlzQ29ycmVjdCA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBhLWV4My0ke2l9YCkudmFsdWUgPT09IGV4LmNvcnJlY3Q7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZXgzLSR7aX1gKS5jbGFzc05hbWUgPSBpc0NvcnJlY3QgPyAnZXhlcmNpc2UtaXRlbSBjb3JyZWN0JyA6ICdleGVyY2lzZS1pdGVtIGluY29ycmVjdCc7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZi1leDMtJHtpfWApLmNsYXNzTmFtZSA9IGlzQ29ycmVjdCA/ICdmZWVkYmFjayBjb3JyZWN0IHNob3cnIDogJ2ZlZWRiYWNrIGluY29ycmVjdCBzaG93JzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4My0ke2l9YCkuaW5uZXJIVE1MID0gaXNDb3JyZWN0ID8gJ+KckyBDb3JlY3QhJyA6IGDinJcgQXJ0aWNvbHVsIGNvcmVjdDogJHtleC5jb3JyZWN0fWA7CiAgICAgICAgICAgICAgICBpZiAoaXNDb3JyZWN0KSBjb3JyZWN0Kys7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBzaG93U2NvcmUoJ2V4MycsIGNvcnJlY3QsIGV4ZXJjaXNlc0V4My5sZW5ndGgpOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gY2hlY2tFeDQoKSB7CiAgICAgICAgICAgIGxldCBjb3JyZWN0ID0gMDsKICAgICAgICAgICAgZXhlcmNpc2VzRXg0LmZvckVhY2goKGV4LCBpKSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBpc0NvcnJlY3QgPSAKICAgICAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgYS1leDQtJHtpfWApLnZhbHVlID09PSBleC5hcnRpY2xlICYmCiAgICAgICAgICAgICAgICAgICAgbm9ybWFsaXplU3RyaW5nKGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGB0LWV4NC0ke2l9YCkudmFsdWUpID09PSBub3JtYWxpemVTdHJpbmcoZXgudHJhbnNsYXRpb24pOwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZXg0LSR7aX1gKS5jbGFzc05hbWUgPSBpc0NvcnJlY3QgPyAnZXhlcmNpc2UtaXRlbSBjb3JyZWN0JyA6ICdleGVyY2lzZS1pdGVtIGluY29ycmVjdCc7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZi1leDQtJHtpfWApLmNsYXNzTmFtZSA9IGlzQ29ycmVjdCA/ICdmZWVkYmFjayBjb3JyZWN0IHNob3cnIDogJ2ZlZWRiYWNrIGluY29ycmVjdCBzaG93JzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4NC0ke2l9YCkuaW5uZXJIVE1MID0gaXNDb3JyZWN0ID8gJ+KckyBQZXJmZWN0IScgOiBg4pyXICR7ZXguYXJ0aWNsZX0gJHtleC5jb21wb3VuZH0gPSAke2V4LnRyYW5zbGF0aW9ufWA7CiAgICAgICAgICAgICAgICBpZiAoaXNDb3JyZWN0KSBjb3JyZWN0Kys7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBzaG93U2NvcmUoJ2V4NCcsIGNvcnJlY3QsIGV4ZXJjaXNlc0V4NC5sZW5ndGgpOwogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gY2hlY2tFeDUoKSB7CiAgICAgICAgICAgIGxldCBjb3JyZWN0ID0gMDsKICAgICAgICAgICAgZXhlcmNpc2VzRXg1LmZvckVhY2goKGV4LCBpKSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBpc0NvcnJlY3QgPSAKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGMtZXg1LSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC5jb21wb3VuZCkgJiYKICAgICAgICAgICAgICAgICAgICBub3JtYWxpemVTdHJpbmcoZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHQtZXg1LSR7aX1gKS52YWx1ZSkgPT09IG5vcm1hbGl6ZVN0cmluZyhleC50cmFuc2xhdGlvbik7CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBleDUtJHtpfWApLmNsYXNzTmFtZSA9IGlzQ29ycmVjdCA/ICdleGVyY2lzZS1pdGVtIGNvcnJlY3QnIDogJ2V4ZXJjaXNlLWl0ZW0gaW5jb3JyZWN0JzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4NS0ke2l9YCkuY2xhc3NOYW1lID0gaXNDb3JyZWN0ID8gJ2ZlZWRiYWNrIGNvcnJlY3Qgc2hvdycgOiAnZmVlZGJhY2sgaW5jb3JyZWN0IHNob3cnOwogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGYtZXg1LSR7aX1gKS5pbm5lckhUTUwgPSBpc0NvcnJlY3QgPyAn4pyTIENvcmVjdCEnIDogYOKclyAke2V4LmNvbXBvdW5kfSA9ICR7ZXgudHJhbnNsYXRpb259YDsKICAgICAgICAgICAgICAgIGlmIChpc0NvcnJlY3QpIGNvcnJlY3QrKzsKICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIHNob3dTY29yZSgnZXg1JywgY29ycmVjdCwgZXhlcmNpc2VzRXg1Lmxlbmd0aCk7CiAgICAgICAgfQoKICAgICAgICBmdW5jdGlvbiBzaG93U2NvcmUoaWQsIGNvcnJlY3QsIHRvdGFsKSB7CiAgICAgICAgICAgIGNvbnN0IHNjb3JlID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHNjb3JlLSR7aWR9YCk7CiAgICAgICAgICAgIGNvbnN0IHBjdCA9IE1hdGgucm91bmQoKGNvcnJlY3QgLyB0b3RhbCkgKiAxMDApOwogICAgICAgICAgICBjb25zdCBlbW9qaSA9IHBjdCA9PT0gMTAwID8gJ/CfjoknIDogcGN0ID49IDgwID8gJ/CfkY8nIDogcGN0ID49IDYwID8gJ/CfkY0nIDogJ/CfkqonOwogICAgICAgICAgICBzY29yZS5pbm5lckhUTUwgPSBgJHtlbW9qaX0gU2NvcjogJHtjb3JyZWN0fSAvICR7dG90YWx9ICgke3BjdH0lKWA7CiAgICAgICAgICAgIHNjb3JlLmNsYXNzTmFtZSA9ICdzY29yZSBzaG93JzsKICAgICAgICB9CgogICAgICAgIGZ1bmN0aW9uIHNob3dBbGxWYXJpYW50cygpIHsKICAgICAgICAgICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3ZhcmlhbnRzQ29udGFpbmVyJyk7CiAgICAgICAgICAgIGNvbnRhaW5lci5pbm5lckhUTUwgPSAnJzsKICAgICAgICAgICAgCiAgICAgICAgICAgIE9iamVjdC5rZXlzKGFsbFZhcmlhbnRzKS5mb3JFYWNoKChjYXQsIGluZGV4KSA9PiB7CiAgICAgICAgICAgICAgICBjb25zdCBjYXRlZ29yeURpdiA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgICAgICAgICAgICAgY2F0ZWdvcnlEaXYuY2xhc3NOYW1lID0gJ2NhdGVnb3J5JzsKICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgY29uc3QgaGVhZGVyID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7CiAgICAgICAgICAgICAgICBoZWFkZXIuY2xhc3NOYW1lID0gJ2NhdGVnb3J5LWhlYWRlcic7CiAgICAgICAgICAgICAgICBoZWFkZXIuc3R5bGUuY3Vyc29yID0gJ3BvaW50ZXInOwogICAgICAgICAgICAgICAgaGVhZGVyLnN0eWxlLmRpc3BsYXkgPSAnZmxleCc7CiAgICAgICAgICAgICAgICBoZWFkZXIuc3R5bGUuanVzdGlmeUNvbnRlbnQgPSAnc3BhY2UtYmV0d2Vlbic7CiAgICAgICAgICAgICAgICBoZWFkZXIuc3R5bGUuYWxpZ25JdGVtcyA9ICdjZW50ZXInOwogICAgICAgICAgICAgICAgaGVhZGVyLm9uY2xpY2sgPSAoKSA9PiB0b2dnbGVDYXRlZ29yeUV4NihpbmRleCk7CiAgICAgICAgICAgICAgICBoZWFkZXIuaW5uZXJIVE1MID0gYDxoMz4ke2NhdH08L2gzPjxzcGFuIGNsYXNzPSJhcnJvdy1leDYiIGlkPSJhcnJvdy1leDYtJHtpbmRleH0iPuKWvDwvc3Bhbj5gOwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBjb25zdCBncmlkID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgnZGl2Jyk7CiAgICAgICAgICAgICAgICBncmlkLmNsYXNzTmFtZSA9ICd2YXJpYW50cy1ncmlkJzsKICAgICAgICAgICAgICAgIGdyaWQuaWQgPSBgZ3JpZC1leDYtJHtpbmRleH1gOwogICAgICAgICAgICAgICAgZ3JpZC5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnOwogICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICBhbGxWYXJpYW50c1tjYXRdLmZvckVhY2godiA9PiB7CiAgICAgICAgICAgICAgICAgICAgY29uc3QgY2FyZCA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoJ2RpdicpOwogICAgICAgICAgICAgICAgICAgIGNhcmQuY2xhc3NOYW1lID0gJ3ZhcmlhbnQtY2FyZCc7CiAgICAgICAgICAgICAgICAgICAgY2FyZC5pbm5lckhUTUwgPSBgCiAgICAgICAgICAgICAgICAgICAgICAgIDxzdHJvbmc+JHt2LndvcmR9PC9zdHJvbmc+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9InZhcmlhbnQtcGFydHMiPiR7di5wYXJ0c308L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdj4ke3YudHJhbnNsYXRpb259PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgYDsKICAgICAgICAgICAgICAgICAgICBncmlkLmFwcGVuZENoaWxkKGNhcmQpOwogICAgICAgICAgICAgICAgfSk7CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIGNhdGVnb3J5RGl2LmFwcGVuZENoaWxkKGhlYWRlcik7CiAgICAgICAgICAgICAgICBjYXRlZ29yeURpdi5hcHBlbmRDaGlsZChncmlkKTsKICAgICAgICAgICAgICAgIGNvbnRhaW5lci5hcHBlbmRDaGlsZChjYXRlZ29yeURpdik7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICAKICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FsbFZhcmlhbnRzJykuY2xhc3NOYW1lID0gJ2FsbC12YXJpYW50cyBzaG93JzsKICAgICAgICB9CgogICAgICAgIGZ1bmN0aW9uIHRvZ2dsZUNhdGVnb3J5RXg2KGluZGV4KSB7CiAgICAgICAgICAgIGNvbnN0IGdyaWQgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZ3JpZC1leDYtJHtpbmRleH1gKTsKICAgICAgICAgICAgY29uc3QgYXJyb3cgPSBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgYXJyb3ctZXg2LSR7aW5kZXh9YCk7CiAgICAgICAgICAgIAogICAgICAgICAgICBpZiAoZ3JpZC5zdHlsZS5kaXNwbGF5ID09PSAnbm9uZScpIHsKICAgICAgICAgICAgICAgIGdyaWQuc3R5bGUuZGlzcGxheSA9ICdncmlkJzsKICAgICAgICAgICAgICAgIGFycm93LnN0eWxlLnRyYW5zZm9ybSA9ICdyb3RhdGUoMTgwZGVnKSc7CiAgICAgICAgICAgIH0gZWxzZSB7CiAgICAgICAgICAgICAgICBncmlkLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSc7CiAgICAgICAgICAgICAgICBhcnJvdy5zdHlsZS50cmFuc2Zvcm0gPSAncm90YXRlKDBkZWcpJzsKICAgICAgICAgICAgfQogICAgICAgIH0KCiAgICAgICAgZnVuY3Rpb24gcmVzZXRFeGVyY2lzZShpZCkgewogICAgICAgICAgICBpZiAoaWQgPT09ICdleDEnKSBleGVyY2lzZXNFeDEuZm9yRWFjaCgoXywgaSkgPT4gewogICAgICAgICAgICAgICAgWydhMScsICdwMScsICdhMicsICdwMicsICd0J10uZm9yRWFjaChmID0+IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGAke2Z9LWV4MS0ke2l9YCkudmFsdWUgPSAnJyk7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZXgxLSR7aX1gKS5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZi1leDEtJHtpfWApLmNsYXNzTmFtZSA9ICdmZWVkYmFjayc7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBpZiAoaWQgPT09ICdleDInKSBleGVyY2lzZXNFeDIuZm9yRWFjaCgoZXgsIGkpID0+IHsKICAgICAgICAgICAgICAgIFsnYTEnLCAncDEnLCAnYTInLCAncDInLCAndCddLmZvckVhY2goZiA9PiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgJHtmfS1leDItJHtpfWApLnZhbHVlID0gJycpOwogICAgICAgICAgICAgICAgaWYgKGV4LnBhcnQzKSBbJ2EzJywgJ3AzJ10uZm9yRWFjaChmID0+IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGAke2Z9LWV4Mi0ke2l9YCkudmFsdWUgPSAnJyk7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZXgyLSR7aX1gKS5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZi1leDItJHtpfWApLmNsYXNzTmFtZSA9ICdmZWVkYmFjayc7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBpZiAoaWQgPT09ICdleDMnKSBleGVyY2lzZXNFeDMuZm9yRWFjaCgoXywgaSkgPT4gewogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGEtZXgzLSR7aX1gKS52YWx1ZSA9ICcnOwogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGV4My0ke2l9YCkuY2xhc3NOYW1lID0gJ2V4ZXJjaXNlLWl0ZW0nOwogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGYtZXgzLSR7aX1gKS5jbGFzc05hbWUgPSAnZmVlZGJhY2snOwogICAgICAgICAgICB9KTsKICAgICAgICAgICAgaWYgKGlkID09PSAnZXg0JykgZXhlcmNpc2VzRXg0LmZvckVhY2goKF8sIGkpID0+IHsKICAgICAgICAgICAgICAgIFsnYScsICd0J10uZm9yRWFjaChmID0+IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGAke2Z9LWV4NC0ke2l9YCkudmFsdWUgPSAnJyk7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZXg0LSR7aX1gKS5jbGFzc05hbWUgPSAnZXhlcmNpc2UtaXRlbSc7CiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgZi1leDQtJHtpfWApLmNsYXNzTmFtZSA9ICdmZWVkYmFjayc7CiAgICAgICAgICAgIH0pOwogICAgICAgICAgICBpZiAoaWQgPT09ICdleDUnKSBleGVyY2lzZXNFeDUuZm9yRWFjaCgoXywgaSkgPT4gewogICAgICAgICAgICAgICAgWydjJywgJ3QnXS5mb3JFYWNoKGYgPT4gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYCR7Zn0tZXg1LSR7aX1gKS52YWx1ZSA9ICcnKTsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBleDUtJHtpfWApLmNsYXNzTmFtZSA9ICdleGVyY2lzZS1pdGVtJzsKICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBmLWV4NS0ke2l9YCkuY2xhc3NOYW1lID0gJ2ZlZWRiYWNrJzsKICAgICAgICAgICAgfSk7CiAgICAgICAgICAgIGlmIChpZCA9PT0gJ2V4NicpIHsKICAgICAgICAgICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgNTsgaSsrKSBbJ3cxJywgJ3cyJywgJ2MnLCAndCddLmZvckVhY2goZiA9PiBkb2N1bWVudC5nZXRFbGVtZW50QnlJZChgJHtmfS1leDYtJHtpfWApLnZhbHVlID0gJycpOwogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ2FsbFZhcmlhbnRzJykuY2xhc3NOYW1lID0gJ2FsbC12YXJpYW50cyc7CiAgICAgICAgICAgIH0KICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYHNjb3JlLSR7aWR9YCkuY2xhc3NOYW1lID0gJ3Njb3JlJzsKICAgICAgICB9CgogICAgICAgIC8vIFRvZ2dsZSBleGVyY2lzZSB2aXNpYmlsaXR5CiAgICAgICAgZnVuY3Rpb24gdG9nZ2xlRXhlcmNpc2UoZXhlcmNpc2VJZCkgewogICAgICAgICAgICBjb25zdCBjb250ZW50ID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoYGNvbnRlbnQtJHtleGVyY2lzZUlkfWApOwogICAgICAgICAgICBjb25zdCBhcnJvdyA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKGBhcnJvdy1oZWFkZXItJHtleGVyY2lzZUlkfWApOwogICAgICAgICAgICAKICAgICAgICAgICAgaWYgKGNvbnRlbnQuc3R5bGUuZGlzcGxheSA9PT0gJ25vbmUnKSB7CiAgICAgICAgICAgICAgICBjb250ZW50LnN0eWxlLmRpc3BsYXkgPSAnYmxvY2snOwogICAgICAgICAgICAgICAgYXJyb3cuc3R5bGUudHJhbnNmb3JtID0gJ3JvdGF0ZSgxODBkZWcpJzsKICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAgIGNvbnRlbnQuc3R5bGUuZGlzcGxheSA9ICdub25lJzsKICAgICAgICAgICAgICAgIGFycm93LnN0eWxlLnRyYW5zZm9ybSA9ICdyb3RhdGUoMGRlZyknOwogICAgICAgICAgICB9CiAgICAgICAgfQoKICAgICAgICAvLyBOYXYgaGlnaGxpZ2h0CiAgICAgICAgd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsICgpID0+IHsKICAgICAgICAgICAgY29uc3Qgc2VjdGlvbnMgPSBbJ3Rlb3JpZScsICdleDEnLCAnZXgyJywgJ2V4MycsICdleDQnLCAnZXg1JywgJ2V4NicsICdyZWNhcGl0dWxhcmUnXTsKICAgICAgICAgICAgbGV0IGN1cnJlbnQgPSAnJzsKICAgICAgICAgICAgc2VjdGlvbnMuZm9yRWFjaChzID0+IHsKICAgICAgICAgICAgICAgIGNvbnN0IGVsID0gZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQocyk7CiAgICAgICAgICAgICAgICBpZiAoZWwpIHsKICAgICAgICAgICAgICAgICAgICBjb25zdCByZWN0ID0gZWwuZ2V0Qm91bmRpbmdDbGllbnRSZWN0KCk7CiAgICAgICAgICAgICAgICAgICAgaWYgKHJlY3QudG9wIDw9IDEwMCAmJiByZWN0LmJvdHRvbSA+PSAxMDApIGN1cnJlbnQgPSBzOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9KTsKICAgICAgICAgICAgZG9jdW1lbnQucXVlcnlTZWxlY3RvckFsbCgnLm5hdi1saW5rJykuZm9yRWFjaCgobGluaywgaSkgPT4gewogICAgICAgICAgICAgICAgbGluay5jbGFzc0xpc3QudG9nZ2xlKCdhY3RpdmUnLCBzZWN0aW9uc1tpXSA9PT0gY3VycmVudCk7CiAgICAgICAgICAgIH0pOwogICAgICAgIH0pOwoKICAgICAgICAvLyBJbml0IGFsbAogICAgICAgIGluaXRFeDEoKTsKICAgICAgICBpbml0RXgyKCk7CiAgICAgICAgaW5pdEV4MygpOwogICAgICAgIGluaXRFeDQoKTsKICAgICAgICBpbml0RXg1KCk7CiAgICAgICAgaW5pdEV4NigpOwogICAgPC9zY3JpcHQ+CjwvYm9keT4KPC9odG1sPgo=");
+            document.getElementById('protectedContent').innerHTML = encodedContent;
+            
+            // Re-execute scripts in the loaded content
+            const scripts = document.getElementById('protectedContent').querySelectorAll('script');
+            scripts.forEach(oldScript => {
+                const newScript = document.createElement('script');
+                Array.from(oldScript.attributes).forEach(attr => {
+                    newScript.setAttribute(attr.name, attr.value);
+                });
+                newScript.textContent = oldScript.textContent;
+                oldScript.parentNode.replaceChild(newScript, oldScript);
+            });
+        }
     </script>
 </body>
 </html>
