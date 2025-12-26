@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das Numerale - Numeralul in Germana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 0;
+        }
+
+        .section-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .section-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            display: none;
+            padding: 30px;
+            background: #f0fdf4;
+            border: 3px solid #10b981;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .sub-section {
+            margin-bottom: 15px;
+        }
+
+        .sub-section-header {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            color: #065f46;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        .sub-section-header:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .sub-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .sub-arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .sub-section-content {
+            display: none;
+            padding: 20px;
+            background: white;
+            border: 2px solid #d1fae5;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            margin-bottom: 15px;
+        }
+
+        .sub-section-content.active {
+            display: block;
+        }
+
+        .theory-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-left: 5px solid #10b981;
+        }
+
+        .theory-box p {
+            color: #1e293b;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .exercise-item {
+            background: #f0fdf4;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .exercise-item.correct {
+            border-color: #10b981;
+            background: #d1fae5;
+        }
+
+        .exercise-item.incorrect {
+            border-color: #ef4444;
+            background: #fee2e2;
+        }
+
+        .exercise-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        input.correct, select.correct {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+
+        input.incorrect, select.incorrect {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-check {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-check:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-reset {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background: #4b5563;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            display: none;
+        }
+
+        .score.show {
+            display: block;
+        }
+
+        .table-style {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .table-style td {
+            padding: 10px;
+            border: 1px solid #d1d5db;
+        }
+
+        .table-style td:first-child {
+            background: #f3f4f6;
+            font-weight: bold;
+            text-align: center;
+            width: 80px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                margin: 15px auto;
+            }
+
+            .header {
+                padding: 25px 20px;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section-header h3 {
+                font-size: 1.1rem;
+            }
+
+            .exercise-item {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Das Numerale - Numeralul</h1>
+            <p>Claudia Toth</p>
+        </div>
+
+        <div class="content">
+
+            <!-- TEORIE MAIN SECTION -->
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(0)">
+                    <h3>ʚଓ TEORIE</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-0">
+                    
+                    <!-- Sub-section 1 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(0)">
+                            <span>Was ist ein Numerale? (Ce este numeralul?)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-0">
+                            <p>Das Numerale kann Stellvertreter oder Begleiter des Nomens sein. Es sind Wörter, die einen Bezug zu Zahlen haben.</p>
+                            <p>Numeralul poate fi inlocuitor sau insotitor al substantivului. Sunt cuvinte care au legatura cu numerele.</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 2 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(1)">
+                            <span>Grundzahlen - Kardinalzahlen (Numerale cardinale)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-1">
+                            <p>Sie antworten auf die Frage 'Wie viele?' (Raspund la intrebarea 'Cate?')</p>
+                            <p style="margin-top: 10px;"><strong>Beispiele:</strong></p>
+                            <p>eins, fünf, siebzehn, einundzwanzig</p>
+                            <p>unu, cinci, saptesprezece, douazeci si unu</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 3 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(2)">
+                            <span>Ordnungszahlen - Ordinalzahlen (Numerale ordinale)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-2">
+                            <p>Sie antworten auf die Frage 'Der wievielte?' (Raspund la intrebarea 'Al catelea?')</p>
+                            <p style="margin-top: 10px;"><strong>Beispiele:</strong></p>
+                            <p>der erste Platz → locul intai</p>
+                            <p style="margin-top: 10px;"><strong>Regeln (Reguli):</strong></p>
+                            <p>• Als Ziffer geschrieben: mit Punkt (3. Platz) - Scris ca cifra: cu punct (locul 3.)</p>
+                            <p>• Nominalisiert: groß geschrieben (Er ging als Dritter durchs Ziel) - Substantivizat: cu majuscula</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 4 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(3)">
+                            <span>Wiederholungszahl (Numeral repetitiv)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-3">
+                            <p>Gibt an, wie oft etwas geschieht. (Arata de cate ori se intampla ceva.)</p>
+                            <p style="margin-top: 10px;"><strong>Beispiele:</strong> einmal, zweimal, dreimal</p>
+                            <p>(o data, de doua ori, de trei ori)</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 5 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(4)">
+                            <span>Vervielfältigungszahl (Numeral de inmultire)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-4">
+                            <p>Gibt an, um wie viel etwas vervielfacht wird. (Arata de cate ori este inmultit ceva.)</p>
+                            <p style="margin-top: 10px;"><strong>Beispiele:</strong> einfach, zweifach, dreifach</p>
+                            <p>(simplu, dublu, triplu)</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 6 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(5)">
+                            <span>Weitere Numeralarten (Alte tipuri de numerale)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-5">
+                            <p>• Sammlungszahl (ein Dutzend) - Numeral colectiv (o duzina)</p>
+                            <p>• Bruchzahl (ein Fünftel) - Numeral fractionar (o cincime)</p>
+                            <p>• Gesellschaftszahl (zu dritt) - Numeral distributiv (cate trei)</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 7 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(6)">
+                            <span>Schreibregeln (Reguli de scriere)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-6">
+                            <p><strong>Bindestrich-Regel (Regula cratimei):</strong> Zwischen Ziffer und Wort steht ein Bindestrich</p>
+                            <p>(Intre cifra si cuvant se pune cratima)</p>
+                            <p>Beispiele: 3-mal, 18-jährig, 100-prozentig</p>
+                            <p style="margin-top: 10px;"><strong>Zusammenschreibung (Scriere impreuna):</strong> Ziffer und Nachsilbe werden zusammengeschrieben</p>
+                            <p>(Cifra si sufixul se scriu impreuna)</p>
+                            <p>Beispiele: 3fach, 80er, 100stel Sekunde</p>
+                        </div>
+                    </div>
+
+                    <!-- Sub-section 8 -->
+                    <div class="sub-section">
+                        <div class="sub-section-header" onclick="toggleSubSection(7)">
+                            <span>Römische Zahlen (Numerale romane)</span>
+                            <span class="sub-arrow">▼</span>
+                        </div>
+                        <div class="sub-section-content" id="sub-section-7">
+                            <table class="table-style">
+                                <tr><td>I</td><td>1</td></tr>
+                                <tr><td>V</td><td>5</td></tr>
+                                <tr><td>X</td><td>10</td></tr>
+                                <tr><td>L</td><td>50</td></tr>
+                                <tr><td>C</td><td>100</td></tr>
+                                <tr><td>D</td><td>500</td></tr>
+                                <tr><td>M</td><td>1000</td></tr>
+                            </table>
+                            <p style="margin-top: 10px;"><strong>Beispiele:</strong></p>
+                            <p>Heinrich VIII. (der Achte) - Henric al VIII-lea</p>
+                            <p>Ludwig XIV. (der Vierzehnte) - der Sonnenkönig - Ludovic al XIV-lea - Regele Soare</p>
+                            <p>Elisabeth II. (die Zweite) - Elisabeta a II-a</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(1)">
+                    <h3>ʚଓ Übung 1: Zahlen in Worten schreiben</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-1">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Schreibe die Zahlen in Worten! (Scrie numerele in litere!)</p>
+                    <div id="exercises-ex1"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex1')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex1')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex1"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(2)">
+                    <h3>ʚଓ Übung 2: Römische Zahlen</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-2">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Schreibe die römischen Zahlen als Ziffern! (Scrie numeralele romane ca cifre!)</p>
+                    <div id="exercises-ex2"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex2')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex2')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex2"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(3)">
+                    <h3>ʚଓ Übung 3: Numerale ergänzen</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-3">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Setze das passende Numerale ein! (Completeaza cu numeralul potrivit!)</p>
+                    <div id="exercises-ex3"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex3')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex3')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex3"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(4)">
+                    <h3>ʚଓ Übung 4: Numeralarten bestimmen</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-4">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Bestimme, welche Art von Numerale vorliegt! (Determina ce tip de numeral este!)</p>
+                    <div id="exercises-ex4"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex4')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex4')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex4"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(5)">
+                    <h3>ʚଓ Übung 5: Schreibweise korrigieren</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-5">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Korrigiere die falsche Schreibweise! (Corecteaza scrierea gresita!)</p>
+                    <div id="exercises-ex5"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex5')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex5')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex5"></div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleMainSection(6)">
+                    <h3>ʚଓ Übung 6: Großschreibung bei Nominalisierung</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content" id="main-section-6">
+                    <p style="margin-bottom: 20px; font-weight: 600;">Schreibe richtig! (Scrie corect!)</p>
+                    <div id="exercises-ex6"></div>
+                    <div class="buttons">
+                        <button class="btn-check" onclick="checkAnswers('ex6')">✓ Verifica</button>
+                        <button class="btn-reset" onclick="resetExercise('ex6')">↻ Reseteaza</button>
+                    </div>
+                    <div class="score" id="score-ex6"></div>
+                </div>
+            </div>
+
+            <div class="theory-box" style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.2rem; font-weight: bold;">🎉 Gut gemacht! / Bravo!</p>
+                <p>Du hast alle Übungen bearbeitet! / Ai rezolvat toate exercitiile!</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Exercise data with umlauts
+        const exercisesEx1 = [
+            {q: "vor 3 Wochen", a: "vor drei Wochen"},
+            {q: "das 2. Glas", a: "das zweite Glas"},
+            {q: "7 1/2 Jahre", a: "siebeneinhalb Jahre"},
+            {q: "jeder 2. verließ den Saal", a: "jeder zweite verließ den Saal"},
+            {q: "im 3. Stock", a: "im dritten Stock"},
+            {q: "in die 8. Klasse", a: "in die achte Klasse"},
+            {q: "meine 7-jährige Schwester", a: "meine siebenjährige Schwester"},
+            {q: "1 1/2 Monate", a: "anderthalb Monate"},
+            {q: "auf der 3. Seite", a: "auf der dritten Seite"},
+            {q: "das 3. Jahrtausend", a: "das dritte Jahrtausend"}
+        ];
+
+        const exercisesEx2 = [
+            {q: "IV", a: "4"},
+            {q: "VI", a: "6"},
+            {q: "VIII", a: "8"},
+            {q: "IX", a: "9"},
+            {q: "XXVII", a: "27"},
+            {q: "XLV", a: "45"}
+        ];
+
+        const exercisesEx3 = [
+            {q: "...ier Tageszeiten", a: "vier", hint: "Numerale wie Adjektiv gebraucht"},
+            {q: "...undert Möglichkeiten", a: "hundert", hint: "Numerale wie Adjektiv gebraucht"},
+            {q: "...ausend Gedanken", a: "tausend", hint: "Numerale wie Adjektiv gebraucht"},
+            {q: "...rstens", a: "erstens", hint: "Numerale als Adverb"},
+            {q: "...weitens", a: "zweitens", hint: "Numerale als Adverb"},
+            {q: "...rittens", a: "drittens", hint: "Numerale als Adverb"},
+            {q: "Bald haben sie die ...illion erreicht.", a: "Million", hint: "Numerale als Nomen"},
+            {q: "Im ...utzend billiger!", a: "Dutzend", hint: "Numerale als Nomen"},
+            {q: "Lohn gibt es am ...rsten des Monats.", a: "Ersten", hint: "Numerale als Nomen"},
+            {q: "Sie lief als ...weite durchs Ziel.", a: "Zweite", hint: "Numerale als Nomen"},
+            {q: "Auch der ...ritte steht auf dem Siegerpodest.", a: "Dritte", hint: "Numerale als Nomen"}
+        ];
+
+        const exercisesEx4 = [
+            {q: "dreimal", opts: ["Grundzahl", "Ordnungszahl", "Wiederholungszahl", "Vervielfältigungszahl"], a: "Wiederholungszahl"},
+            {q: "zweifach", opts: ["Grundzahl", "Ordnungszahl", "Wiederholungszahl", "Vervielfältigungszahl"], a: "Vervielfältigungszahl"},
+            {q: "ein Dutzend", opts: ["Sammlungszahl", "Bruchzahl", "Gesellschaftszahl", "Ordnungszahl"], a: "Sammlungszahl"},
+            {q: "ein Fünftel", opts: ["Sammlungszahl", "Bruchzahl", "Gesellschaftszahl", "Ordnungszahl"], a: "Bruchzahl"},
+            {q: "zu dritt", opts: ["Sammlungszahl", "Bruchzahl", "Gesellschaftszahl", "Ordnungszahl"], a: "Gesellschaftszahl"},
+            {q: "der erste Platz", opts: ["Grundzahl", "Ordnungszahl", "Wiederholungszahl", "Vervielfältigungszahl"], a: "Ordnungszahl"},
+            {q: "fünf Äpfel", opts: ["Grundzahl", "Ordnungszahl", "Wiederholungszahl", "Vervielfältigungszahl"], a: "Grundzahl"}
+        ];
+
+        const exercisesEx5 = [
+            {q: "3 mal", a: "3-mal", hint: "Zwischen Ziffer und Wort steht ein Bindestrich"},
+            {q: "18 jährig", a: "18-jährig", hint: "Zwischen Ziffer und Wort steht ein Bindestrich"},
+            {q: "100 prozentig", a: "100-prozentig", hint: "Zwischen Ziffer und Wort steht ein Bindestrich"},
+            {q: "3 fach", a: "3fach", hint: "Ziffer und Nachsilbe werden zusammengeschrieben"},
+            {q: "80 er", a: "80er", hint: "Ziffer und Nachsilbe werden zusammengeschrieben"},
+            {q: "100 stel Sekunde", a: "100stel Sekunde", hint: "Ziffer und Nachsilbe werden zusammengeschrieben"}
+        ];
+
+        const exercisesEx6 = [
+            {q: "Er belegte den dritten Platz. → Er ging als ... durchs Ziel.", a: "Dritter"},
+            {q: "Sie war die fünfte Rednerin. → Sie ergriff als ... das Wort.", a: "Fünfte"},
+            {q: "Er war der zweite Läufer. → Der ... kam ins Ziel.", a: "Zweite"},
+            {q: "Sie gewann den ersten Preis. → Sie wurde ... .", a: "Erste"}
+        ];
+
+        function normalizeString(s) {
+            return s.trim().toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+        }
+
+        function toggleMainSection(i) {
+            const content = document.getElementById(`main-section-${i}`);
+            const arrows = document.querySelectorAll('.arrow');
+            content.classList.toggle('active');
+            arrows[i].classList.toggle('rotated');
+        }
+
+        function toggleSubSection(i) {
+            const content = document.getElementById(`sub-section-${i}`);
+            const arrows = document.querySelectorAll('.sub-arrow');
+            content.classList.toggle('active');
+            arrows[i].classList.toggle('rotated');
+        }
+
+        function initEx1() {
+            const container = document.getElementById('exercises-ex1');
+            exercisesEx1.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex1-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q}</label>
+                        <input type="text" id="a-ex1-${i}" placeholder="Scrie raspunsul...">
+                    </div>
+                    <div class="feedback" id="f-ex1-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx2() {
+            const container = document.getElementById('exercises-ex2');
+            exercisesEx2.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex2-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q} = ?</label>
+                        <input type="text" id="a-ex2-${i}" placeholder="Scrie cifra...">
+                    </div>
+                    <div class="feedback" id="f-ex2-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx3() {
+            const container = document.getElementById('exercises-ex3');
+            exercisesEx3.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex3-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q}</label>
+                        ${ex.hint ? `<p style="color: #6b7280; font-size: 0.9rem; font-style: italic;">💡 ${ex.hint}</p>` : ''}
+                        <input type="text" id="a-ex3-${i}" placeholder="Completeaza...">
+                    </div>
+                    <div class="feedback" id="f-ex3-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx4() {
+            const container = document.getElementById('exercises-ex4');
+            exercisesEx4.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex4-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q}</label>
+                        <select id="a-ex4-${i}">
+                            <option value="">Alege tipul...</option>
+                            ${ex.opts.map(opt => `<option value="${opt}">${opt}</option>`).join('')}
+                        </select>
+                    </div>
+                    <div class="feedback" id="f-ex4-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx5() {
+            const container = document.getElementById('exercises-ex5');
+            exercisesEx5.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex5-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q}</label>
+                        ${ex.hint ? `<p style="color: #6b7280; font-size: 0.9rem; font-style: italic;">💡 ${ex.hint}</p>` : ''}
+                        <input type="text" id="a-ex5-${i}" placeholder="Corecteaza...">
+                    </div>
+                    <div class="feedback" id="f-ex5-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx6() {
+            const container = document.getElementById('exercises-ex6');
+            exercisesEx6.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex6-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div class="input-group">
+                        <label>${ex.q}</label>
+                        <input type="text" id="a-ex6-${i}" placeholder="Completeaza...">
+                    </div>
+                    <div class="feedback" id="f-ex6-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function checkAnswers(id) {
+            let correct = 0;
+            let total = 0;
+            
+            if (id === 'ex1') {
+                total = exercisesEx1.length;
+                exercisesEx1.forEach((ex, i) => {
+                    const input = document.getElementById(`a-ex1-${i}`);
+                    const isCorrect = normalizeString(input.value) === normalizeString(ex.a);
+                    document.getElementById(`ex1-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex1-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex1-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            } else if (id === 'ex2') {
+                total = exercisesEx2.length;
+                exercisesEx2.forEach((ex, i) => {
+                    const input = document.getElementById(`a-ex2-${i}`);
+                    const isCorrect = normalizeString(input.value) === normalizeString(ex.a);
+                    document.getElementById(`ex2-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex2-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex2-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            } else if (id === 'ex3') {
+                total = exercisesEx3.length;
+                exercisesEx3.forEach((ex, i) => {
+                    const input = document.getElementById(`a-ex3-${i}`);
+                    const isCorrect = normalizeString(input.value) === normalizeString(ex.a);
+                    document.getElementById(`ex3-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex3-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex3-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            } else if (id === 'ex4') {
+                total = exercisesEx4.length;
+                exercisesEx4.forEach((ex, i) => {
+                    const select = document.getElementById(`a-ex4-${i}`);
+                    const isCorrect = select.value === ex.a;
+                    document.getElementById(`ex4-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex4-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex4-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            } else if (id === 'ex5') {
+                total = exercisesEx5.length;
+                exercisesEx5.forEach((ex, i) => {
+                    const input = document.getElementById(`a-ex5-${i}`);
+                    const isCorrect = normalizeString(input.value) === normalizeString(ex.a);
+                    document.getElementById(`ex5-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex5-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex5-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            } else if (id === 'ex6') {
+                total = exercisesEx6.length;
+                exercisesEx6.forEach((ex, i) => {
+                    const input = document.getElementById(`a-ex6-${i}`);
+                    const isCorrect = normalizeString(input.value) === normalizeString(ex.a);
+                    document.getElementById(`ex6-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                    document.getElementById(`f-ex6-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                    document.getElementById(`f-ex6-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Raspuns corect: ${ex.a}`;
+                    if (isCorrect) correct++;
+                });
+            }
+
+            const score = document.getElementById(`score-${id}`);
+            const pct = Math.round((correct / total) * 100);
+            const emoji = pct === 100 ? '🎉' : pct >= 80 ? '👏' : pct >= 60 ? '👍' : '💪';
+            score.innerHTML = `${emoji} Scor: ${correct} / ${total} (${pct}%)`;
+            score.className = 'score show';
+        }
+
+        function resetExercise(id) {
+            if (id === 'ex1') {
+                exercisesEx1.forEach((_, i) => {
+                    document.getElementById(`a-ex1-${i}`).value = '';
+                    document.getElementById(`ex1-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex1-${i}`).className = 'feedback';
+                });
+            } else if (id === 'ex2') {
+                exercisesEx2.forEach((_, i) => {
+                    document.getElementById(`a-ex2-${i}`).value = '';
+                    document.getElementById(`ex2-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex2-${i}`).className = 'feedback';
+                });
+            } else if (id === 'ex3') {
+                exercisesEx3.forEach((_, i) => {
+                    document.getElementById(`a-ex3-${i}`).value = '';
+                    document.getElementById(`ex3-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex3-${i}`).className = 'feedback';
+                });
+            } else if (id === 'ex4') {
+                exercisesEx4.forEach((_, i) => {
+                    document.getElementById(`a-ex4-${i}`).value = '';
+                    document.getElementById(`ex4-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex4-${i}`).className = 'feedback';
+                });
+            } else if (id === 'ex5') {
+                exercisesEx5.forEach((_, i) => {
+                    document.getElementById(`a-ex5-${i}`).value = '';
+                    document.getElementById(`ex5-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex5-${i}`).className = 'feedback';
+                });
+            } else if (id === 'ex6') {
+                exercisesEx6.forEach((_, i) => {
+                    document.getElementById(`a-ex6-${i}`).value = '';
+                    document.getElementById(`ex6-${i}`).className = 'exercise-item';
+                    document.getElementById(`f-ex6-${i}`).className = 'feedback';
+                });
+            }
+            document.getElementById(`score-${id}`).className = 'score';
+        }
+
+        // Initialize all exercises
+        initEx1();
+        initEx2();
+        initEx3();
+        initEx4();
+        initEx5();
+        initEx6();
+    </script>
+</body>
+</html>
