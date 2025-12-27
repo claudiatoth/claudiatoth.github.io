@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Flashcards - Substantive Compuse | Claudia Toth</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255,255,255,0.35);
+            transform: translateY(-2px);
+        }
+        
+        .flashcards-box {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        /* Progress */
+        .fc-progress {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .fc-progress-text {
+            color: #065f46;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .fc-progress-bar {
+            background: rgba(16, 185, 129, 0.2);
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .fc-progress-fill {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            height: 100%;
+            width: 0%;
+            transition: width 0.4s ease;
+            border-radius: 10px;
+        }
+        
+        /* Card wrapper */
+        .fc-wrapper {
+            perspective: 1200px;
+            margin: 0 auto 35px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .fc-card {
+            position: relative;
+            width: 100%;
+            max-width: 550px;
+            height: 500px;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        
+        .fc-card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .fc-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+        }
+        
+        .fc-front {
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+        
+        .fc-back {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            transform: rotateY(180deg);
+        }
+        
+        .fc-butterfly {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
+            opacity: 0.7;
+        }
+        
+        .fc-image {
+            width: 260px;
+            height: 195px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        
+        .fc-article {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .fc-article.der { color: #3b82f6; }
+        .fc-article.die { color: #ef4444; }
+        .fc-article.das { color: #10b981; }
+        
+        .fc-word {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #1e293b;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        .fc-speak-btn {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+        
+        .fc-speak-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 28px rgba(16, 185, 129, 0.5);
+        }
+        
+        .fc-back-content {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .fc-breakdown-title {
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            color: #065f46;
+            font-weight: bold;
+        }
+        
+        .fc-breakdown-parts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+            align-items: center;
+        }
+        
+        .fc-part {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .fc-part-word {
+            font-size: 1.2rem;
+            color: #374151;
+            font-weight: 500;
+        }
+        
+        .fc-part-article {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        
+        .fc-part-article.der { color: #3b82f6; }
+        .fc-part-article.die { color: #ef4444; }
+        .fc-part-article.das { color: #10b981; }
+        
+        .fc-mini-speak {
+            background: #10b981;
+            color: white;
+            border: none;
+            padding: 7px 13px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+        
+        .fc-mini-speak:hover {
+            background: #059669;
+            transform: scale(1.15);
+        }
+        
+        .fc-translation {
+            font-size: 1.7rem;
+            color: #1e293b;
+            margin: 25px 0;
+            font-weight: 600;
+        }
+        
+        .fc-article-info {
+            background: rgba(255,255,255,0.8);
+            padding: 18px;
+            border-radius: 15px;
+            margin-top: 18px;
+        }
+        
+        .fc-article-info p {
+            font-size: 1.05rem;
+            color: #374151;
+            margin: 7px 0;
+            line-height: 1.6;
+        }
+        
+        /* Controls */
+        .fc-controls {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+        
+        .fc-btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .fc-btn-nav {
+            background: white;
+            color: #10b981;
+            min-width: 130px;
+            border: 2px solid #10b981;
+        }
+        
+        .fc-btn-nav:hover:not(:disabled) {
+            background: #10b981;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+        }
+        
+        .fc-btn-nav:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        
+        .fc-btn-shuffle {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+        }
+        
+        .fc-btn-shuffle:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.45);
+        }
+        
+        .fc-hint {
+            text-align: center;
+            color: #065f46;
+            font-size: 0.95rem;
+            opacity: 0.85;
+            line-height: 1.7;
+        }
+        
+        .fc-shortcut {
+            display: inline-block;
+            background: rgba(16, 185, 129, 0.25);
+            padding: 4px 10px;
+            border-radius: 7px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .fc-card { height: 550px; max-width: 100%; }
+            .fc-word { font-size: 2rem; }
+            .fc-article { font-size: 1.7rem; }
+            .fc-breakdown-title { font-size: 1.4rem; }
+            .fc-translation { font-size: 1.5rem; }
+            .fc-image { width: 220px; height: 165px; }
+            .fc-btn { padding: 12px 24px; font-size: 1rem; }
+            .flashcards-box { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎴 ʚଓ FLASHCARDS</h1>
+            <p>Substantive Compuse în Germană</p>
+        </div>
+        
+        <a href="index.html" class="back-btn">← Înapoi la lecție</a>
+        
+        <div class="flashcards-box">
+            
+            <div class="fc-progress">
+                <div class="fc-progress-text" id="fc-progress-text">Card 1 / 20</div>
+                <div class="fc-progress-bar">
+                    <div class="fc-progress-fill" id="fc-progress-fill"></div>
+                </div>
+            </div>
+            
+            <div class="fc-wrapper">
+                <div class="fc-card" id="fc-card" onclick="fcFlip()">
+                    <div class="fc-face fc-front">
+                        <div class="fc-butterfly">ʚଓ</div>
+                        <img id="fc-img" class="fc-image" src="" alt="">
+                        <div class="fc-article" id="fc-article"></div>
+                        <div class="fc-word" id="fc-word"></div>
+                        <button class="fc-speak-btn" onclick="event.stopPropagation(); fcSpeak()">🔊</button>
+                    </div>
+                    <div class="fc-face fc-back">
+                        <div class="fc-butterfly">ʚଓ</div>
+                        <div class="fc-back-content">
+                            <div class="fc-breakdown-title" id="fc-title"></div>
+                            <div class="fc-breakdown-parts" id="fc-parts"></div>
+                            <div class="fc-translation" id="fc-trans"></div>
+                            <div class="fc-article-info">
+                                <p><strong>Articol compus:</strong> <span id="fc-final"></span></p>
+                                <p style="font-size: 0.95rem; margin-top: 8px;">
+                                    💡 Articolul este determinat de <strong>ultima parte</strong> a cuvântului compus
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="fc-controls">
+                <button class="fc-btn fc-btn-nav" id="fc-prev" onclick="fcPrev()">← Anterior</button>
+                <button class="fc-btn fc-btn-shuffle" onclick="fcShuffle()">🔀 Amestecă</button>
+                <button class="fc-btn fc-btn-nav" id="fc-next" onclick="fcNext()">Următor →</button>
+            </div>
+            
+            <div class="fc-hint">
+                💡 Click pe card pentru a întoarce | 
+                <span class="fc-shortcut">SPAȚIU</span> flip | 
+                <span class="fc-shortcut">←</span> <span class="fc-shortcut">→</span> navigare
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+const fcData = [
+    { article: "das", word: "Haustor", part1: { article: "das", word: "Haus" }, part2: { article: "das", word: "Tor" }, translation: "poarta casei", gender: "neutru", image: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=300&fit=crop" },
+    { article: "die", word: "Fensterbank", part1: { article: "das", word: "Fenster" }, part2: { article: "die", word: "Bank" }, translation: "pervazul de fereastră", gender: "feminin", image: "https://images.unsplash.com/photo-1603794067602-9feaa4f70e0c?w=400&h=300&fit=crop" },
+    { article: "das", word: "Türschloss", part1: { article: "die", word: "Tür" }, part2: { article: "das", word: "Schloss" }, translation: "yala ușii", gender: "neutru", image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=300&fit=crop" },
+    { article: "der", word: "Schreibtisch", part1: { word: "Schreiben" }, part2: { article: "der", word: "Tisch" }, translation: "biroul", gender: "masculin", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=300&fit=crop" },
+    { article: "der", word: "Bücherschrank", part1: { article: "das", word: "Buch", plural: "Bücher" }, part2: { article: "der", word: "Schrank" }, translation: "biblioteca", gender: "masculin", image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=300&fit=crop" },
+    { article: "der", word: "Kleiderschrank", part1: { article: "das", word: "Kleid", plural: "Kleider" }, part2: { article: "der", word: "Schrank" }, translation: "șifonierul", gender: "masculin", image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&h=300&fit=crop" },
+    { article: "der", word: "Nachttisch", part1: { article: "die", word: "Nacht" }, part2: { article: "der", word: "Tisch" }, translation: "noptiera", gender: "masculin", image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=400&h=300&fit=crop" },
+    { article: "das", word: "Esszimmer", part1: { word: "Essen" }, part2: { article: "das", word: "Zimmer" }, translation: "sufrageria", gender: "neutru", image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=300&fit=crop" },
+    { article: "das", word: "Wohnzimmer", part1: { word: "Wohnen" }, part2: { article: "das", word: "Zimmer" }, translation: "livingul", gender: "neutru", image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop" },
+    { article: "das", word: "Badezimmer", part1: { word: "Baden" }, part2: { article: "das", word: "Zimmer" }, translation: "baia", gender: "neutru", image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop" },
+    { article: "der", word: "Sonnenaufgang", part1: { article: "die", word: "Sonne" }, part2: { article: "der", word: "Aufgang" }, translation: "răsăritul", gender: "masculin", image: "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?w=400&h=300&fit=crop" },
+    { article: "der", word: "Sonnenuntergang", part1: { article: "die", word: "Sonne" }, part2: { article: "der", word: "Untergang" }, translation: "apusul", gender: "masculin", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" },
+    { article: "der", word: "Regenschirm", part1: { article: "der", word: "Regen" }, part2: { article: "der", word: "Schirm" }, translation: "umbrela", gender: "masculin", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" },
+    { article: "der", word: "Schneefall", part1: { article: "der", word: "Schnee" }, part2: { article: "der", word: "Fall" }, translation: "ninsoarea", gender: "masculin", image: "https://images.unsplash.com/photo-1478719059408-592965723cbc?w=400&h=300&fit=crop" },
+    { article: "die", word: "Wasserflasche", part1: { article: "das", word: "Wasser" }, part2: { article: "die", word: "Flasche" }, translation: "sticla de apă", gender: "feminin", image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=300&fit=crop" },
+    { article: "das", word: "Baumhaus", part1: { article: "der", word: "Baum" }, part2: { article: "das", word: "Haus" }, translation: "căsuța din copac", gender: "neutru", image: "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=400&h=300&fit=crop" },
+    { article: "der", word: "Blumentopf", part1: { article: "die", word: "Blume" }, part2: { article: "der", word: "Topf" }, translation: "ghiveciul", gender: "masculin", image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=300&fit=crop" },
+    { article: "das", word: "Gartentor", part1: { article: "der", word: "Garten" }, part2: { article: "das", word: "Tor" }, translation: "poarta grădinii", gender: "neutru", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop" },
+    { article: "die", word: "Handtasche", part1: { article: "die", word: "Hand" }, part2: { article: "die", word: "Tasche" }, translation: "poșeta", gender: "feminin", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop" },
+    { article: "der", word: "Blumenlehrer", part1: { article: "die", word: "Blume" }, part2: { article: "der", word: "Lehrer" }, translation: "profesorul de floricultură", gender: "masculin", image: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=300&fit=crop" }
+];
+
+let fcIdx = 0, fcFlipped = false, fcOrder = [...Array(fcData.length).keys()];
+
+function fcUpdate() {
+    const c = fcData[fcOrder[fcIdx]];
+    const card = document.getElementById('fc-card');
+    if (fcFlipped) { card.classList.remove('flipped'); fcFlipped = false; }
+    
+    document.getElementById('fc-img').src = c.image;
+    document.getElementById('fc-img').alt = c.word;
+    document.getElementById('fc-article').textContent = c.article;
+    document.getElementById('fc-article').className = 'fc-article ' + c.article;
+    document.getElementById('fc-word').textContent = c.word;
+    document.getElementById('fc-title').textContent = c.article + ' ' + c.word;
+    
+    const parts = document.getElementById('fc-parts');
+    parts.innerHTML = '';
+    
+    const p1 = document.createElement('div');
+    p1.className = 'fc-part';
+    if (c.part1.article) {
+        const a1 = document.createElement('span');
+        a1.className = 'fc-part-article ' + c.part1.article;
+        a1.textContent = c.part1.article;
+        p1.appendChild(a1);
+    }
+    const w1 = document.createElement('span');
+    w1.className = 'fc-part-word';
+    w1.textContent = c.part1.plural || c.part1.word;
+    p1.appendChild(w1);
+    const s1 = document.createElement('button');
+    s1.className = 'fc-mini-speak';
+    s1.textContent = '🔊';
+    s1.onclick = (e) => { e.stopPropagation(); fcSpeakPart(c.part1.word); };
+    p1.appendChild(s1);
+    
+    const plus = document.createElement('span');
+    plus.style.fontSize = '1.4rem';
+    plus.style.color = '#6b7280';
+    plus.textContent = '+';
+    
+    const p2 = document.createElement('div');
+    p2.className = 'fc-part';
+    if (c.part2.article) {
+        const a2 = document.createElement('span');
+        a2.className = 'fc-part-article ' + c.part2.article;
+        a2.textContent = c.part2.article;
+        p2.appendChild(a2);
+    }
+    const w2 = document.createElement('span');
+    w2.className = 'fc-part-word';
+    w2.textContent = c.part2.word;
+    p2.appendChild(w2);
+    const s2 = document.createElement('button');
+    s2.className = 'fc-mini-speak';
+    s2.textContent = '🔊';
+    s2.onclick = (e) => { e.stopPropagation(); fcSpeakPart(c.part2.word); };
+    p2.appendChild(s2);
+    
+    parts.appendChild(p1);
+    parts.appendChild(plus);
+    parts.appendChild(p2);
+    
+    document.getElementById('fc-trans').textContent = '= ' + c.translation;
+    document.getElementById('fc-final').innerHTML = '<span class="' + c.article + '" style="font-weight: bold;">' + c.article + ' (' + c.gender + ')</span>';
+    
+    document.getElementById('fc-progress-text').textContent = 'Card ' + (fcIdx + 1) + ' / ' + fcData.length;
+    document.getElementById('fc-progress-fill').style.width = ((fcIdx + 1) / fcData.length * 100) + '%';
+    
+    document.getElementById('fc-prev').disabled = fcIdx === 0;
+    document.getElementById('fc-next').disabled = fcIdx === fcData.length - 1;
+}
+
+function fcFlip() { document.getElementById('fc-card').classList.toggle('flipped'); fcFlipped = !fcFlipped; }
+function fcNext() { if (fcIdx < fcData.length - 1) { fcIdx++; fcUpdate(); } }
+function fcPrev() { if (fcIdx > 0) { fcIdx--; fcUpdate(); } }
+function fcShuffle() { for (let i = fcOrder.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [fcOrder[i], fcOrder[j]] = [fcOrder[j], fcOrder[i]]; } fcIdx = 0; fcUpdate(); }
+function fcSpeak() { const c = fcData[fcOrder[fcIdx]]; fcSpeakPart(c.article + ' ' + c.word); }
+function fcSpeakPart(text) { if ('speechSynthesis' in window) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = 'de-DE'; u.rate = 0.85; const voices = speechSynthesis.getVoices(); const gv = voices.find(v => v.lang.startsWith('de')); if (gv) u.voice = gv; speechSynthesis.speak(u); } }
+
+document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space') { e.preventDefault(); fcFlip(); }
+    else if (e.code === 'ArrowLeft') { e.preventDefault(); fcPrev(); }
+    else if (e.code === 'ArrowRight') { e.preventDefault(); fcNext(); }
+});
+
+if ('speechSynthesis' in window) speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+
+fcUpdate();
+    </script>
+</body>
+</html>
