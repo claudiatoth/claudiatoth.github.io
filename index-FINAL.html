@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Substantive Compuse în Germană - Workshop Complet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 9999;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            background: rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: rgba(255,255,255,0.35);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        /* Theory Sections */
+        .section-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 20px 25px;
+            border-radius: 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 0;
+        }
+
+        .section-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .section-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .arrow.rotated {
+            transform: rotate(180deg);
+        }
+
+        .section-content {
+            display: none;
+            padding: 30px;
+            background: #f0fdf4;
+            border: 3px solid #10b981;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        /* Exercise Items */
+        .exercise-item {
+            background: #f0fdf4;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s;
+        }
+
+        .exercise-item.correct {
+            border-color: #10b981;
+            background: #d1fae5;
+        }
+
+        .exercise-item.incorrect {
+            border-color: #ef4444;
+            background: #fee2e2;
+        }
+
+        .exercise-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .word-display {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #059669;
+            margin-bottom: 20px;
+        }
+
+        /* Input Styles */
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .input-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .article-input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .article-input-wrapper.break-line {
+            flex-basis: 100%;
+        }
+
+        input[type="text"], select {
+            padding: 12px 15px;
+            border: 2px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+            flex: 1;
+        }
+
+        input[type="text"].small {
+            max-width: 60px;
+            flex: 0 0 60px;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2310b981' d='M6 9L1 4h10z'/%3E%3C/svg%3E") no-repeat right 12px center;
+            padding-right: 40px;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        input.correct, select.correct {
+            border-color: #10b981;
+            background: #ecfdf5;
+        }
+
+        input.incorrect, select.incorrect {
+            border-color: #ef4444;
+            background: #fef2f2;
+        }
+
+        .plus-sign {
+            font-size: 1.5rem;
+            color: #10b981;
+            font-weight: bold;
+        }
+
+        /* Feedback */
+        .feedback {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: #d1fae5;
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+
+        .feedback.incorrect {
+            background: #fee2e2;
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+
+        .correct-answer {
+            margin-top: 10px;
+            padding: 10px;
+            background: #f0fdf4;
+            border-radius: 6px;
+            color: #065f46;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-check {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .btn-check:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+        }
+
+        .btn-reset {
+            background: #6b7280;
+            color: white;
+        }
+
+        .btn-reset:hover {
+            background: #4b5563;
+        }
+
+        /* Score */
+        .score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 20px;
+            margin-top: 30px;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 12px;
+            display: none;
+        }
+
+        .score.show {
+            display: block;
+        }
+
+        /* Info Boxes */
+        .example-box, .info-box {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border-left: 5px solid #10b981;
+        }
+
+        .example-box h3, .info-box h3 {
+            color: #065f46;
+            margin-bottom: 10px;
+        }
+
+        .example-box p, .info-box p {
+            color: #1e293b;
+            font-size: 1.05rem;
+        }
+
+        /* Ex 6 Styles */
+        .all-variants {
+            display: none;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 3px solid #10b981;
+        }
+
+        .all-variants.show {
+            display: block;
+        }
+
+        .variants-header {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .category {
+            margin-bottom: 30px;
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .category-header h3 {
+            font-size: 1.3rem;
+        }
+
+        .arrow-ex6 {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+            color: white;
+        }
+
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .variant-card {
+            background: #f0fdf4;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .variant-card strong {
+            color: #059669;
+            font-size: 1.1rem;
+        }
+
+        .variant-parts {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .words-list {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .words-list p {
+            margin-bottom: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 140px;
+                padding: 10px;
+                padding-top: 140px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+            }
+
+            .container {
+                margin: 15px auto;
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 25px 20px;
+                border-radius: 15px 15px 0 0;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.95rem;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .section-header h3 {
+                font-size: 1.1rem;
+            }
+
+            .example-box, .info-box {
+                padding: 15px;
+                font-size: 0.95rem;
+            }
+
+            .exercise-item {
+                padding: 15px;
+            }
+
+            .exercise-number {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .word-display {
+                font-size: 1.1rem;
+            }
+
+            .input-group label {
+                font-size: 0.95rem;
+            }
+
+            .input-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .article-input-wrapper {
+                width: 100%;
+                min-width: 100%;
+            }
+
+            input[type="text"], select {
+                font-size: 0.95rem;
+                padding: 10px 12px;
+            }
+
+            .plus-sign {
+                display: none;
+            }
+
+            .feedback {
+                font-size: 0.9rem;
+                padding: 10px 12px;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            button {
+                width: 100%;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+
+            .score {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+
+            .variants-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .variant-card {
+                padding: 12px;
+            }
+
+            .category-header h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.3rem;
+            }
+
+            .nav-link {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .exercise-item {
+                padding: 12px;
+            }
+
+            input[type="text"], select {
+                font-size: 0.9rem;
+            }
+        }
+    
+/* FLASHCARDS STYLES */
+.flashcards-container { max-width: 100%; background: #f0fdf4; padding: 40px 20px; border-radius: 15px; }
+.fc-progress { text-align: center; margin-bottom: 25px; }
+.fc-progress-text { color: #065f46; font-weight: bold; font-size: 1.15rem; margin-bottom: 12px; }
+.fc-progress-bar { background: rgba(16, 185, 129, 0.2); height: 10px; border-radius: 10px; overflow: hidden; max-width: 500px; margin: 0 auto; }
+.fc-progress-fill { background: linear-gradient(90deg, #10b981 0%, #059669 100%); height: 100%; width: 0%; transition: width 0.4s ease; border-radius: 10px; }
+.fc-wrapper { perspective: 1200px; margin: 0 auto 30px; display: flex; justify-content: center; align-items: center; }
+.fc-card { position: relative; width: 100%; max-width: 520px; height: 480px; transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+.fc-card.flipped { transform: rotateY(180deg); }
+.fc-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 18px; box-shadow: 0 15px 40px rgba(0,0,0,0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 35px; }
+.fc-front { background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%); }
+.fc-back { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); transform: rotateY(180deg); }
+.fc-butterfly { position: absolute; top: 18px; right: 18px; font-size: 1.6rem; opacity: 0.65; }
+.fc-image { width: 240px; height: 180px; object-fit: cover; border-radius: 14px; margin-bottom: 22px; box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
+.fc-article { font-size: 1.9rem; font-weight: bold; margin-bottom: 12px; }
+.fc-article.der { color: #3b82f6; }
+.fc-article.die { color: #ef4444; }
+.fc-article.das { color: #10b981; }
+.fc-word { font-size: 2.3rem; font-weight: bold; margin-bottom: 22px; color: #1e293b; text-align: center; word-wrap: break-word; line-height: 1.2; }
+.fc-speak-btn { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none; padding: 14px 32px; border-radius: 28px; font-size: 1.4rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 6px 18px rgba(16, 185, 129, 0.35); }
+.fc-speak-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(16, 185, 129, 0.45); }
+.fc-back-content { width: 100%; text-align: center; }
+.fc-breakdown-title { font-size: 1.55rem; margin-bottom: 18px; color: #065f46; font-weight: bold; }
+.fc-breakdown-parts { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; align-items: center; }
+.fc-part { display: flex; align-items: center; gap: 8px; }
+.fc-part-word { font-size: 1.15rem; color: #374151; font-weight: 500; }
+.fc-part-article { font-size: 0.95rem; font-weight: bold; }
+.fc-part-article.der { color: #3b82f6; }
+.fc-part-article.die { color: #ef4444; }
+.fc-part-article.das { color: #10b981; }
+.fc-mini-speak { background: #10b981; color: white; border: none; padding: 6px 11px; border-radius: 13px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; }
+.fc-mini-speak:hover { background: #059669; transform: scale(1.12); }
+.fc-translation { font-size: 1.6rem; color: #1e293b; margin: 22px 0; font-weight: 600; }
+.fc-article-info { background: rgba(255,255,255,0.75); padding: 16px; border-radius: 12px; margin-top: 16px; }
+.fc-article-info p { font-size: 1.02rem; color: #374151; margin: 6px 0; line-height: 1.5; }
+.fc-controls { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
+.fc-btn { padding: 13px 28px; border: none; border-radius: 11px; font-size: 1.05rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+.fc-btn-nav { background: white; color: #10b981; min-width: 120px; border: 2px solid #10b981; }
+.fc-btn-nav:hover:not(:disabled) { background: #10b981; color: white; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3); }
+.fc-btn-nav:disabled { opacity: 0.45; cursor: not-allowed; }
+.fc-btn-shuffle { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; }
+.fc-btn-shuffle:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(245, 158, 11, 0.4); }
+.fc-hint { text-align: center; color: #065f46; font-size: 0.92rem; opacity: 0.82; line-height: 1.6; }
+.fc-shortcut { display: inline-block; background: rgba(16, 185, 129, 0.22); padding: 4px 9px; border-radius: 6px; font-size: 0.88rem; margin: 0 4px; font-weight: 600; }
+@media (max-width: 768px) {
+    .fc-card { height: 520px; max-width: 100%; }
+    .fc-word { font-size: 1.9rem; }
+    .fc-article { font-size: 1.6rem; }
+    .fc-breakdown-title { font-size: 1.3rem; }
+    .fc-translation { font-size: 1.4rem; }
+    .fc-image { width: 200px; height: 150px; }
+    .fc-btn { padding: 11px 22px; font-size: 0.98rem; }
+    .flashcards-container { padding: 25px 15px; }
+}
+
+</style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="nav-menu">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span>ʚଓ</span>
+                <span>Claudia Toth</span>
+            </div>
+            <div class="nav-links">
+                <a href="#teorie" class="nav-link">Teorie</a>
+                <a href="#ex1" class="nav-link">Ex. 1</a>
+                <a href="#ex2" class="nav-link">Ex. 2</a>
+                <a href="#ex3" class="nav-link">Ex. 3</a>
+                <a href="#ex4" class="nav-link">Ex. 4</a>
+                <a href="#ex5" class="nav-link">Ex. 5</a>
+                <a href="#ex6" class="nav-link">Ex. 6</a>
+                <a href="#flashcards" class="nav-link">🎴 Flashcards</a>
+                <a href="#recapitulare" class="nav-link">Recapitulare</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- TEORIE -->
+    <div class="container" id="teorie">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('teorie')">
+            <h1>ʚଓ TEORIE <span id="arrow-header-teorie" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Substantive Compuse în Germană - Zusammengesetzte Substantive - PARTEA 1</p>
+        </div>
+        <div class="content" id="content-teorie" style="display: none;">
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(0)">
+                    <h3>CE SUNT SUBSTANTIVELE COMPUSE?</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>DEFINIȚIE</h3>
+                        <p>Un substantiv compus este un substantiv format din <strong>cel puțin două cuvinte</strong> unite împreună.</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>Exemplu simplu în română:</h3>
+                        <p>"copil" + "cameră" = "camera copiilor"</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>Exemplu în germană:</h3>
+                        <p><strong>das Kind</strong> (copilul) + <strong>das Zimmer</strong> (camera) = <strong>das Kinderzimmer</strong> (camera copiilor)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(1)">
+                    <h3>DE CE SUNT IMPORTANTE?</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>1. Limba germană IUBEȘTE cuvintele compuse!</h3>
+                        <p>Germanii creează constant cuvinte noi prin combinare. Este o caracteristică fundamentală a limbii!</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>2. Vocabular INFINIT!</h3>
+                        <p>Când știi cum să formezi substantive compuse, vocabularul tău devine MULT mai mare! Nu mai trebuie să memorezi fiecare cuvânt separat.</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>3. Exprimare PRECISĂ!</h3>
+                        <p>Poți descrie lucruri foarte specific:<br>
+                        <strong>das Zimmer</strong> = camera (ce fel de cameră?)<br>
+                        <strong>das Kinderzimmer</strong> = camera copiilor (AHA! Acum știm!)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(2)">
+                    <h3>REGULILE DE AUR</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>REGULA 1: Scris cu majusculă</h3>
+                        <p>Un substantiv compus se scrie cu literă mare doar la început (ca orice substantiv german).</p>
+                        <p style="margin-top: 10px;">✅ das Kinderzimmer<br>❌ das KinderZimmer</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>REGULA 2: Articolul ultimului cuvânt</h3>
+                        <p>Substantivul compus ia articolul <strong>ultimului cuvânt</strong> (Grundwort - cuvântul de bază).</p>
+                        <p style="margin-top: 15px;"><strong>Exemple:</strong><br>
+                        • das Auto + <strong>die Tür</strong> = <strong>die</strong> Autotür (die de la Tür)<br>
+                        • der Tee + <strong>die Kanne</strong> = <strong>die</strong> Teekanne (die de la Kanne)<br>
+                        • die Sonne + <strong>der Schein</strong> = <strong>der</strong> Sonnenschein (der de la Schein)</p>
+                        <p style="margin-top: 10px; font-weight: bold; color: #059669;">⚠️ Reține: Ultimul cuvânt DICTEAZĂ articolul!</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>REGULA 3: Primul descrie pe al doilea</h3>
+                        <p>În substantivul compus:<br>
+                        <strong>Primul cuvânt</strong> (Bestimmungswort) = DESCRIE<br>
+                        <strong>Al doilea cuvânt</strong> (Grundwort) = este DESCRIS</p>
+                        <p style="margin-top: 10px;"><strong>das Kinder|zimmer</strong><br>
+                        Kind (copil) → descrie<br>
+                        Zimmer (cameră) → ce fel de cameră? → camera COPIILOR</p>
+                        <p style="margin-top: 10px;"><strong>die Auto|tür</strong><br>
+                        Auto (mașină) → descrie<br>
+                        Tür (ușă) → ce fel de ușă? → ușa MAȘINII</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(3)">
+                    <h3>TIPUL 1: SUBSTANTIV + SUBSTANTIV</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>CUM FUNCȚIONEAZĂ?</h3>
+                        <p>Pur și simplu așezi cuvintele unul după altul:</p>
+                        <p style="text-align: center; font-size: 1.2rem; font-weight: bold; background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            SUBSTANTIV 1 + SUBSTANTIV 2 = SUBSTANTIV COMPUS
+                        </p>
+                    </div>
+                    <div class="example-box">
+                        <h3>EXEMPLE SIMPLE</h3>
+                        <p><strong>1.</strong> das Auto + die Tür = <strong>die Autotür</strong> (ușa mașinii)</p>
+                        <p><strong>2.</strong> der Tee + die Kanne = <strong>die Teekanne</strong> (ceainicul)</p>
+                        <p><strong>3.</strong> das Haus + die Tür = <strong>die Haustür</strong> (ușa de la intrare a casei)</p>
+                        <p><strong>4.</strong> der Fuß + der Ball = <strong>der Fußball</strong> (mingea de fotbal)</p>
+                        <p><strong>5.</strong> die Blume + der Topf = <strong>der Blumentopf</strong> (ghiveciul)</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>EXEMPLE MAI COMPLEXE (3+ cuvinte!)</h3>
+                        <p>Da, poți combina mai mult de 2 cuvinte!</p>
+                        <p style="margin-top: 10px;"><strong>1.</strong> der Fuß + der Ball + das Spiel = <strong>das Fußballspiel</strong><br>
+                        (meciul de fotbal)</p>
+                        <p><strong>2.</strong> die Geburt + der Tag + das Geschenk = <strong>das Geburtstagsgeschenk</strong><br>
+                        (cadoul de ziua de naștere)</p>
+                        <p><strong>3.</strong> das Auto + die Bahn + der Hof = <strong>der Autobahnhof</strong><br>
+                        (stația de autostradă / parcare)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(4)">
+                    <h3>CUM SĂ ÎNȚELEGI UN CUVÂNT LUNG?</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>Strategia în 3 pași:</h3>
+                        <p><strong>PASUL 1:</strong> Împarte cuvântul în părți<br>
+                        <strong>PASUL 2:</strong> Identifică ultimul cuvânt (Grundwort) → acesta îți dă ARTICOLUL și SENSUL PRINCIPAL<br>
+                        <strong>PASUL 3:</strong> Citește de la DREAPTA la STÂNGA pentru a înțelege sensul complet</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>EXEMPLU: die Haustür</h3>
+                        <p><strong>PASUL 1 - Împarte:</strong><br>Haus + Tür</p>
+                        <p style="margin-top: 10px;"><strong>PASUL 2 - Ultimul cuvânt:</strong><br>
+                        Tür (ușă) → articol <strong>die</strong><br>
+                        Deci este vorba despre o UȘĂ</p>
+                        <p style="margin-top: 10px;"><strong>PASUL 3 - Citește invers:</strong><br>
+                        Ce fel de ușă? → Haus (casă)<br>
+                        = ușa CASEI</p>
+                        <p style="margin-top: 10px; font-weight: bold; background: white; padding: 10px; border-radius: 8px;">
+                        ✓ Rezultat: die Haustür = ușa casei</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(5)">
+                    <h3>LITERELE DE LEGĂTURĂ (Fugenelemente)</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box">
+                        <h3>CE SUNT?</h3>
+                        <p>Uneori, între cuvinte trebuie să inserezi o literă sau un grup de litere pentru ca substantivul să sune corect.</p>
+                        <p style="margin-top: 10px;"><strong>Cele mai comune litere de legătură:</strong><br>
+                        -e- | -(e)s- | -(e)n- | -er-</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>CÂND FOLOSIM -(e)s-?</h3>
+                        <p>Literă de legătură -(e)s- apare adesea după substantive feminine terminate în -ung, -heit, -keit, -schaft:</p>
+                        <p style="margin-top: 10px;"><strong>1.</strong> die Geburt + der Tag = <strong>der Geburtstag</strong><br>
+                        die Geburt → Geburt<strong>s</strong>tag</p>
+                        <p><strong>2.</strong> die Geburt + der Tag + das Geschenk = <strong>das Geburtstagsgeschenk</strong><br>
+                        Geburtstag<strong>s</strong>geschenk</p>
+                        <p><strong>3.</strong> die Arbeit + der Platz = <strong>der Arbeitsplatz</strong><br>
+                        Arbeit<strong>s</strong>platz (locul de muncă)</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>CÂND FOLOSIM -(e)n-?</h3>
+                        <p>Literă de legătură -(e)n- apare adesea după substantive feminine (acestea trec la plural, însă există și excepții - die Hand, die Tür):</p>
+                        <p style="margin-top: 10px;"><strong>1.</strong> die Straße + die Bahn = <strong>die Straßenbahn</strong><br>
+                        Straße<strong>n</strong>bahn (tramvaiul)</p>
+                        <p><strong>2.</strong> die Blume + der Topf = <strong>der Blumentopf</strong><br>
+                        Blume<strong>n</strong>topf (ghiveciul)</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>CÂND FOLOSIM -er-?</h3>
+                        <p>Literă de legătură -er- apare adesea la plural:</p>
+                        <p style="margin-top: 10px;"><strong>1.</strong> das Bild + das Buch = <strong>das Bilderbuch</strong><br>
+                        das Bild (plural: Bilder) → Bild<strong>er</strong>buch<br>
+                        (cartea ilustrată)</p>
+                        <p><strong>2.</strong> das Kind + das Zimmer = <strong>das Kinderzimmer</strong><br>
+                        das Kind (plural: Kinder) → Kind<strong>er</strong>zimmer<br>
+                        (camera copiilor)</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-header" onclick="toggleSection(6)">
+                    <h3>CEL MAI LUNG CUVÂNT COMPUS ÎN GERMANĂ</h3>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="section-content">
+                    <div class="example-box" style="text-align: center;">
+                        <h3 style="font-size: 1.5rem; margin-bottom: 20px;">🏆 Cel mai lung cuvânt compus</h3>
+                        <p style="font-size: 1.1rem; font-weight: bold; word-break: break-all; line-height: 1.8; color: #059669; margin: 20px 0;">
+                            Rinderkennzeichnungsfleischetikettierungsüberwachungsaufgabenübertragungsgesetz
+                        </p>
+                        <p style="font-size: 1.4rem; font-weight: bold; color: #065f46; margin: 20px 0;">63 de litere!</p>
+                        <p>(O lege care reglementa modul în care este etichetată carnea de vită în Germania - a fost în vigoare între 1999-2013)</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>Traducere:</h3>
+                        <p>Legea privind transferul sarcinilor de monitorizare a etichetării cărnii de vită.</p>
+                    </div>
+                    <div class="example-box">
+                        <h3>Compunere:</h3>
+                        <p>• <strong>das Rind</strong> → vita / cornuta<br>
+                        • <strong>die Kennzeichnung</strong> → marcarea / identificarea<br>
+                        • <strong>das Fleisch</strong> → carnea<br>
+                        • <strong>die Etikettierung</strong> → etichetarea<br>
+                        • <strong>die Überwachung</strong> → supravegherea<br>
+                        • <strong>die Aufgabe</strong> → sarcina / atribuția<br>
+                        • <strong>die Übertragung</strong> → transferul / transmiterea<br>
+                        • <strong>das Gesetz</strong> → legea</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EX 1 -->
+    <div class="container" id="ex1">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex1')">
+            <h1>ʚଓ ÜBUNG 1 <span id="arrow-header-ex1" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Descifrează substantivele compuse</p>
+        </div>
+        <div class="content" id="content-ex1" style="display: none;">
+            <div class="example-box">
+                <h3>📝 Exemplu:</h3>
+                <p><strong>die Autotür</strong> → <strong>das Auto</strong> + <strong>die Tür</strong> → ușa mașinii</p>
+            </div>
+            <div id="exercises-ex1"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="checkAnswers('ex1')">✓ Verifică</button>
+                <button class="btn-reset" onclick="resetExercise('ex1')">↻ Resetează</button>
+            </div>
+            <div class="score" id="score-ex1"></div>
+        </div>
+    </div>
+
+    <!-- EX 2 -->
+    <div class="container" id="ex2">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex2')">
+            <h1>ʚଓ ÜBUNG 2 <span id="arrow-header-ex2" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Substantive cu 3 părți</p>
+        </div>
+        <div class="content" id="content-ex2" style="display: none;">
+            <div class="info-box">
+                <h3>💡 Atenție!</h3>
+                <p>Aceste substantive au <strong>3 părți</strong>! Al treilea cuvânt va fi pe rând nou.</p>
+            </div>
+            <div id="exercises-ex2"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="checkAnswers('ex2')">✓ Verifică</button>
+                <button class="btn-reset" onclick="resetExercise('ex2')">↻ Resetează</button>
+            </div>
+            <div class="score" id="score-ex2"></div>
+        </div>
+    </div>
+
+    <!-- EX 3 -->
+    <div class="container" id="ex3">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex3')">
+            <h1>ʚଓ ÜBUNG 3 <span id="arrow-header-ex3" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Găsește articolul corect</p>
+        </div>
+        <div class="content" id="content-ex3" style="display: none;">
+            <div class="info-box">
+                <h3>⚡ Regula de aur:</h3>
+                <p><strong>Articolul vine de la ULTIMUL cuvânt!</strong></p>
+            </div>
+            <div id="exercises-ex3"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="checkAnswers('ex3')">✓ Verifică</button>
+                <button class="btn-reset" onclick="resetExercise('ex3')">↻ Resetează</button>
+            </div>
+            <div class="score" id="score-ex3"></div>
+        </div>
+    </div>
+
+    <!-- EX 4 -->
+    <div class="container" id="ex4">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex4')">
+            <h1>ʚଓ ÜBUNG 4 <span id="arrow-header-ex4" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Formează substantive compuse</p>
+        </div>
+        <div class="content" id="content-ex4" style="display: none;">
+            <div class="info-box">
+                <h3>📝 Exemplu:</h3>
+                <p><strong>der Apfel + der Saft = der Apfelsaft</strong></p>
+            </div>
+            <div id="exercises-ex4"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="checkAnswers('ex4')">✓ Verifică</button>
+                <button class="btn-reset" onclick="resetExercise('ex4')">↻ Resetează</button>
+            </div>
+            <div class="score" id="score-ex4"></div>
+        </div>
+    </div>
+
+    <!-- EX 5 -->
+    <div class="container" id="ex5">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex5')">
+            <h1>ʚଓ ÜBUNG 5 <span id="arrow-header-ex5" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Completează tabelul</p>
+        </div>
+        <div class="content" id="content-ex5" style="display: none;">
+            <div class="info-box">
+                <h3>📝 Instrucțiuni:</h3>
+                <p>Completează substantivul compus și traducerea.</p>
+            </div>
+            <div id="exercises-ex5"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="checkAnswers('ex5')">✓ Verifică</button>
+                <button class="btn-reset" onclick="resetExercise('ex5')">↻ Resetează</button>
+            </div>
+            <div class="score" id="score-ex5"></div>
+        </div>
+    </div>
+
+    <!-- EX 6 -->
+    <div class="container" id="ex6">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('ex6')">
+            <h1>ʚଓ ÜBUNG 6 <span id="arrow-header-ex6" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Creativitate - Creează substantive compuse!</p>
+        </div>
+        <div class="content" id="content-ex6" style="display: none;">
+            <div class="info-box">
+                <h3>🎨 Fii creativ!</h3>
+                <p>Creează <strong>5 substantive compuse</strong> folosind cuvintele de mai jos.</p>
+                <div class="words-list">
+                    <p><strong>Grupa 1:</strong> das Haus, der Garten, die Tür, das Fenster, der Baum</p>
+                    <p><strong>Grupa 2:</strong> das Buch, die Schule, der Lehrer, das Kind</p>
+                    <p><strong>Grupa 3:</strong> die Sonne, der Regen, der Schnee, die Blume</p>
+                </div>
+            </div>
+            <div id="exercises-ex6"></div>
+            <div class="buttons">
+                <button class="btn-check" onclick="showAllVariants()">🔍 Arată toate variantele</button>
+                <button class="btn-reset" onclick="resetExercise('ex6')">↻ Resetează</button>
+            </div>
+            <div class="all-variants" id="allVariants">
+                <div class="variants-header">
+                    <h2>✨ Toate variantele posibile</h2>
+                    <p>TOATE combinațiile cu cuvintele date!</p>
+                </div>
+                <div id="variantsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- FLASHCARDS SECTION -->
+    <section id="flashcards" class="section-wrapper" style="scroll-margin-top: 100px;">
+        <div class="header" onclick="toggleSection('flashcards-content', 'arrow-flashcards')" style="cursor: pointer;">
+            <h1>🎴 ʚଓ FLASHCARDS - Memorează cuvintele! <span id="arrow-flashcards" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p style="margin-top: 15px; font-size: 1.1rem; opacity: 0.95;">Exersează vocabularul cu flashcards interactive!</p>
+        </div>
+        <div id="flashcards-content" class="content" style="display: none;">
+            
+            <div class="flashcards-container">
+                
+                <!-- Progress Bar -->
+                <div class="fc-progress">
+                    <div class="fc-progress-text" id="fc-progress-text">Card 1 / 20</div>
+                    <div class="fc-progress-bar">
+                        <div class="fc-progress-fill" id="fc-progress-fill"></div>
+                    </div>
+                </div>
+                
+                <!-- Flashcard -->
+                <div class="fc-wrapper">
+                    <div class="fc-card" id="fc-card" onclick="fcFlip()">
+                        <!-- Front -->
+                        <div class="fc-face fc-front">
+                            <div class="fc-butterfly">ʚଓ</div>
+                            <img id="fc-img" class="fc-image" src="" alt="">
+                            <div class="fc-article" id="fc-article"></div>
+                            <div class="fc-word" id="fc-word"></div>
+                            <button class="fc-speak-btn" onclick="event.stopPropagation(); fcSpeak()">🔊</button>
+                        </div>
+                        <!-- Back -->
+                        <div class="fc-face fc-back">
+                            <div class="fc-butterfly">ʚଓ</div>
+                            <div class="fc-back-content">
+                                <div class="fc-breakdown-title" id="fc-title"></div>
+                                <div class="fc-breakdown-parts" id="fc-parts"></div>
+                                <div class="fc-translation" id="fc-trans"></div>
+                                <div class="fc-article-info">
+                                    <p><strong>Articol compus:</strong> <span id="fc-final"></span></p>
+                                    <p style="font-size: 0.95rem; margin-top: 8px;">
+                                        💡 Articolul este determinat de <strong>ultima parte</strong> a cuvântului compus
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div class="fc-controls">
+                    <button class="fc-btn fc-btn-nav" id="fc-prev" onclick="fcPrev()">← Anterior</button>
+                    <button class="fc-btn fc-btn-shuffle" onclick="fcShuffle()">🔀 Amestecă</button>
+                    <button class="fc-btn fc-btn-nav" id="fc-next" onclick="fcNext()">Următor →</button>
+                </div>
+                
+                <!-- Hint -->
+                <div class="fc-hint">
+                    💡 Click pe card pentru a întoarce | 
+                    <span class="fc-shortcut">SPAȚIU</span> flip | 
+                    <span class="fc-shortcut">←</span> <span class="fc-shortcut">→</span> navigare
+                </div>
+                
+            </div>
+            
+        </div>
+    </section>
+
+
+<!-- RECAPITULARE -->
+    <div class="container" id="recapitulare">
+        <div class="header" style="cursor: pointer;" onclick="toggleExercise('recapitulare')">
+            <h1>ʚଓ RECAPITULARE <span id="arrow-header-recapitulare" style="font-size: 1.5rem; transition: transform 0.3s;">▼</span></h1>
+            <p>Ce am învățat astăzi?</p>
+        </div>
+        <div class="content" id="content-recapitulare" style="display: none;">
+            <div class="example-box">
+                <h3>✓ Substantive compuse</h3>
+                <p>Cuvinte formate din <strong>2+ cuvinte</strong></p>
+            </div>
+            <div class="example-box">
+                <h3>✓ Regulile</h3>
+                <p>Articolul ultimului cuvânt | Primul descrie pe al doilea</p>
+            </div>
+            <div class="example-box">
+                <h3>★ FELICITĂRI!</h3>
+                <p><strong>Viel Erfolg!</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data
+        const exercisesEx1 = [
+            { word: "die Autobahn", article1: "das", part1: "Auto", article2: "die", part2: "Bahn", translation: "autostrada" },
+            { word: "der Autoschlüssel", article1: "das", part1: "Auto", article2: "der", part2: "Schlüssel", translation: "cheia mașinii" },
+            { word: "der Bahnhof", article1: "die", part1: "Bahn", article2: "der", part2: "Hof", translation: "gara" },
+            { word: "der Blumenstrauß", article1: "die", part1: "Blume", article2: "der", part2: "Strauß", translation: "buchetul de flori" },
+            { word: "der Briefkasten", article1: "der", part1: "Brief", article2: "der", part2: "Kasten", translation: "cutia poștală" },
+            { word: "das Gartenhaus", article1: "der", part1: "Garten", article2: "das", part2: "Haus", translation: "casa din grădină" }
+        ];
+
+        const exercisesEx2 = [
+            { word: "der Haustürschlüssel", article1: "das", part1: "Haus", article2: "die", part2: "Tür", article3: "der", part3: "Schlüssel", translation: "cheia ușii de la intrare" },
+            { word: "der Kindergartenlehrer", article1: "das", part1: "Kind", article2: "der", part2: "Garten", article3: "der", part3: "Lehrer", translation: "educatorul de grădiniță" },
+            { word: "die Weihnachtsmarktbude", article1: "die", part1: "Weihnacht", article2: "der", part2: "Markt", article3: "die", part3: "Bude", translation: "standurile de la târgul de Crăciun" },
+            { word: "das Geburtstagskind", article1: "der", part1: "Geburtstag", article2: "das", part2: "Kind", article3: "", part3: "", translation: "copilul care își sărbătorește ziua de naștere", note: true },
+            { word: "das Autobahndreieck", article1: "das", part1: "Auto", article2: "die", part2: "Bahn", article3: "das", part3: "Dreieck", translation: "intersecția de autostrăzi" },
+            { word: "der Fußballspieler", article1: "der", part1: "Fuß", article2: "der", part2: "Ball", article3: "der", part3: "Spieler", translation: "jucătorul de fotbal" }
+        ];
+
+        const exercisesEx3 = [
+            { word1: "Haus", article1: "das", word2: "Tür", article2: "die", compound: "Haustür", correct: "die" },
+            { word1: "Garten", article1: "der", word2: "Haus", article2: "das", compound: "Gartenhaus", correct: "das" },
+            { word1: "Blume", article1: "die", word2: "Topf", article2: "der", compound: "Blumentopf", correct: "der" },
+            { word1: "Tisch", article1: "der", word2: "Decke", article2: "die", compound: "Tischdecke", correct: "die" },
+            { word1: "Tennis", article1: "das", word2: "Ball", article2: "der", compound: "Tennisball", correct: "der" },
+            { word1: "Woche", article1: "die", word2: "Ende", article2: "das", compound: "Wochenende", correct: "das" }
+        ];
+
+        const exercisesEx4 = [
+            { word1: "der Apfel", word2: "der Kuchen", compound: "Apfelkuchen", article: "der", translation: "prăjitura cu mere" },
+            { word1: "die Reise", word2: "die Tasche", compound: "Reisetasche", article: "die", translation: "geanta de voiaj" },
+            { word1: "das Fahrrad", word2: "der Weg", compound: "Fahrradweg", article: "der", translation: "pista de biciclete" },
+            { word1: "die Hand", word2: "der Ball", compound: "Handball", article: "der", translation: "handbalul" },
+            { word1: "die Sonne", word2: "der Schein", compound: "Sonnenschein", article: "der", translation: "strălucirea soarelui" }
+        ];
+
+        const exercisesEx5 = [
+            { word1: "das Haus", word2: "das Tier", compound: "das Haustier", translation: "animalul de casă" },
+            { word1: "das Kleid", word2: "der Schrank", compound: "der Kleiderschrank", translation: "dulapul de haine" },
+            { word1: "der Brief", word2: "der Kasten", compound: "der Briefkasten", translation: "cutia poștală" },
+            { word1: "die Arbeit", word2: "der Platz", compound: "der Arbeitsplatz", translation: "locul de muncă" },
+            { word1: "die Straße", word2: "die Bahn", compound: "die Straßenbahn", translation: "tramvaiul" }
+        ];
+
+        const allVariants = {
+            "Grupa 1: Haus, Garten, Tür, Fenster, Baum": [
+                { word: "die Haustür", parts: "das Haus + die Tür", translation: "ușa de la intrare" },
+                { word: "das Hausfenster", parts: "das Haus + das Fenster", translation: "fereastra casei" },
+                { word: "der Hausbaum", parts: "das Haus + der Baum", translation: "copacul casei" },
+                { word: "das Gartenhaus", parts: "der Garten + das Haus", translation: "casa din grădină" },
+                { word: "die Gartentür", parts: "der Garten + die Tür", translation: "poarta grădinii" },
+                { word: "das Gartenfenster", parts: "der Garten + das Fenster", translation: "fereastra spre grădină" },
+                { word: "der Gartenbaum", parts: "der Garten + der Baum", translation: "copacul din grădină" },
+                { word: "das Türfenster", parts: "die Tür + das Fenster", translation: "fereastra ușii" },
+                { word: "das Baumhaus", parts: "der Baum + das Haus", translation: "casa din copac" },
+                { word: "die Gartenhaustür", parts: "der Garten + das Haus + die Tür", translation: "ușa casei din grădină" },
+                { word: "das Gartenhausfenster", parts: "der Garten + das Haus + das Fenster", translation: "fereastra casei din grădină" },
+                { word: "die Baumhaustür", parts: "der Baum + das Haus + die Tür", translation: "ușa casei din copac" },
+                { word: "das Baumhausfenster", parts: "der Baum + das Haus + das Fenster", translation: "fereastra casei din copac" }
+            ],
+            "Grupa 2: Buch, Schule, Lehrer, Kind": [
+                { word: "das Schulbuch", parts: "die Schule + das Buch", translation: "manualul școlar" },
+                { word: "der Schullehrer", parts: "die Schule + der Lehrer", translation: "profesorul de școală" },
+                { word: "das Schulkind", parts: "die Schule + das Kind", translation: "copilul școlar" },
+                { word: "das Lehrerbuch", parts: "der Lehrer + das Buch", translation: "cartea profesorului" },
+                { word: "der Kinderschullehrer", parts: "das Kind + die Schule + der Lehrer", translation: "profesorul școlii pentru copii" },
+                { word: "das Lehrerkind", parts: "der Lehrer + das Kind", translation: "copilul profesorului" },
+                { word: "das Kinderbuch", parts: "das Kind + das Buch", translation: "cartea pentru copii" },
+                { word: "die Kinderschule", parts: "das Kind + die Schule", translation: "școala pentru copii" },
+                { word: "der Kinderlehrer", parts: "das Kind + der Lehrer", translation: "profesorul pentru copii" },
+                { word: "das Schulkinderbuch", parts: "die Schule + das Kind + das Buch", translation: "cartea pentru copiii școlari" }
+            ],
+            "Grupa 3: Sonne, Regen, Schnee, Blume": [
+                { word: "die Sonnenblume", parts: "die Sonne + die Blume", translation: "floarea-soarelui" },
+                { word: "der Sonnenregen", parts: "die Sonne + der Regen", translation: "ploaia cu soare" },
+                { word: "der Sonnenschnee", parts: "die Sonne + der Schnee", translation: "zăpadă la soare" },
+                { word: "die Regenblume", parts: "der Regen + die Blume", translation: "floare de ploaie" },
+                { word: "der Regenschnee", parts: "der Regen + der Schnee", translation: "lapoviță" },
+                { word: "die Schneeblume", parts: "der Schnee + die Blume", translation: "floare de zăpadă" },
+                { word: "der Blumenregen", parts: "die Blume + der Regen", translation: "ploaia de flori" },
+                { word: "der Blumenschnee", parts: "die Blume + der Schnee", translation: "zăpadă de flori" }
+            ],
+            "Combinații între grupe": [
+                { word: "das Schulhaus", parts: "die Schule + das Haus", translation: "clădirea școlii" },
+                { word: "die Schultür", parts: "die Schule + die Tür", translation: "ușa școlii" },
+                { word: "das Schulfenster", parts: "die Schule + das Fenster", translation: "fereastra școlii" },
+                { word: "die Baumschule", parts: "der Baum + die Schule", translation: "pepiniera" },
+                { word: "der Schulbaum", parts: "die Schule + der Baum", translation: "copacul școlii" },
+                { word: "die Gartenblume", parts: "der Garten + die Blume", translation: "floarea de grădină" },
+                { word: "das Blumenhaus", parts: "die Blume + das Haus", translation: "casa florilor / sera" },
+                { word: "der Blumengarten", parts: "die Blume + der Garten", translation: "grădina de flori" },
+                { word: "die Blumentür", parts: "die Blume + die Tür", translation: "ușa cu flori" },
+                { word: "das Blumenfenster", parts: "die Blume + das Fenster", translation: "fereastra cu flori" },
+                { word: "der Sonnenbaum", parts: "die Sonne + der Baum", translation: "copac expus la soare" },
+                { word: "der Sonnengarten", parts: "die Sonne + der Garten", translation: "grădina însorită" },
+                { word: "das Blumenbuch", parts: "die Blume + das Buch", translation: "cartea despre flori" },
+                { word: "die Blumenschule", parts: "die Blume + die Schule", translation: "școala de floricultură" },
+                { word: "das Blumenkind", parts: "die Blume + das Kind", translation: "copilul floare" },
+                { word: "der Blumenlehrer", parts: "die Blume + der Lehrer", translation: "profesorul de floricultură" },
+                { word: "das Gartentor", parts: "der Garten + die Tür", translation: "poarta grădinii" },
+                { word: "das Haustor", parts: "das Haus + die Tür", translation: "poarta casei" }
+            ]
+        };
+
+        // Initialize
+        function initEx1() {
+            const container = document.getElementById('exercises-ex1');
+            exercisesEx1.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex1-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">Ex. ${i + 1}</div>
+                    <div class="word-display">${ex.word}</div>
+                    <div class="input-group">
+                        <label>Împărțire:</label>
+                        <div class="input-row">
+                            <div class="article-input-wrapper">
+                                <input type="text" id="a1-ex1-${i}" placeholder="art." class="small">
+                                <input type="text" id="p1-ex1-${i}" placeholder="Cuvânt 1">
+                            </div>
+                            <span class="plus-sign">+</span>
+                            <div class="article-input-wrapper">
+                                <input type="text" id="a2-ex1-${i}" placeholder="art." class="small">
+                                <input type="text" id="p2-ex1-${i}" placeholder="Cuvânt 2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Traducere:</label>
+                        <input type="text" id="t-ex1-${i}" placeholder="Traducerea">
+                    </div>
+                    <div class="feedback" id="f-ex1-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx2() {
+            const container = document.getElementById('exercises-ex2');
+            exercisesEx2.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex2-${i}`;
+                
+                let inputs = `
+                    <div class="article-input-wrapper">
+                        <input type="text" id="a1-ex2-${i}" placeholder="art." class="small">
+                        <input type="text" id="p1-ex2-${i}" placeholder="Cuv. 1">
+                    </div>
+                    <span class="plus-sign">+</span>
+                    <div class="article-input-wrapper">
+                        <input type="text" id="a2-ex2-${i}" placeholder="art." class="small">
+                        <input type="text" id="p2-ex2-${i}" placeholder="Cuv. 2">
+                    </div>
+                `;
+                
+                if (ex.part3) {
+                    inputs += `
+                        <span class="plus-sign">+</span>
+                        <div class="article-input-wrapper break-line">
+                            <input type="text" id="a3-ex2-${i}" placeholder="art." class="small">
+                            <input type="text" id="p3-ex2-${i}" placeholder="Cuv. 3">
+                        </div>
+                    `;
+                }
+                
+                div.innerHTML = `
+                    <div class="exercise-number">Ex. ${i + 1}</div>
+                    <div class="word-display">${ex.word}</div>
+                    <div class="input-group">
+                        <label>Împărțire:</label>
+                        <div class="input-row">${inputs}</div>
+                        ${ex.note ? '<p style="color: #059669; font-size: 0.9rem; font-style: italic;">💡 Acest cuvânt are doar 2 părți</p>' : ''}
+                    </div>
+                    <div class="input-group">
+                        <label>Traducere:</label>
+                        <input type="text" id="t-ex2-${i}" placeholder="Traducerea">
+                    </div>
+                    <div class="feedback" id="f-ex2-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx3() {
+            const container = document.getElementById('exercises-ex3');
+            exercisesEx3.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex3-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">${i + 1}</div>
+                    <div style="color: #6b7280; margin-bottom: 10px;">${ex.word1} (${ex.article1}) + ${ex.word2} (${ex.article2})</div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <select id="a-ex3-${i}">
+                            <option value="">?</option>
+                            <option value="der">der</option>
+                            <option value="die">die</option>
+                            <option value="das">das</option>
+                        </select>
+                        <span style="font-weight: bold; color: #059669;">${ex.compound}</span>
+                    </div>
+                    <div class="feedback" id="f-ex3-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx4() {
+            const container = document.getElementById('exercises-ex4');
+            exercisesEx4.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex4-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">Ex. ${i + 1}</div>
+                    <div style="margin-bottom: 15px;"><strong>${ex.word1}</strong> + <strong>${ex.word2}</strong> =</div>
+                    <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                        <select id="a-ex4-${i}">
+                            <option value="">?</option>
+                            <option value="der">der</option>
+                            <option value="die">die</option>
+                            <option value="das">das</option>
+                        </select>
+                        <span style="font-weight: bold; color: #059669;">${ex.compound}</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Traducere:</label>
+                        <input type="text" id="t-ex4-${i}" placeholder="Traducerea">
+                    </div>
+                    <div class="feedback" id="f-ex4-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx5() {
+            const container = document.getElementById('exercises-ex5');
+            exercisesEx5.forEach((ex, i) => {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.id = `ex5-${i}`;
+                div.innerHTML = `
+                    <div class="exercise-number">Ex. ${i + 1}</div>
+                    <div style="background: #d1fae5; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                        <strong>Cuvânt 1:</strong> ${ex.word1} | <strong>Cuvânt 2:</strong> ${ex.word2}
+                    </div>
+                    <div class="input-group">
+                        <label>Substantiv compus:</label>
+                        <input type="text" id="c-ex5-${i}" placeholder="ex: das Gartenhaus">
+                    </div>
+                    <div class="input-group">
+                        <label>Traducere:</label>
+                        <input type="text" id="t-ex5-${i}" placeholder="Traducerea">
+                    </div>
+                    <div class="feedback" id="f-ex5-${i}"></div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function initEx6() {
+            const container = document.getElementById('exercises-ex6');
+            for (let i = 0; i < 5; i++) {
+                const div = document.createElement('div');
+                div.className = 'exercise-item';
+                div.innerHTML = `
+                    <div class="exercise-number">Combinația ${i + 1}</div>
+                    <div class="input-row">
+                        <input type="text" id="w1-ex6-${i}" placeholder="Cuvânt 1 (cu articol)">
+                        <span class="plus-sign">+</span>
+                        <input type="text" id="w2-ex6-${i}" placeholder="Cuvânt 2 (cu articol)">
+                        <span class="plus-sign">=</span>
+                        <input type="text" id="c-ex6-${i}" placeholder="Compus">
+                    </div>
+                    <div class="input-group">
+                        <label>Traducere:</label>
+                        <input type="text" id="t-ex6-${i}" placeholder="Traducerea">
+                    </div>
+                `;
+                container.appendChild(div);
+            }
+        }
+
+        function toggleSection(i) {
+            const contents = document.querySelectorAll('.section-content');
+            const arrows = document.querySelectorAll('.arrow');
+            contents[i].classList.toggle('active');
+            arrows[i].classList.toggle('rotated');
+        }
+
+        function normalizeString(s) {
+            return s.trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        function checkAnswers(id) {
+            if (id === 'ex1') checkEx1();
+            if (id === 'ex2') checkEx2();
+            if (id === 'ex3') checkEx3();
+            if (id === 'ex4') checkEx4();
+            if (id === 'ex5') checkEx5();
+        }
+
+        function checkEx1() {
+            let correct = 0;
+            exercisesEx1.forEach((ex, i) => {
+                const isCorrect = 
+                    normalizeString(document.getElementById(`a1-ex1-${i}`).value) === normalizeString(ex.article1) &&
+                    normalizeString(document.getElementById(`p1-ex1-${i}`).value) === normalizeString(ex.part1) &&
+                    normalizeString(document.getElementById(`a2-ex1-${i}`).value) === normalizeString(ex.article2) &&
+                    normalizeString(document.getElementById(`p2-ex1-${i}`).value) === normalizeString(ex.part2) &&
+                    normalizeString(document.getElementById(`t-ex1-${i}`).value) === normalizeString(ex.translation);
+                
+                document.getElementById(`ex1-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                document.getElementById(`f-ex1-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                document.getElementById(`f-ex1-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ ${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} = ${ex.translation}`;
+                if (isCorrect) correct++;
+            });
+            showScore('ex1', correct, exercisesEx1.length);
+        }
+
+        function checkEx2() {
+            let correct = 0;
+            exercisesEx2.forEach((ex, i) => {
+                let isCorrect = 
+                    normalizeString(document.getElementById(`a1-ex2-${i}`).value) === normalizeString(ex.article1) &&
+                    normalizeString(document.getElementById(`p1-ex2-${i}`).value) === normalizeString(ex.part1) &&
+                    normalizeString(document.getElementById(`a2-ex2-${i}`).value) === normalizeString(ex.article2) &&
+                    normalizeString(document.getElementById(`p2-ex2-${i}`).value) === normalizeString(ex.part2) &&
+                    normalizeString(document.getElementById(`t-ex2-${i}`).value) === normalizeString(ex.translation);
+                
+                if (ex.part3) {
+                    isCorrect = isCorrect &&
+                        normalizeString(document.getElementById(`a3-ex2-${i}`).value) === normalizeString(ex.article3) &&
+                        normalizeString(document.getElementById(`p3-ex2-${i}`).value) === normalizeString(ex.part3);
+                }
+                
+                document.getElementById(`ex2-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                document.getElementById(`f-ex2-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                
+                if (isCorrect) {
+                    document.getElementById(`f-ex2-${i}`).innerHTML = '✓ Perfect!';
+                } else {
+                    let correctAnswer = ex.part3 
+                        ? `${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} + ${ex.article3} ${ex.part3} = ${ex.translation}`
+                        : `${ex.article1} ${ex.part1} + ${ex.article2} ${ex.part2} = ${ex.translation}`;
+                    document.getElementById(`f-ex2-${i}`).innerHTML = `✗ Răspuns corect: ${correctAnswer}`;
+                }
+                
+                if (isCorrect) correct++;
+            });
+            showScore('ex2', correct, exercisesEx2.length);
+        }
+
+        function checkEx3() {
+            let correct = 0;
+            exercisesEx3.forEach((ex, i) => {
+                const isCorrect = document.getElementById(`a-ex3-${i}`).value === ex.correct;
+                document.getElementById(`ex3-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                document.getElementById(`f-ex3-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                document.getElementById(`f-ex3-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ Articolul corect: ${ex.correct}`;
+                if (isCorrect) correct++;
+            });
+            showScore('ex3', correct, exercisesEx3.length);
+        }
+
+        function checkEx4() {
+            let correct = 0;
+            exercisesEx4.forEach((ex, i) => {
+                const isCorrect = 
+                    document.getElementById(`a-ex4-${i}`).value === ex.article &&
+                    normalizeString(document.getElementById(`t-ex4-${i}`).value) === normalizeString(ex.translation);
+                
+                document.getElementById(`ex4-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                document.getElementById(`f-ex4-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                document.getElementById(`f-ex4-${i}`).innerHTML = isCorrect ? '✓ Perfect!' : `✗ ${ex.article} ${ex.compound} = ${ex.translation}`;
+                if (isCorrect) correct++;
+            });
+            showScore('ex4', correct, exercisesEx4.length);
+        }
+
+        function checkEx5() {
+            let correct = 0;
+            exercisesEx5.forEach((ex, i) => {
+                const isCorrect = 
+                    normalizeString(document.getElementById(`c-ex5-${i}`).value) === normalizeString(ex.compound) &&
+                    normalizeString(document.getElementById(`t-ex5-${i}`).value) === normalizeString(ex.translation);
+                
+                document.getElementById(`ex5-${i}`).className = isCorrect ? 'exercise-item correct' : 'exercise-item incorrect';
+                document.getElementById(`f-ex5-${i}`).className = isCorrect ? 'feedback correct show' : 'feedback incorrect show';
+                document.getElementById(`f-ex5-${i}`).innerHTML = isCorrect ? '✓ Corect!' : `✗ ${ex.compound} = ${ex.translation}`;
+                if (isCorrect) correct++;
+            });
+            showScore('ex5', correct, exercisesEx5.length);
+        }
+
+        function showScore(id, correct, total) {
+            const score = document.getElementById(`score-${id}`);
+            const pct = Math.round((correct / total) * 100);
+            const emoji = pct === 100 ? '🎉' : pct >= 80 ? '👏' : pct >= 60 ? '👍' : '💪';
+            score.innerHTML = `${emoji} Scor: ${correct} / ${total} (${pct}%)`;
+            score.className = 'score show';
+        }
+
+        function showAllVariants() {
+            const container = document.getElementById('variantsContainer');
+            container.innerHTML = '';
+            
+            Object.keys(allVariants).forEach((cat, index) => {
+                const categoryDiv = document.createElement('div');
+                categoryDiv.className = 'category';
+                
+                const header = document.createElement('div');
+                header.className = 'category-header';
+                header.style.cursor = 'pointer';
+                header.style.display = 'flex';
+                header.style.justifyContent = 'space-between';
+                header.style.alignItems = 'center';
+                header.onclick = () => toggleCategoryEx6(index);
+                header.innerHTML = `<h3>${cat}</h3><span class="arrow-ex6" id="arrow-ex6-${index}">▼</span>`;
+                
+                const grid = document.createElement('div');
+                grid.className = 'variants-grid';
+                grid.id = `grid-ex6-${index}`;
+                grid.style.display = 'none';
+                
+                allVariants[cat].forEach(v => {
+                    const card = document.createElement('div');
+                    card.className = 'variant-card';
+                    card.innerHTML = `
+                        <strong>${v.word}</strong>
+                        <div class="variant-parts">${v.parts}</div>
+                        <div>${v.translation}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+                
+                categoryDiv.appendChild(header);
+                categoryDiv.appendChild(grid);
+                container.appendChild(categoryDiv);
+            });
+            
+            document.getElementById('allVariants').className = 'all-variants show';
+        }
+
+        function toggleCategoryEx6(index) {
+            const grid = document.getElementById(`grid-ex6-${index}`);
+            const arrow = document.getElementById(`arrow-ex6-${index}`);
+            
+            if (grid.style.display === 'none') {
+                grid.style.display = 'grid';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                grid.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        function resetExercise(id) {
+            if (id === 'ex1') exercisesEx1.forEach((_, i) => {
+                ['a1', 'p1', 'a2', 'p2', 't'].forEach(f => document.getElementById(`${f}-ex1-${i}`).value = '');
+                document.getElementById(`ex1-${i}`).className = 'exercise-item';
+                document.getElementById(`f-ex1-${i}`).className = 'feedback';
+            });
+            if (id === 'ex2') exercisesEx2.forEach((ex, i) => {
+                ['a1', 'p1', 'a2', 'p2', 't'].forEach(f => document.getElementById(`${f}-ex2-${i}`).value = '');
+                if (ex.part3) ['a3', 'p3'].forEach(f => document.getElementById(`${f}-ex2-${i}`).value = '');
+                document.getElementById(`ex2-${i}`).className = 'exercise-item';
+                document.getElementById(`f-ex2-${i}`).className = 'feedback';
+            });
+            if (id === 'ex3') exercisesEx3.forEach((_, i) => {
+                document.getElementById(`a-ex3-${i}`).value = '';
+                document.getElementById(`ex3-${i}`).className = 'exercise-item';
+                document.getElementById(`f-ex3-${i}`).className = 'feedback';
+            });
+            if (id === 'ex4') exercisesEx4.forEach((_, i) => {
+                ['a', 't'].forEach(f => document.getElementById(`${f}-ex4-${i}`).value = '');
+                document.getElementById(`ex4-${i}`).className = 'exercise-item';
+                document.getElementById(`f-ex4-${i}`).className = 'feedback';
+            });
+            if (id === 'ex5') exercisesEx5.forEach((_, i) => {
+                ['c', 't'].forEach(f => document.getElementById(`${f}-ex5-${i}`).value = '');
+                document.getElementById(`ex5-${i}`).className = 'exercise-item';
+                document.getElementById(`f-ex5-${i}`).className = 'feedback';
+            });
+            if (id === 'ex6') {
+                for (let i = 0; i < 5; i++) ['w1', 'w2', 'c', 't'].forEach(f => document.getElementById(`${f}-ex6-${i}`).value = '');
+                document.getElementById('allVariants').className = 'all-variants';
+            }
+            document.getElementById(`score-${id}`).className = 'score';
+        }
+
+        // Toggle exercise visibility
+        function toggleExercise(exerciseId) {
+            const content = document.getElementById(`content-${exerciseId}`);
+            const arrow = document.getElementById(`arrow-header-${exerciseId}`);
+            
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Nav highlight
+        window.addEventListener('scroll', () => {
+            const sections = ['teorie', 'ex1', 'ex2', 'ex3', 'ex4', 'ex5', 'ex6', 'recapitulare'];
+            let current = '';
+            sections.forEach(s => {
+                const el = document.getElementById(s);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 100 && rect.bottom >= 100) current = s;
+                }
+            });
+            document.querySelectorAll('.nav-link').forEach((link, i) => {
+                link.classList.toggle('active', sections[i] === current);
+            });
+        });
+
+        // Init all
+        initEx1();
+        initEx2();
+        initEx3();
+        initEx4();
+        initEx5();
+        initEx6();
+    
+
+// FLASHCARDS JavaScript
+const fcData = [
+    { article: "das", word: "Haustor", part1: { article: "das", word: "Haus" }, part2: { article: "das", word: "Tor" }, translation: "poarta casei", gender: "neutru", image: "https://images.unsplash.com/photo-1565538810643-b5bdb714032a?w=400&h=300&fit=crop" },
+    { article: "die", word: "Fensterbank", part1: { article: "das", word: "Fenster" }, part2: { article: "die", word: "Bank" }, translation: "pervazul de fereastră", gender: "feminin", image: "https://images.unsplash.com/photo-1603794067602-9feaa4f70e0c?w=400&h=300&fit=crop" },
+    { article: "das", word: "Türschloss", part1: { article: "die", word: "Tür" }, part2: { article: "das", word: "Schloss" }, translation: "yala ușii", gender: "neutru", image: "https://images.unsplash.com/photo-1582139329536-e7284fece509?w=400&h=300&fit=crop" },
+    { article: "der", word: "Schreibtisch", part1: { word: "Schreiben" }, part2: { article: "der", word: "Tisch" }, translation: "biroul", gender: "masculin", image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=400&h=300&fit=crop" },
+    { article: "der", word: "Bücherschrank", part1: { article: "das", word: "Buch", plural: "Bücher" }, part2: { article: "der", word: "Schrank" }, translation: "biblioteca", gender: "masculin", image: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=400&h=300&fit=crop" },
+    { article: "der", word: "Kleiderschrank", part1: { article: "das", word: "Kleid", plural: "Kleider" }, part2: { article: "der", word: "Schrank" }, translation: "șifonierul", gender: "masculin", image: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?w=400&h=300&fit=crop" },
+    { article: "der", word: "Nachttisch", part1: { article: "die", word: "Nacht" }, part2: { article: "der", word: "Tisch" }, translation: "noptiera", gender: "masculin", image: "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=400&h=300&fit=crop" },
+    { article: "das", word: "Esszimmer", part1: { word: "Essen" }, part2: { article: "das", word: "Zimmer" }, translation: "sufrageria", gender: "neutru", image: "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=400&h=300&fit=crop" },
+    { article: "das", word: "Wohnzimmer", part1: { word: "Wohnen" }, part2: { article: "das", word: "Zimmer" }, translation: "livingul", gender: "neutru", image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop" },
+    { article: "das", word: "Badezimmer", part1: { word: "Baden" }, part2: { article: "das", word: "Zimmer" }, translation: "baia", gender: "neutru", image: "https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=300&fit=crop" },
+    { article: "der", word: "Sonnenaufgang", part1: { article: "die", word: "Sonne" }, part2: { article: "der", word: "Aufgang" }, translation: "răsăritul", gender: "masculin", image: "https://images.unsplash.com/photo-1495567720989-cebdbdd97913?w=400&h=300&fit=crop" },
+    { article: "der", word: "Sonnenuntergang", part1: { article: "die", word: "Sonne" }, part2: { article: "der", word: "Untergang" }, translation: "apusul", gender: "masculin", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop" },
+    { article: "der", word: "Regenschirm", part1: { article: "der", word: "Regen" }, part2: { article: "der", word: "Schirm" }, translation: "umbrela", gender: "masculin", image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop" },
+    { article: "der", word: "Schneefall", part1: { article: "der", word: "Schnee" }, part2: { article: "der", word: "Fall" }, translation: "ninsoarea", gender: "masculin", image: "https://images.unsplash.com/photo-1478719059408-592965723cbc?w=400&h=300&fit=crop" },
+    { article: "die", word: "Wasserflasche", part1: { article: "das", word: "Wasser" }, part2: { article: "die", word: "Flasche" }, translation: "sticla de apă", gender: "feminin", image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=300&fit=crop" },
+    { article: "das", word: "Baumhaus", part1: { article: "der", word: "Baum" }, part2: { article: "das", word: "Haus" }, translation: "căsuța din copac", gender: "neutru", image: "https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=400&h=300&fit=crop" },
+    { article: "der", word: "Blumentopf", part1: { article: "die", word: "Blume" }, part2: { article: "der", word: "Topf" }, translation: "ghiveciul", gender: "masculin", image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=400&h=300&fit=crop" },
+    { article: "das", word: "Gartentor", part1: { article: "der", word: "Garten" }, part2: { article: "das", word: "Tor" }, translation: "poarta grădinii", gender: "neutru", image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=300&fit=crop" },
+    { article: "die", word: "Handtasche", part1: { article: "die", word: "Hand" }, part2: { article: "die", word: "Tasche" }, translation: "poșeta", gender: "feminin", image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop" },
+    { article: "der", word: "Blumenlehrer", part1: { article: "die", word: "Blume" }, part2: { article: "der", word: "Lehrer" }, translation: "profesorul de floricultură", gender: "masculin", image: "https://images.unsplash.com/photo-1544776193-352d25ca82cd?w=400&h=300&fit=crop" }
+];
+
+let fcIdx = 0, fcFlipped = false, fcOrder = [...Array(fcData.length).keys()];
+
+function fcInit() { fcUpdate(); }
+
+function fcUpdate() {
+    const c = fcData[fcOrder[fcIdx]];
+    const card = document.getElementById('fc-card');
+    if (fcFlipped) { card.classList.remove('flipped'); fcFlipped = false; }
+    
+    document.getElementById('fc-img').src = c.image;
+    document.getElementById('fc-img').alt = c.word;
+    document.getElementById('fc-article').textContent = c.article;
+    document.getElementById('fc-article').className = 'fc-article ' + c.article;
+    document.getElementById('fc-word').textContent = c.word;
+    document.getElementById('fc-title').textContent = c.article + ' ' + c.word;
+    
+    const parts = document.getElementById('fc-parts');
+    parts.innerHTML = '';
+    
+    const p1 = document.createElement('div');
+    p1.className = 'fc-part';
+    if (c.part1.article) {
+        const a1 = document.createElement('span');
+        a1.className = 'fc-part-article ' + c.part1.article;
+        a1.textContent = c.part1.article;
+        p1.appendChild(a1);
+    }
+    const w1 = document.createElement('span');
+    w1.className = 'fc-part-word';
+    w1.textContent = c.part1.plural || c.part1.word;
+    p1.appendChild(w1);
+    const s1 = document.createElement('button');
+    s1.className = 'fc-mini-speak';
+    s1.textContent = '🔊';
+    s1.onclick = (e) => { e.stopPropagation(); fcSpeakPart(c.part1.word); };
+    p1.appendChild(s1);
+    
+    const plus = document.createElement('span');
+    plus.style.fontSize = '1.3rem';
+    plus.style.color = '#6b7280';
+    plus.textContent = '+';
+    
+    const p2 = document.createElement('div');
+    p2.className = 'fc-part';
+    if (c.part2.article) {
+        const a2 = document.createElement('span');
+        a2.className = 'fc-part-article ' + c.part2.article;
+        a2.textContent = c.part2.article;
+        p2.appendChild(a2);
+    }
+    const w2 = document.createElement('span');
+    w2.className = 'fc-part-word';
+    w2.textContent = c.part2.word;
+    p2.appendChild(w2);
+    const s2 = document.createElement('button');
+    s2.className = 'fc-mini-speak';
+    s2.textContent = '🔊';
+    s2.onclick = (e) => { e.stopPropagation(); fcSpeakPart(c.part2.word); };
+    p2.appendChild(s2);
+    
+    parts.appendChild(p1);
+    parts.appendChild(plus);
+    parts.appendChild(p2);
+    
+    document.getElementById('fc-trans').textContent = '= ' + c.translation;
+    document.getElementById('fc-final').innerHTML = '<span class="' + c.article + '" style="font-weight: bold;">' + c.article + ' (' + c.gender + ')</span>';
+    
+    document.getElementById('fc-progress-text').textContent = 'Card ' + (fcIdx + 1) + ' / ' + fcData.length;
+    document.getElementById('fc-progress-fill').style.width = ((fcIdx + 1) / fcData.length * 100) + '%';
+    
+    document.getElementById('fc-prev').disabled = fcIdx === 0;
+    document.getElementById('fc-next').disabled = fcIdx === fcData.length - 1;
+}
+
+function fcFlip() { document.getElementById('fc-card').classList.toggle('flipped'); fcFlipped = !fcFlipped; }
+function fcNext() { if (fcIdx < fcData.length - 1) { fcIdx++; fcUpdate(); } }
+function fcPrev() { if (fcIdx > 0) { fcIdx--; fcUpdate(); } }
+function fcShuffle() { for (let i = fcOrder.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [fcOrder[i], fcOrder[j]] = [fcOrder[j], fcOrder[i]]; } fcIdx = 0; fcUpdate(); }
+function fcSpeak() { const c = fcData[fcOrder[fcIdx]]; fcSpeakPart(c.article + ' ' + c.word); }
+function fcSpeakPart(text) { if ('speechSynthesis' in window) { speechSynthesis.cancel(); const u = new SpeechSynthesisUtterance(text); u.lang = 'de-DE'; u.rate = 0.85; const voices = speechSynthesis.getVoices(); const gv = voices.find(v => v.lang.startsWith('de')); if (gv) u.voice = gv; speechSynthesis.speak(u); } }
+
+// Init when flashcards section opens
+const fcContent = document.getElementById('flashcards-content');
+if (fcContent) {
+    const obs = new MutationObserver((muts) => { muts.forEach((mut) => { if (mut.type === 'attributes' && mut.attributeName === 'style' && fcContent.style.display !== 'none') fcInit(); }); });
+    obs.observe(fcContent, { attributes: true });
+}
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+    const open = document.getElementById('flashcards-content')?.style.display !== 'none';
+    if (!open) return;
+    if (e.code === 'Space') { e.preventDefault(); fcFlip(); }
+    else if (e.code === 'ArrowLeft') { e.preventDefault(); fcPrev(); }
+    else if (e.code === 'ArrowRight') { e.preventDefault(); fcNext(); }
+});
+
+</script>
+</body>
+</html>
