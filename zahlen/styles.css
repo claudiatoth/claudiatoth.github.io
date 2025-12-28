@@ -1,0 +1,556 @@
+/* ==================== GENERAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    min-height: 100vh;
+    padding-top: 140px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    padding: 15px 30px;
+    box-shadow: 0 4px 20px rgba(5, 150, 105, 0.3);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-logo {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.navbar-menu li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* ==================== HEADER ==================== */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    color: #059669;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #6b7280;
+    font-size: 1.1rem;
+}
+
+/* ==================== SECTIONS ==================== */
+.section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    padding: 20px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    margin: -25px -25px 0 -25px;
+}
+
+.section-header:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.3);
+}
+
+.section-header h3 {
+    font-size: 1.3rem;
+}
+
+.arrow {
+    transition: transform 0.3s;
+    font-size: 1.2rem;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.section-content.active {
+    max-height: 8000px;
+    padding: 25px 0;
+}
+
+/* ==================== SUB-SECTIONS ==================== */
+.sub-section {
+    margin: 15px 0;
+}
+
+.sub-section-header {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.sub-section-header:hover {
+    background: #a7f3d0;
+}
+
+.sub-arrow {
+    transition: transform 0.3s;
+}
+
+.sub-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.sub-section-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.sub-section-content.active {
+    max-height: 5000px;
+    padding: 20px;
+    background: white;
+    border-radius: 0 0 8px 8px;
+}
+
+/* ==================== THEORY BOXES ==================== */
+.theory-box {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+.theory-box p {
+    margin: 5px 0;
+}
+
+.audio-btn {
+    background: #10b981;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    margin: 10px 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.audio-btn:hover {
+    background: #059669;
+    transform: scale(1.05);
+}
+
+.theory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.theory-table th,
+.theory-table td {
+    padding: 12px;
+    text-align: center;
+    border: 2px solid #10b981;
+}
+
+.theory-table th {
+    background: #059669;
+    color: white;
+    font-weight: 600;
+}
+
+.theory-table td {
+    background: white;
+}
+
+/* ==================== EXERCISES ==================== */
+.exercise-item {
+    background: #f9fafb;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.exercise-number {
+    background: #10b981;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.input-group {
+    display: inline-block;
+    width: calc(100% - 60px);
+    vertical-align: top;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d1fae5;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-group select:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.feedback {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    display: none;
+}
+
+.feedback.correct {
+    background: #d1fae5;
+    color: #065f46;
+    display: block;
+}
+
+.feedback.incorrect {
+    background: #fee2e2;
+    color: #991b1b;
+    display: block;
+}
+
+/* ==================== SOLUTIONS ==================== */
+.solutions-dropdown {
+    margin-top: 30px;
+    border-top: 2px solid #d1fae5;
+    padding-top: 20px;
+}
+
+.solutions-header {
+    background: #f0fdf4;
+    color: #065f46;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    font-weight: 600;
+    border: 2px solid #d1fae5;
+}
+
+.solutions-header:hover {
+    background: #d1fae5;
+}
+
+.solution-arrow {
+    transition: transform 0.3s;
+}
+
+.solution-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.solutions-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.solutions-content.active {
+    max-height: 1000px;
+    padding: 20px;
+    background: #f0fdf4;
+    border-radius: 0 0 8px 8px;
+    border: 2px solid #d1fae5;
+    border-top: none;
+}
+
+.solution-item {
+    padding: 10px 15px;
+    margin: 8px 0;
+    background: white;
+    border-left: 4px solid #10b981;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.solution-item strong {
+    color: #059669;
+}
+
+/* ==================== FLASHCARDS ==================== */
+.flashcard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.flashcard-wrapper {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.flashcard-front {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+}
+
+.flashcard-back {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flashcard-number {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.flashcard-text {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.flashcard-audio {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.flashcard-audio:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.flashcard-controls {
+    display: flex;
+    gap: 20px;
+}
+
+.flashcard-btn {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.flashcard-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+.flashcard-counter {
+    font-size: 1.2rem;
+    color: #374151;
+    font-weight: 600;
+}
+
+/* ==================== BUTTONS ==================== */
+.btn-container {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.btn {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(5, 150, 105, 0.4);
+}
+
+.btn-reset {
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
+}
+
+/* ==================== SCORE ==================== */
+.score {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 30px 0;
+    box-shadow: 0 8px 25px rgba(5, 150, 105, 0.3);
+    display: none;
+}
+
+.score.show {
+    display: block;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    body {
+        padding-top: 180px;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .flashcard-number {
+        font-size: 3rem;
+    }
+
+    .flashcard-text {
+        font-size: 1.5rem;
+    }
+
+    .navbar-menu {
+        gap: 10px;
+    }
+
+    .navbar-menu li a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
